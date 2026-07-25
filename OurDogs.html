@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<div id="header"></div>
+<script>
+    fetch("header.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("header").innerHTML = data);
+</script>
+
+<section style="text-align:center;" class="breed-standard">
+<h1>Our Dogs</h1>
+<main>
+<section class="breed-standard">
+    <p>Meet our beautiful, health-tested Spaniels.</p>
+</section>
+</main>
+    <article>
+
+    <div class="dog-card-container">
+<br> 
+<div class="nav-button-container">
+        <a href="OurDogs-Cocker-Hermione.html" class="nav-btn">Hermione</a>
+
+
+
+</div>
+</div>
+</article>
+</section>
+
+
+
+
+
+
+
+
+<div id="footer-placeholder"></div>
+<script>
+fetch("footer.html")
+    .then(r => r.text())
+    .then(d => document.getElementById("footer-placeholder").innerHTML = d);
+</script>
+
+
+</body>
+</html>

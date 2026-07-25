@@ -1,0 +1,39 @@
+
+
+/* ---------- DOG / PUPPY CARDS (SHOW STYLE) ---------- */
+.dog-card,
+.puppy-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: 1px solid rgba(232,185,35,0.35);
+    text-align: center;
+    font-size: 0.85rem;
+    width: 200px;
+}
+.gallery-item,
+.gallery-item-img,
+.dog-card img,
+.logo-img,
+.puppy-card img {
+    position: center;
+    width: 180px;
+    border-radius: 12px;
+    border: 3px solid #e8b923;
+}
+.dog-card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; /* spacing between cards */
+    padding: 20px;
+}
+.breed-standard {
+    display: flex;
+    flex-direction: column;   /* stack items vertically */
+    align-items: center;      /* center each item */
+    gap: 20px;                /* spacing between items */
+    text-align: center;
+}
+
+

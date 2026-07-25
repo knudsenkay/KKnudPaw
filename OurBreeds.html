@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<div id="header"></div>
+<script>
+    fetch("header.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("header").innerHTML = data);
+</script>
+
+
+<body>
+<section style="text-align:center;" class="breed-standard">
+
+
+<img src="images/ECS%20Standard.jpeg">
+
+<h3>ANKC Breed Standards</h3>
+
+<main>
+<section class="breed-standard">
+    <h1>Cocker Spaniel Breed Standard</h1>
+    <p>Last updated: 09 Oct 2012</p>
+</section>
+</main>
+
+
+    <article>
+        <div class="dog-card-container">
+    <h2>Our Breeds</h2>
+    <p>We proudly raise several Spaniel breeds known for their temperament, beauty, and companionship.</p>
+
+    <div class="dog-card-container">
+
+
+<div id="footer-placeholder"></div>
+<script>
+fetch("footer.html")
+    .then(r => r.text())
+    .then(d => document.getElementById("footer-placeholder").innerHTML = d);
+</script>
+
+
+</body>
+</html>

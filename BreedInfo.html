@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<div id="header"></div>
+<script>
+    fetch("header.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("header").innerHTML = data);
+</script>
+
+
+<!-- PAGE CONTENT -->
+<section style="text-align:center;" class="breed-standard">
+
+
+<img src="images/ECS%20Standard.jpeg">
+
+<h3>ANKC Breed Standards</h3>
+
+<main>
+<section class="breed-standard">
+    <h1>Cocker Spaniel Breed Standard</h1>
+    <p>Last updated: 09 Oct 2012</p>
+</section>
+</main>
+
+
+    <article>
+        <div class="dog-card-container">
+    <h2>Breed Information</h2>
+    <p>Learn about the temperament, grooming needs, colours, and breed standards of the Spaniels we raise.</p>
+
+    <div class="dog-card-container">
+    
+    <article class="dog-card">
+          <a href="BreedInfo-Temperament.html"class="nav-link"><h3>Temperament</h3></a>
+        <p>Spaniels are affectionate, gentle, eager to please, and thrive in family environments.</p>
+    </article>
+
+    <article class="dog-card">
+          <a href="BreedInfo-Grooming.html"class="nav-link"><h3>Grooming</h3></a>
+        <p>Regular brushing, ear care, and coat maintenance are essential for keeping your Spaniel healthy.</p>
+    </article>
+
+    <article class="dog-card">
+          <a href="BreedInfo-Colours.html"class="nav-link"><h3>Colours</h3></a>
+        <p>Spaniels come in a wide range of colours including golden, black, roan, parti, chocolate, sable, and more.</p>
+    </article>
+
+    <article class="dog-card">
+          <a href="BreedInfo-ANKC.html"class="nav-link"><h3>Breed Standards</h3></a>
+        <p>We follow DogsWest and ANKC breed standards to ensure ethical, responsible breeding.</p>
+    </article>
+</section>
+
+
+
+<div id="footer-placeholder"></div>
+<script>
+fetch("footer.html")
+    .then(r => r.text())
+    .then(d => document.getElementById("footer-placeholder").innerHTML = d);
+</script>
+
+
+</body>
+</html>

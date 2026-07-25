@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<div id="header"></div>
+<script>
+    fetch("header.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("header").innerHTML = data);
+</script>
+<section style="text-align:center;" class="breed-standard">
+    <h1>Apply for Our Waitlist</h1>
+</section>
+<form class="waitlist-form" action="send_waitlist.php" method="POST">
+        <label>Full Name</label>
+        <input type="text" required>
+        <label>Email</label>
+        <input type="email" required>
+        <label>Phone</label>
+        <input type="tel" required>
+        <label>Preferred Breed</label>
+        <select>
+            <option>English Cocker</option>
+        </select>
+        <label>Preferred Gender</label>
+        <select>
+            <option>Any</option>
+            <option>Female</option>
+            <option>Male</option>
+        </select>
+<fieldset class="colour-select">
+    <legend>Preferred Colour</legend>
+    <label><input type="checkbox" name="colour" value="Any"> Any</label>
+    <label><input type="checkbox" name="colour" value="Black & Tan"> Black & Tan</label>
+    <label><input type="checkbox" name="colour" value="Black, White & Tan"> Black, White & Tan</label>
+    <label><input type="checkbox" name="colour" value="Black & White"> Black & White</label>
+    <label><input type="checkbox" name="colour" value="Black"> Black</label>
+    <label><input type="checkbox" name="colour" value="Blue Roan & Tan"> Blue Roan & Tan</label>
+    <label><input type="checkbox" name="colour" value="Blue Roan"> Blue Roan</label>
+    <label><input type="checkbox" name="colour" value="Golden"> Golden</label>
+    <label><input type="checkbox" name="colour" value="Lemon Roan"> Lemon Roan</label>
+    <label><input type="checkbox" name="colour" value="Lemon & White"> Lemon & White</label>
+    <label><input type="checkbox" name="colour" value="Liver Roan & Tan"> Liver Roan & Tan</label>
+    <label><input type="checkbox" name="colour" value="Liver Roan"> Liver Roan</label>
+    <label><input type="checkbox" name="colour" value="Liver & Tan"> Liver & Tan</label>
+    <label><input type="checkbox" name="colour" value="Liver, White & Tan"> Liver, White & Tan</label>
+    <label><input type="checkbox" name="colour" value="Liver & White"> Liver & White</label>
+    <label><input type="checkbox" name="colour" value="Liver"> Liver</label>
+    <label><input type="checkbox" name="colour" value="Orange Roan"> Orange Roan</label>
+    <label><input type="checkbox" name="colour" value="Orange & White"> Orange & White</label>
+    <label><input type="checkbox" name="colour" value="Red"> Red</label>
+</fieldset>
+        <label>Tell us about your home</label>
+        <textarea rows="10"></textarea>
+        <button type="submit">Join Waitlist</button>
+    </form>
+</section>
+<div id="footer"></div>
+<script>
+    fetch("footer.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+</html>

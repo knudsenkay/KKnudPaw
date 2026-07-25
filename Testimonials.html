@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<div id="header"></div>
+<script>
+    fetch("header.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("header").innerHTML = data);
+</script>
+<section style="text-align:center;" class="breed-standard">
+<main>
+    <h1>Testimonials</h1>
+    <p>Hear from families who have welcomed a KKnudPaw Spaniel into their home.</p>
+</section>
+</main>
+    <article>
+        <div class="dog-card-container">
+        <div class="dog-card">
+            <h3>“The sweetest puppy we’ve ever owned.”</h3>
+            <p>Our little girl settled in immediately. She is confident, gentle, and beautifully socialised. We could not be happier.</p>
+            <p><strong>— The Harris Family</strong></p>
+        </div>
+        <div class="dog-card">
+            <h3>“Ethical breeder, incredible communication.”</h3>
+            <p>Kayla kept us updated from pregnancy to pickup. We felt supported every step of the way.</p>
+            <p><strong>— Sarah & Michael</strong></p>
+        </div>
+        <div class="dog-card">
+            <h3>“Healthy, happy, and beautifully raised.”</h3>
+            <p>Our boy has the best temperament. You can tell he was raised with love and care.</p>
+            <p><strong>— The Thompson Family</strong></p>
+        </div>
+    </div>
+</section>
+<div id="footer"></div>
+<script>
+fetch("footer.html")
+    .then(r => r.text())
+    .then(d => document.getElementById("footer").innerHTML = d);
+</script>
+</html>

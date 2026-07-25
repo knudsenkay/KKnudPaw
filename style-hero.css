@@ -1,0 +1,23 @@
+
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+    padding: 0 !important;
+    background: linear-gradient(135deg, #1b1324, #4a2e6f 40%, #e8b923 100%);
+    color: #f7e9d7;
+    text-align: center;
+    box-shadow: none !important;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.hero p {
+    max-width: 640px;
+    margin: 1rem auto 0;
+    font-size: 1.05rem;
+}
+

@@ -1,0 +1,26 @@
+:root {
+    --primary: #cc99ff;
+    --secondary: #000033;
+    --accent: #ffccff;
+    --text-dark: #660066;
+    --text-light: #ffccff;
+    --border: #330066;
+}
+
+/* Example usage */
+body {
+    background: var(--accent);
+    color: var(--text-dark);
+}
+
+.main-nav {
+    background: var(--primary);
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+.box {
+    border: 1px solid var(--border);
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<div id="header"></div>
+<script>
+    fetch("header.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("header").innerHTML = data);
+</script>
+
+<section style="text-align:center;" class="breed-standard">
+
+
+<img src="images/CKCS-Standard.jpg">
+
+<h3>ANKC Breed Standards</h3>
+
+<main>
+<section class="breed-standard">
+    <h1>Cocker Spaniel Breed Standard</h1>
+    <p>Last updated: 09 Oct 2012</p>
+</section>
+</main>
+
+
+    <article>
+        <div class="dog-card-container">
+    <h2>English Cocker Spaniel</h2>
+    <p>The English Cocker Spaniel is affectionate, intelligent, eager to please, and known for its beautiful silky coat.</p>
+
+    <div class="dog-card-container">
+        <div><a href="23%20ECS%20Temperament.html"  class="dog-card">
+                       <img src="images/ECS%20Temperament.jpeg"> </a>
+            <h3>Temperament</h3>
+            <p>Friendly, gentle, loyal, and excellent with families.</p>
+        </div>
+
+        <div><a href="23%20ECS%20Grooming.html"  class="dog-card">
+                       <img src="images/ECS%20Grooming.jpeg"> </a>
+
+            <h3>Grooming</h3>
+            <p>Regular brushing, ear care, and coat trimming recommended.</p>
+            <p>Sanitary, Comfort, .</p>
+        </div>
+
+        <div><a href="23%20ECS%20Colours.html"  class="dog-card">
+                       <img src="images/ECS%20Colours.jpeg"> </a>
+            <h3>Colours</h3>
+            <p>Golden, black, roan, parti, chocolate, sable, and more.</p>
+        </div>
+        
+        <div><a href="23%20ECS%20Breed%20Standards.html"  class="dog-card">
+                       <img src="images/ECS%20Standard.jpeg"> </a>
+            <h3>ANKC Breed Standards</h3>
+            <p></p>
+        </div>
+    </div>
+</section>
+
+
+<div id="footer-placeholder"></div>
+<script>
+fetch("footer.html")
+    .then(r => r.text())
+    .then(d => document.getElementById("footer-placeholder").innerHTML = d);
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<div id="header"></div>
+<script>
+    fetch("header.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("header").innerHTML = data);
+</script>
+<section style="text-align:center;" class="breed-standard">
+<main>
+    <h1>Puppy Care Guide</h1>
+    <p>Everything you need to know to give your new puppy the best start in life.</p>
+</main>
+</section>
+<div class="dog-card-container">
+        <div class="puppy-card">
+        <h3>Feeding</h3>
+        <p>Feed a high-quality puppy food recommended by your breeder. Keep meals consistent and avoid sudden diet changes.</p>
+    </div>
+        <div class="puppy-card">
+        <h3>Sleep & Routine</h3>
+        <p>Puppies thrive on routine. Provide a quiet, safe sleeping area and maintain consistent wake, play, and rest times.</p>
+    </div>
+        <div class="puppy-card">
+        <h3>Socialisation</h3>
+        <p>Introduce your puppy to new people, sounds, environments, and gentle experiences to build confidence.</p>
+    </div>
+        <div class="puppy-card">
+        <h3>Training</h3>
+        <p>Use positive reinforcement. Start with simple cues like sit, stay, and recall. Keep sessions short and fun.</p>
+    </div>
+        <div class="puppy-card">
+        <h3>Grooming</h3>
+        <p>Brush regularly, check ears weekly, and introduce grooming early so your puppy becomes comfortable with handling.</p>
+    </div>
+        <div class="puppy-card">
+        <h3>Vet Care</h3>
+        <p>Follow your vet’s vaccination schedule, worming plan, and health checks. Keep records organised.</p>
+    </div>    </div>
+</section>
+<div id="footer"></div>
+<script>
+fetch("footer.html")
+    .then(r => r.text())
+    .then(d => document.getElementById("footer").innerHTML = d);
+</script>
+</html>

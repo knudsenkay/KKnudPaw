@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<div id="header"></div>
+<script>
+    fetch("header.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("header").innerHTML = data);
+</script>
+
+<section style="text-align:center;" class="breed-standard">
+
+
+<img src="images/ECS-Standard.jpg">
+
+<h3>ANKC Breed Standards</h3>
+
+<main>
+<section class="breed-standard">
+    <h1>Cocker Spaniel Breed Standard</h1>
+    <p>Last updated: 09 Oct 2012</p>
+</section>
+</main>
+
+
+    <article>
+        <div class="dog-card-container">
+    <h2>English Cocker Spaniel</h2>
+    <p>The English Cocker Spaniel is affectionate, intelligent, eager to please, and known for its beautiful silky coat.</p>
+
+
+    <div class="dog-card-container">
+<br> 
+<div class="nav-button-container">
+        <a href="OurDogs-Cocker-Hermione.html" class="nav-btn">Hermione</a>
+
+
+
+
+</div>
+
+
+</section>
+
+
+<div id="footer-placeholder"></div>
+<script>
+fetch("footer.html")
+    .then(r => r.text())
+    .then(d => document.getElementById("footer-placeholder").innerHTML = d);
+</script>
+
+
+</body>
+</html>

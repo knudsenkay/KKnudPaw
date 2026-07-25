@@ -8,23 +8,15 @@
 <body><section style="text-align:center;" class="breed-standard">
     <h1>Apply for Our Waitlist</h1>
 </section>
-<form class="waitlist-form" action="send_waitlist.php" method="POST">
-        <label>Full Name</label>
-        <input type="text" required>
-        <label>Email</label>
-        <input type="email" required>
-        <label>Phone</label>
-        <input type="tel" required>
-        <label>Preferred Breed</label>
-        <select>
-            <option>English Cocker</option>
-        </select>
-        <label>Preferred Gender</label>
-        <select>
-            <option>Any</option>
-            <option>Female</option>
-            <option>Male</option>
-        </select>
+<form id="waitlistForm" class="waitlist-form">
+
+<input type="text" name="full_name" required>
+<input type="email" name="email" required>
+<input type="tel" name="phone" required>
+<select name="breed">…</select>
+<select name="gender">…</select>
+
+
 <fieldset class="colour-select">
     <legend>Preferred Colour</legend>
     <label><input type="checkbox" name="colour" value="Any"> Any</label>
@@ -47,7 +39,7 @@
     <label><input type="checkbox" name="colour" value="Orange & White"> Orange & White</label>
     <label><input type="checkbox" name="colour" value="Red"> Red</label>
 </fieldset>
-        <label>Tell us about your home</label>
+<textarea name="home_info">Tell us about your home</textarea>
         <textarea rows="10"></textarea>
         <button type="submit">Join Waitlist</button>
     </form>
@@ -57,6 +49,9 @@
     (function() {
         emailjs.init("-MsYa1BCKn8v6mlQZ"); 
     })();
+</script>
+<script>
+
 </script>
 
 </body>

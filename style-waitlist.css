@@ -35,4 +35,14 @@
     gap: 8px;
     font-size: 1rem;
 }
+document.getElementById("waitlistForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
+    emailjs.sendForm("KKnudPaw.spaniels", "template_hkq8nwt", this)
+        .then(() => {
+            alert("Your waitlist request has been sent!");
+        }, (error) => {
+            alert("Failed to send. Please try again.");
+            console.error(error);
+        });
+});

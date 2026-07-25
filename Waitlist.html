@@ -5,7 +5,7 @@
         .then(res => res.text())
         .then(data => document.getElementById("header").innerHTML = data);
 </script>
-<section style="text-align:center;" class="breed-standard">
+<body><section style="text-align:center;" class="breed-standard">
     <h1>Apply for Our Waitlist</h1>
 </section>
 <form class="waitlist-form" action="send_waitlist.php" method="POST">
@@ -52,6 +52,14 @@
         <button type="submit">Join Waitlist</button>
     </form>
 </section>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    (function() {
+        emailjs.init("YOUR_PUBLIC_KEY"); 
+    })();
+</script>
+
+</body>
 <div id="footer"></div>
 <script>
     fetch("footer.html")

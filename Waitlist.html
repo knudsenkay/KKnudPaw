@@ -10,11 +10,11 @@
 </section>
 <form id="waitlistForm" class="waitlist-form">
 
-<input type="text" name="full_name" required>
-<input type="email" name="email" required>
-<input type="tel" name="phone" required>
-<select name="breed">…</select>
-<select name="gender">…</select>
+    <legend>Your Full Name</legend><input type="text" name="full_name" required>
+    <legend>Email</legend><input type="email" name="email" required>
+    <legend>Phone</legend><input type="tel" name="phone" required>
+    <legend>Breed</legend><select name="breed">Cocker Spaniel</select>
+    <legend>Gender</legend><select name="gender">Any</select>
 
 
 <fieldset class="colour-select">
@@ -45,14 +45,7 @@
     </form>
 </section>
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-    (function() {
-        emailjs.init("-MsYa1BCKn8v6mlQZ"); 
-    })();
-</script>
-<script>
 
-</script>
 
 </body>
 <div id="footer"></div>

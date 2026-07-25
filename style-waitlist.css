@@ -38,6 +38,7 @@
 document.getElementById("waitlistForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
+        emailjs.init("-MsYa1BCKn8v6mlQZ"); 
     emailjs.sendForm("KKnudPaw.spaniels", "template_hkq8nwt", this)
         .then(() => {
             alert("Your waitlist request has been sent!");

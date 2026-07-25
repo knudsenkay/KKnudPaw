@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             const response = await emailjs.send(
                 "service_spaniels",     // Example: "service_abc123"
-                "template_hkq8nwt",    // Example: "template_xyz789"
+                "template_rr08hpp",    // Example: "template_xyz789"
                 formData
             );
 

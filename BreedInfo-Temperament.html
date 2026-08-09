@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<div id="header"></div>
+<script>
+    fetch("header.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("header").innerHTML = data);
+</script>
+<img src="images/Spaniels.jpg">
+
+
+<div id="footer-placeholder"></div>
+<script>
+fetch("footer.html")
+    .then(r => r.text())
+    .then(d => document.getElementById("footer-placeholder").innerHTML = d);
+</script>

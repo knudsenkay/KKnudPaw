@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <div id="header"></div>
+
 <script>
-    fetch("header.html")
-        .then(res => res.text())
-        .then(data => document.getElementById("header").innerHTML = data);
+fetch("header.html")
+    .then(res => res.text())
+    .then(html => {
+        document.getElementById("header").innerHTML = html;
+        initHeaderComponents(); // attach JS AFTER header loads
+    });
 </script>
+
+
+
 <section style="text-align:center;" class="breed-standard">
 <img src="images/Spaniels.jpg">
 
 <html>
-<body>
-        <div class="dog-card-container">
-<img src="images/ECS-Standard.jpg">
-<img src="images/CS-Standard.jpg">
-<img src="images/CKCS-Standard.jpg">
-<img src="images/SS-Standard.jpg">
-</div>
-<section style="text-align:center;" class="breed-standard">
-<h3>My Spaniel Breeds</h3>
+<body><h1>My Spaniel Breeds</h1>
+        <div class="dog-card img">
+        
+<img src="images/CKCS.jpg">
+<img src="images/CS.jpg">
+<img src="images/ECS.jpg">
+<img src="images/SS.jpg">
+</>
+
+
         <div class="dog-card-container">
   <a href="OurBreeds-Cavalier.html"class="nav-link">Cavalier</a>
   <a href="OurBreeds-Clumber.html"class="nav-link">Clumber</a>

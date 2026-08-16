@@ -23,3 +23,13 @@ function initHeaderComponents() {
         });
     });
 }
+function openImagePopup(src) {
+    const popup = document.getElementById('imgPopup');
+    const popupImg = document.getElementById('imgPopupImg');
+    popupImg.src = src;
+    popup.style.display = 'flex';
+}
+
+function closeImagePopup() {
+    document.getElementById('imgPopup').style.display = 'none';
+}

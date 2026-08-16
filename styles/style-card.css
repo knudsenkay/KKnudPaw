@@ -1,51 +1,12 @@
-
-
-/* ---------- DOG / PUPPY CARDS (SHOW STYLE) ---------- */
-.dog-card,
-.puppy-card {
-    background: #ffffff;
-    border-radius: 6px;
-    padding: 0 !important;
-    box-shadow: none !important;
-    border: 1px solid rgba(232,185,35,0.35);
-    text-align: center;
-    font-size: 0.85rem;
-
-}
-.gallery-item,
-.gallery-item-img,
-.dog-card img,
-.logo-img,
-.puppy-card img {
-    position: center;
-    width: 280px;
-
-}
-.dog-card-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px; /* spacing between cards */
-    padding: 10px;
-}
-.breed-standard {
-    display: flex;
-    flex-direction: column;   /* stack items vertically */
-    align-items: center;      /* center each item */
-    gap: 20px;                /* spacing between items */
-    text-align: center;
-}
 .img-popup {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    inset: 0;
     background: rgba(0,0,0,0.8);
     display: none;
     justify-content: center;
     align-items: center;
-    cursor: zoom-out;
     z-index: 9999;
+    cursor: zoom-out;
 }
 
 .img-popup img {
@@ -54,4 +15,16 @@
     border-radius: 10px;
 }
 
+.dog-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
 
+.dog-card img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}

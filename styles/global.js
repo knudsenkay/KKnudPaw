@@ -23,13 +23,48 @@ function initHeaderComponents() {
         });
     });
 }
-function openImagePopup(src) {
-    const popup = document.getElementById('imgPopup');
-    const popupImg = document.getElementById('imgPopupImg');
-    popupImg.src = src;
-    popup.style.display = 'flex';
+
+
+/* ================================
+   GALLERY COMPONENT INITIALIZER
+================================ */
+
+async function initGalleryComponent(el) {
+    const folder = el.getAttribute("data-folder");
+    if (!folder) return;
+
+    // Fetch list of images in folder
+    const response = await fetch(`/data/gallery.json`);
+    const images = await response.json();
+
+    const container = el.querySelector("#galleryContainer");
+
+    images.forEach(src => {
+        const fullPath = `${folder}/${src}`;
+
+        const card = document.createElement("div");
+        card.className = "dog-card img";
+        card.onclick = () => openImagePopup(fullPath);
+
+        card.innerHTML = `<img src="${fullPath}">`;
+        container.appendChild(card);
+    });
 }
 
-function closeImagePopup() {
-    document.getElementById('imgPopup').style.display = 'none';
+/* Hook into your existing component loader */
+document.querySelectorAll("[data-component]").forEach(async el => {
+    await loadComponent(el);
+
+    if (el.getAttribute("data-component") === "gallery") {
+        initGalleryComponent(el);
+    }
+});
+
+/* ================================
+   POPUP
+================================ */
+
+function openImagePopup(src) {
+    document.getElementById('imgPopupImg').src = src;
+    document.getElementById('imgPopup').style.display = 'flex';
 }

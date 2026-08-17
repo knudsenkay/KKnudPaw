@@ -24,3 +24,21 @@ body {
 .box {
     border: 1px solid var(--border);
 }
+.nav-dropdown {
+    display: none;
+    padding: 10px 0;
+}
+
+.nav-dropdown.show {
+    display: block;
+}
+
+.nav-dropdown-btn {
+    background: #6a3ea1;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}

@@ -1,28 +1,17 @@
-}
-function initHeaderComponents() {
-    const buttons = document.querySelectorAll('.nav-dropdown-btn');
+/* ================================
+   DROPDOWN INITIALIZER
+================================ */
 
-    buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const id = btn.dataset.dropdown;
-            const menu = document.getElementById(id);
-            menu.classList.toggle('open');
+function initDropdowns() {
+    document.querySelectorAll(".nav-dropdown-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const menu = document.getElementById(btn.dataset.dropdown);
+            if (menu) {
+                menu.classList.toggle("show");
+            }
         });
     });
 }
-document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const menu = document.getElementById(btn.dataset.dropdown);
-    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-  });
-});
-function initDropdowns() {
-    document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const id = btn.dataset.dropdown;
-            document.getElementById(id).classList.toggle('open');
-        });
-    });
 
 
 /* ================================
@@ -51,17 +40,30 @@ async function initGalleryComponent(el) {
     });
 }
 
-/* Hook into your existing component loader */
+
+/* ================================
+   COMPONENT LOADER HOOK
+================================ */
+
 document.querySelectorAll("[data-component]").forEach(async el => {
     await loadComponent(el);
 
-    if (el.getAttribute("data-component") === "gallery") {
+    const type = el.getAttribute("data-component");
+
+    // Header loads FIRST → now dropdown buttons exist
+    if (type === "header") {
+        initDropdowns();
+    }
+
+    // Gallery component
+    if (type === "gallery") {
         initGalleryComponent(el);
     }
 });
 
+
 /* ================================
-   POPUP
+   POPUP VIEWER
 ================================ */
 
 function openImagePopup(src) {

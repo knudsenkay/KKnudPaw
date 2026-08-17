@@ -1,3 +1,15 @@
+}
+function initHeaderComponents() {
+    const buttons = document.querySelectorAll('.nav-dropdown-btn');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const id = btn.dataset.dropdown;
+            const menu = document.getElementById(id);
+            menu.classList.toggle('open');
+        });
+    });
+}
 document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const menu = document.getElementById(btn.dataset.dropdown);
@@ -11,18 +23,6 @@ function initDropdowns() {
             document.getElementById(id).classList.toggle('open');
         });
     });
-}
-function initHeaderComponents() {
-    const buttons = document.querySelectorAll('.nav-dropdown-btn');
-
-    buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const id = btn.dataset.dropdown;
-            const menu = document.getElementById(id);
-            menu.classList.toggle('open');
-        });
-    });
-}
 
 
 /* ================================
@@ -30,7 +30,7 @@ function initHeaderComponents() {
 ================================ */
 
 async function initGalleryComponent(el) {
-    const folder = el.getAttribute("data-folder");
+    const folder = el.getAttribute("images/gallery");
     if (!folder) return;
 
     // Fetch list of images in folder

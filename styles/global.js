@@ -34,7 +34,7 @@ async function initGalleryComponent(el) {
     if (!folder) return;
 
     // Fetch list of images in folder
-    const response = await fetch(`/data/gallery.json`);
+    const response = await fetch(`/images/gallery/gallery.json`);
     const images = await response.json();
 
     const container = el.querySelector("#galleryContainer");

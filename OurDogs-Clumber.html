@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<div id="header"></div>
-<script>
-    fetch("header.html")
-        .then(res => res.text())
-        .then(data => document.getElementById("header").innerHTML = data);
-</script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/style-body.css">
+    <link rel="stylesheet" href="styles/style-btn.css">
+    <link rel="stylesheet" href="styles/style-card.css">
+    <link rel="stylesheet" href="styles/style-footer.css">
+    <link rel="stylesheet" href="styles/style-logo.css">
+    <link rel="stylesheet" href="styles/style-menu.css">
+    <link rel="stylesheet" href="styles/style-pedigree.css">
+    <link rel="stylesheet" href="styles/style-root.css">
+    <link rel="stylesheet" href="styles/style-waitlist.css">
+    <link rel="stylesheet" href="styles/global.js">
+    <link rel="stylesheet" href="styles/send_waitlist.php">
+    <link rel="stylesheet" href="styles/waitlist.js">
+    
+
+
+    <!-- Shared theme + header/footer loader -->
+    <link rel="stylesheet" href="theme.css">
+    <script src="global.js" defer></script>
+
+
+    <title>KKnudPaw Spaniels</title>
+</head>
+<body>
+
+<header class="logo-header">
+    <div class="logo">
+        <img src="images/kknudpaw-logo-w.png" class="logo-img">
+        <p style="color: #ffffff;">Ethical ANKC Breeder</p>
+    </div>
+</header>
 
 
 <section style="text-align:center;" class="breed-standard">

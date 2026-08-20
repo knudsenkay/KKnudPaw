@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <div id="header"></div>
 
-<script>
-fetch("header.html")
-    .then(res => res.text())
-    .then(html => {
-        document.getElementById("header").innerHTML = html;
-        initHeaderComponents(); // attach JS AFTER header loads
-    });
-</script>
+<script src="styles/global.js" defer></script>
 
 
 

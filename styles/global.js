@@ -1,72 +1,30 @@
 /* ================================
-   DROPDOWN INITIALIZER
+   DROPDOWN VIA EVENT DELEGATION
 ================================ */
 
-function initDropdowns() {
-    document.querySelectorAll(".nav-dropdown-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-            const menu = document.getElementById(btn.dataset.dropdown);
-            if (menu) {
-                menu.classList.toggle("show");
-            }
-        });
-    });
-}
+document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".nav-dropdown-btn");
+    if (!btn) return;
 
-
-/* ================================
-   GALLERY COMPONENT INITIALIZER
-================================ */
-
-async function initGalleryComponent(el) {
-    const folder = el.getAttribute("images/gallery");
-    if (!folder) return;
-
-    // Fetch list of images in folder
-    const response = await fetch(`/images/gallery/gallery.json`);
-    const images = await response.json();
-
-    const container = el.querySelector("#galleryContainer");
-
-    images.forEach(src => {
-        const fullPath = `${folder}/${src}`;
-
-        const card = document.createElement("div");
-        card.className = "dog-card img";
-        card.onclick = () => openImagePopup(fullPath);
-
-        card.innerHTML = `<img src="${fullPath}">`;
-        container.appendChild(card);
-    });
-}
-
-
-/* ================================
-   COMPONENT LOADER HOOK
-================================ */
-
-document.querySelectorAll("[data-component]").forEach(async el => {
-    await loadComponent(el);
-
-    const type = el.getAttribute("data-component");
-
-    // Header loads FIRST → now dropdown buttons exist
-    if (type === "header") {
-        initDropdowns();
-    }
-
-    // Gallery component
-    if (type === "gallery") {
-        initGalleryComponent(el);
+    const menu = document.getElementById(btn.dataset.dropdown);
+    if (menu) {
+        menu.classList.toggle("show");
     }
 });
 
 
 /* ================================
-   POPUP VIEWER
+   LOAD HEADER + NAV
 ================================ */
 
-function openImagePopup(src) {
-    document.getElementById('imgPopupImg').src = src;
-    document.getElementById('imgPopup').style.display = 'flex';
+async function loadHeader() {
+    const headerEl = document.getElementById("header");
+    const html = await fetch("header.html").then(r => r.text());
+    headerEl.innerHTML = html;
+
+    // Load nav into the dropdown container
+    const navHtml = await fetch("nav.html").then(r => r.text());
+    document.getElementById("Start-menu").innerHTML = navHtml;
 }
+
+loadHeader();

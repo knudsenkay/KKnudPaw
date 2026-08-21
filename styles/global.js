@@ -1,43 +1,26 @@
-/* ================================
-   MAIN MENU DROPDOWN (EVENT DELEGATION)
-================================ */
-
+/* MAIN MENU */
 document.addEventListener("click", (e) => {
     const btn = e.target.closest(".nav-dropdown-btn");
     if (!btn) return;
 
     const menu = document.getElementById(btn.dataset.dropdown);
-    if (menu) {
-        menu.classList.toggle("show");
-    }
+    if (menu) menu.classList.toggle("show");
 });
 
-
-/* ================================
-   GROUP COLLAPSIBLES (EVENT DELEGATION)
-================================ */
-
+/* GROUPS */
 document.addEventListener("click", (e) => {
     const groupBtn = e.target.closest(".group-btn");
     if (!groupBtn) return;
 
     const menu = document.getElementById(groupBtn.dataset.group);
-    if (menu) {
-        menu.classList.toggle("show");
-    }
+    if (menu) menu.classList.toggle("show");
 });
 
-
-/* ================================
-   LOAD HEADER + NAV
-================================ */
-
+/* LOAD HEADER + NAV */
 async function loadHeader() {
     const headerEl = document.getElementById("header");
-    const html = await fetch("header.html").then(r => r.text());
-    headerEl.innerHTML = html;
+    headerEl.innerHTML = await fetch("header.html").then(r => r.text());
 
-    // Load nav.html into #nav, NOT inside Start-menu
     const navHtml = await fetch("nav.html").then(r => r.text());
     document.getElementById("nav").innerHTML = navHtml;
 }

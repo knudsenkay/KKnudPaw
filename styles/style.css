@@ -1,23 +1,53 @@
+/* ============================================================
+   ROOT VARIABLES -- Elegant Show Theme
+============================================================ */
+:root {
+    --color-bg: #f7e9d7;          /* champagne */
+    --color-text: #1b1324;        /* deep plum-black */
+    --color-muted: #7b6c8f;
 
-/* ---------- PAGE BACKGROUND ---------- */
-.body {
-    background: radial-gradient(circle at top left, #fdf3e6 0%, #f7e9d7 40%, #f2dfca 100%);
-    color: var(--color-text);
+    --color-primary: #4a2e6f;     /* very dark violet */
+    --color-primary-hover: #321f4c;
+    --color-accent: #e8b923;      /* gold accent */
+
+    --shadow-sm: 0 2px 6px rgba(0,0,0,0.12);
+    --shadow-md: 0 8px 24px rgba(0,0,0,0.18);
 }
 
 
-/* ---------- PRIMARY BUTTONS ---------- */
+/* ============================================================
+   PAGE BACKGROUND
+============================================================ */
+body {
+    background: radial-gradient(circle at top left,
+        #fdf3e6 0%, #f7e9d7 40%, #f2dfca 100%);
+    color: var(--color-text);
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+
+/* ============================================================
+   BUTTONS
+============================================================ */
 .btn {
     border-radius: 999px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
 .btn-accent {
-    background: #e8b923;
-    color: #1b1324;
+    background: var(--color-accent);
+    color: var(--color-text);
 }
+
+
+/* ============================================================
+   IMAGE POPUP
+============================================================ */
 .img-popup {
     position: fixed;
     inset: 0;
@@ -35,6 +65,10 @@
     border-radius: 10px;
 }
 
+
+/* ============================================================
+   DOG CARD GALLERY
+============================================================ */
 .dog-card-container {
     display: flex;
     flex-wrap: wrap;
@@ -48,22 +82,30 @@
     border-radius: 10px;
     cursor: pointer;
 }
+
+
+/* ============================================================
+   FOOTER
+============================================================ */
 footer {
     background: #1b1324;
     color: #f7e9d7;
     font-size: 0.95rem;
     padding: 22px;
     letter-spacing: 0.04em;
+    text-align: center;
 }
 
 
-/* ---------- HERO SECTION ---------- */
+/* ============================================================
+   HERO SECTION
+============================================================ */
 .hero {
     padding: 0 !important;
-    background: linear-gradient(135deg, #1b1324, #4a2e6f 40%, #e8b923 100%);
+    background: linear-gradient(135deg,
+        #1b1324, #4a2e6f 40%, #e8b923 100%);
     color: #f7e9d7;
     text-align: center;
-    box-shadow: none !important;
 }
 
 .hero h1 {
@@ -78,138 +120,69 @@ footer {
     font-size: 1.05rem;
 }
 
-/* ---------- LOGO HEADER (ELEGANT) ---------- */
-.logo-text h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin: 0;
-    padding: 0;
+
+/* ============================================================
+   LOGO HEADER
+============================================================ */
+.logo-header {
+    background-color: #4B0082;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 !important;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
+
+.logo-text h1,
 .logo-text p {
     font-size: 2rem;
     font-weight: 700;
     color: #ffffff;
     margin: 0;
-    padding: 0;
-    text-align: center;
-}
-.logo-header {
-    background-color: #4B0082; /* your purple */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    box-shadow: none;
-
-    padding: 0 !important;
-}
-.logo-img {
-
-
-        background: transparent !important;
-    padding: 0 !important;
-
-
-    outline: none !important;
-    box-shadow: none !important;
 }
 
 
+/* ============================================================
+   GROUPED NAVIGATION MENU (NEW SYSTEM)
+============================================================ */
 
-.logo {
-    display: flex;
-    flex-direction: column;     /* keeps image above text */
-    align-items: center;        /* centers image + text together */
-    text-align: center;
-    outline: none !important;
-    box-shadow: none !important;
-
-        background: transparent !important;
-    padding: 0 !important;
+/* Main dropdown container */
+.nav-dropdown {
+    display: none;
+    background: var(--color-primary);
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 10px;
 }
 
-
-
-
-/* Menu toggle button */
-#menu-toggle {
-    padding: 0.6rem 1.2rem;
-    cursor: pointer;
+/* Show class toggles visibility */
+.show {
+    display: block !important;
 }
- {
+
+/* Main Menu button */
+.nav-dropdown-btn {
+    background: var(--color-primary);
+    color: var(--color-bg);
     padding: 12px 22px;
-    background: var(--violet);
-    color: var(--champagne);
     border: none;
     border-radius: 6px;
     font-weight: 600;
     cursor: pointer;
-}
-.dropdown {
-    display: none;
-    flex-direction: column;
-    background: var(--violet-dark);
-    padding: 10px;
-    border-radius: 6px;
-}
-.nav-link-strike,
-.nav-btn.strike {
-    color: var(--champagne);
-    padding: 8px 12px;
-    text-decoration: none;
-}
-.strike {
-    text-decoration: line-through;
-}
-.dropdown a,
-.nav-link,
-.nav-dropdown-btn {
-    color: var(--champagne);
-    padding: 8px 12px;
-    text-decoration: none;
-}
-.dropdown a:hover {
-    background: var(--violet);
+    width: 100%;
+    text-align: left;
 }
 
-/* Main dropdown */
-.dropdown {
-    display: none;
-    margin-top: 10px;
-}
-
-/* Level 1 dropdown buttons */
-.dropdown-link {
-    cursor: pointer;
-    padding: 0.5rem 0;
-}
-
-/* Normal links */
-.dropdown a {
-    display: block;
-    padding: 0.4rem 0;
-    text-decoration: none;
-}
-
-/* Submenus */
-.dropdown-sub {
-    display: none;
-    margin-left: 20px;
-    padding-top: 0.4rem;
-}
-.nav-dropdown {
-    display: none;
-}
-.group-menu {
-    display: none;
-    padding-left: 20px;
-}
-
+/* Group buttons */
 .group-btn {
-    background: #6a3ea1;
-    color: white;
+    background: var(--color-primary-hover);
+    color: var(--color-bg);
     padding: 10px;
     border: none;
     width: 100%;
@@ -218,23 +191,45 @@ footer {
     cursor: pointer;
     border-radius: 6px;
 }
-.nav-dropdown,
+
+/* Group menu container */
 .group-menu {
     display: none;
+    padding-left: 20px;
+    margin-top: 6px;
 }
 
-.show {
+/* Links inside groups */
+.group-menu a,
+.nav-link {
     display: block;
+    color: var(--color-bg);
+    padding: 6px 0;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+/* Hover effect */
+.group-menu a:hover {
+    background: var(--color-primary);
+    padding-left: 10px;
+    border-radius: 4px;
+}
+
+/* Strike-through links */
+.strike {
+    text-decoration: line-through;
+    opacity: 0.7;
 }
 
 
-/* ---------- PEDIGREE TABLE (CERTIFICATE FEEL) ---------- */
+/* ============================================================
+   PEDIGREE TABLE
+============================================================ */
 table {
     border-collapse: collapse;
     width: 100%;
     text-align: center;
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 0.75rem;
     background: #fffdf7;
     border: 1px solid rgba(74,46,111,0.35);
     box-shadow: 0 6px 18px rgba(0,0,0,0.18);
@@ -252,27 +247,16 @@ th, td {
     padding: 6px 8px;
     border: 1px solid rgba(232,185,35,0.35);
 }
-/* ---------- ROOT OVERRIDES ---------- */
-:root {
-    --color-bg: #f7e9d7;          /* champagne */
-    --color-text: #1b1324;        /* deep plum-black */
-    --color-muted: #7b6c8f;
-
-    --color-primary: #4a2e6f;     /* very dark violet */
-    --color-primary-hover: #321f4c;
-    --color-accent: #e8b923;      /* gold accent */
-
-    --shadow-sm: 0 2px 6px rgba(0,0,0,0.12);
-    --shadow-md: 0 8px 24px rgba(0,0,0,0.18);
-}
 
 
-/* ---------- WAITLIST FORM (HIGH-END) ---------- */
+/* ============================================================
+   WAITLIST FORM
+============================================================ */
 .waitlist-form {
     display: flex;
-    flex-direction: column;   /* stack items vertically */
-    align-items: center;      /* center each item */
-    gap: 20px;                /* spacing between items */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
     text-align: center;
     background: #ffffff;
     padding: 24px;
@@ -282,12 +266,13 @@ th, td {
 }
 
 .waitlist-form button {
-    background: #4a2e6f;
-    color: #f7e9d7;
+    background: var(--color-primary);
+    color: var(--color-bg);
     border-radius: 999px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
 }
+
 .colour-select {
     display: flex;
     flex-direction: column;
@@ -302,32 +287,3 @@ th, td {
     gap: 8px;
     font-size: 1rem;
 }
-document.getElementById("waitlistForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-        emailjs.init("-MsYa1BCKn8v6mlQZ"); 
-    emailjs.sendForm("KKnudPaw.spaniels", "template_hkq8nwt", this)
-        .then(() => {
-            alert("Your waitlist request has been sent!");
-        }, (error) => {
-            alert("Failed to send. Please try again.");
-            console.error(error);
-        });
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

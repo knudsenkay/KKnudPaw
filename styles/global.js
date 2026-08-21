@@ -1,5 +1,5 @@
 /* ================================
-   DROPDOWN VIA EVENT DELEGATION
+   MAIN MENU DROPDOWN (EVENT DELEGATION)
 ================================ */
 
 document.addEventListener("click", (e) => {
@@ -7,6 +7,21 @@ document.addEventListener("click", (e) => {
     if (!btn) return;
 
     const menu = document.getElementById(btn.dataset.dropdown);
+    if (menu) {
+        menu.classList.toggle("show");
+    }
+});
+
+
+/* ================================
+   GROUP COLLAPSIBLES (EVENT DELEGATION)
+================================ */
+
+document.addEventListener("click", (e) => {
+    const groupBtn = e.target.closest(".group-btn");
+    if (!groupBtn) return;
+
+    const menu = document.getElementById(groupBtn.dataset.group);
     if (menu) {
         menu.classList.toggle("show");
     }
@@ -22,9 +37,9 @@ async function loadHeader() {
     const html = await fetch("header.html").then(r => r.text());
     headerEl.innerHTML = html;
 
-    // Load nav into the dropdown container
+    // Load nav.html into #nav, NOT inside Start-menu
     const navHtml = await fetch("nav.html").then(r => r.text());
-    document.getElementById("Start-menu").innerHTML = navHtml;
+    document.getElementById("nav").innerHTML = navHtml;
 }
 
 loadHeader();

@@ -1,0 +1,333 @@
+
+/* ---------- PAGE BACKGROUND ---------- */
+.body {
+    background: radial-gradient(circle at top left, #fdf3e6 0%, #f7e9d7 40%, #f2dfca 100%);
+    color: var(--color-text);
+}
+
+
+/* ---------- PRIMARY BUTTONS ---------- */
+.btn {
+    border-radius: 999px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+
+.btn-accent {
+    background: #e8b923;
+    color: #1b1324;
+}
+.img-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: zoom-out;
+}
+
+.img-popup img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.dog-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.dog-card img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+footer {
+    background: #1b1324;
+    color: #f7e9d7;
+    font-size: 0.95rem;
+    padding: 22px;
+    letter-spacing: 0.04em;
+}
+
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+    padding: 0 !important;
+    background: linear-gradient(135deg, #1b1324, #4a2e6f 40%, #e8b923 100%);
+    color: #f7e9d7;
+    text-align: center;
+    box-shadow: none !important;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.hero p {
+    max-width: 640px;
+    margin: 1rem auto 0;
+    font-size: 1.05rem;
+}
+
+/* ---------- LOGO HEADER (ELEGANT) ---------- */
+.logo-text h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.logo-text p {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.logo-header {
+    background-color: #4B0082; /* your purple */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: none;
+
+    padding: 0 !important;
+}
+.logo-img {
+
+
+        background: transparent !important;
+    padding: 0 !important;
+
+
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+
+.logo {
+    display: flex;
+    flex-direction: column;     /* keeps image above text */
+    align-items: center;        /* centers image + text together */
+    text-align: center;
+    outline: none !important;
+    box-shadow: none !important;
+
+        background: transparent !important;
+    padding: 0 !important;
+}
+
+
+
+
+/* Menu toggle button */
+#menu-toggle {
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+}
+ {
+    padding: 12px 22px;
+    background: var(--violet);
+    color: var(--champagne);
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.dropdown {
+    display: none;
+    flex-direction: column;
+    background: var(--violet-dark);
+    padding: 10px;
+    border-radius: 6px;
+}
+.nav-link-strike,
+.nav-btn.strike {
+    color: var(--champagne);
+    padding: 8px 12px;
+    text-decoration: none;
+}
+.strike {
+    text-decoration: line-through;
+}
+.dropdown a,
+.nav-link,
+.nav-dropdown-btn {
+    color: var(--champagne);
+    padding: 8px 12px;
+    text-decoration: none;
+}
+.dropdown a:hover {
+    background: var(--violet);
+}
+
+/* Main dropdown */
+.dropdown {
+    display: none;
+    margin-top: 10px;
+}
+
+/* Level 1 dropdown buttons */
+.dropdown-link {
+    cursor: pointer;
+    padding: 0.5rem 0;
+}
+
+/* Normal links */
+.dropdown a {
+    display: block;
+    padding: 0.4rem 0;
+    text-decoration: none;
+}
+
+/* Submenus */
+.dropdown-sub {
+    display: none;
+    margin-left: 20px;
+    padding-top: 0.4rem;
+}
+.nav-dropdown {
+    display: none;
+}
+.group-menu {
+    display: none;
+    padding-left: 20px;
+}
+
+.group-btn {
+    background: #6a3ea1;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.nav-dropdown,
+.group-menu {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+
+/* ---------- PEDIGREE TABLE (CERTIFICATE FEEL) ---------- */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.75rem;
+    background: #fffdf7;
+    border: 1px solid rgba(74,46,111,0.35);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+caption {
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #4a2e6f;
+}
+
+th, td {
+    padding: 6px 8px;
+    border: 1px solid rgba(232,185,35,0.35);
+}
+/* ---------- ROOT OVERRIDES ---------- */
+:root {
+    --color-bg: #f7e9d7;          /* champagne */
+    --color-text: #1b1324;        /* deep plum-black */
+    --color-muted: #7b6c8f;
+
+    --color-primary: #4a2e6f;     /* very dark violet */
+    --color-primary-hover: #321f4c;
+    --color-accent: #e8b923;      /* gold accent */
+
+    --shadow-sm: 0 2px 6px rgba(0,0,0,0.12);
+    --shadow-md: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+
+/* ---------- WAITLIST FORM (HIGH-END) ---------- */
+.waitlist-form {
+    display: flex;
+    flex-direction: column;   /* stack items vertically */
+    align-items: center;      /* center each item */
+    gap: 20px;                /* spacing between items */
+    text-align: center;
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    border: 1px solid rgba(74,46,111,0.35);
+}
+
+.waitlist-form button {
+    background: #4a2e6f;
+    color: #f7e9d7;
+    border-radius: 999px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+.colour-select {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: none;
+    padding: 0;
+}
+
+.colour-select label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+}
+document.getElementById("waitlistForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+        emailjs.init("-MsYa1BCKn8v6mlQZ"); 
+    emailjs.sendForm("KKnudPaw.spaniels", "template_hkq8nwt", this)
+        .then(() => {
+            alert("Your waitlist request has been sent!");
+        }, (error) => {
+            alert("Failed to send. Please try again.");
+            console.error(error);
+        });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

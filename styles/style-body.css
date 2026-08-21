@@ -1,7 +1,0 @@
-
-/* ---------- PAGE BACKGROUND ---------- */
-.body {
-    background: radial-gradient(circle at top left, #fdf3e6 0%, #f7e9d7 40%, #f2dfca 100%);
-    color: var(--color-text);
-}
-

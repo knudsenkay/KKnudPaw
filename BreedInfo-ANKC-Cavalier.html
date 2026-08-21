@@ -1,40 +1,15 @@
+<script src="styles/global.js"></script>
+<script src="styles/autoload.js"></script>
+
+
 <div id="header"></div>
-<div id="nav"></div>
+<div id="main-nav"></div>
 
-<script>
-    function loadComponent(targetId, file) {
-        return fetch(file)
-            .then(res => res.text())
-            .then(html => {
-                document.getElementById(targetId).innerHTML = html;
-            });
-    }
 
-    function initNavDropd owns() {
-        const buttons = documebnt.querySelectorAll(".nav-dropdown-btn");
+<!-- Your page content -->
 
-        buttons.forEach(btn => {
-            btn.addEventListener("click", () => {
-                const id = btn.dataset.dropdown;
-                const menu = document.getElementById(id);
 
-                if (!menu) return;
 
-                menu.style.display =
-                    menu.style.display === "block" ? "none" : "block";
-            });
-        });
-    }
-
-    // Load header → load nav → THEN attach dropdown events
-loadComponent("header", "header.html")
-    .then(() => loadComponent("nav", "nav.html"))
-    .then(() => {
-        initNavDropdowns();
-        initGroupDropdowns();
-    });
-
-</script>
 
 
 
@@ -148,21 +123,11 @@ loadComponent("header", "header.html")
 
     </article>
 
-</p>
-        </div>
 
 
-    </div>
-</section>
 
-
-<div id="footer-placeholder"></div>
-<script>
-fetch("footer.html")
-    .then(r => r.text())
-    .then(d => document.getElementById("footer-placeholder").innerHTML = d);
-</script>
 
 
 </body>
 </html>
+<div id="footer"></div>

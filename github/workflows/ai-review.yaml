@@ -596,3 +596,6 @@ artifacts:
 
   # Enable saving VCS artifacts.
   vcs_enabled: false
+
+- name: XAI Review
+  uses: Nikita-Filonov/ai-review@v0.76.0

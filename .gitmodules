@@ -1,0 +1,6 @@
+[submodule "github/workflows/prompts"]
+	path = github/workflows/prompts
+	url = https://gitlab.com/ci-cd/templates.git
+[submodule "github/workflows/prompt"]
+	path = github/workflows/prompt
+	url = https://github.com/ci-cd/templates.git

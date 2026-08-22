@@ -68,19 +68,54 @@ body {
 /* ============================================================
    DOG CARD GALLERY
 ============================================================ */
+.breed-standard {
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .dog-card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 30px auto;
 }
 
 .dog-card img {
-    width: 200px;
-    height: auto;
+    width: 100%;
+    display: block;
     border-radius: 10px;
-    cursor: pointer;
 }
+
+.dog-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.dog-card h3 {
+    margin-top: 10px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .dog-card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .dog-card-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 
 /* ============================================================

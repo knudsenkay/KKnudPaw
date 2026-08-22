@@ -2,9 +2,6 @@
    ROOT VARIABLES -- Elegant Show Theme
 ============================================================ */
 :root {
-    --color-bg: #f7e9d7;          /* champagne */
-    --color-text: #1b1324;        /* deep plum-black */
-    --color-muted: #7b6c8f;
 
     --color-primary: #4a2e6f;     /* very dark violet */
     --color-primary-hover: #321f4c;

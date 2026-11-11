@@ -37,7 +37,7 @@ body {
 
 .btn-accent {
     background: var(--color-accent);
-    color: var(--color-text);
+    color: white(--color-text);
 }
 
 
@@ -200,7 +200,7 @@ footer {
 /* Main Menu button */
 .nav-dropdown-btn {
     background: var(--color-primary);
-    color: var(--color-bg);
+    color: white(--color-text);
     padding: 12px 22px;
     border: none;
     border-radius: 6px;
@@ -213,7 +213,7 @@ footer {
 /* Group buttons */
 .group-btn {
     background: var(--color-primary-hover);
-    color: var(--color-bg);
+    color: white(--color-text);
     padding: 10px;
     border: none;
     width: 100%;
@@ -234,7 +234,7 @@ footer {
 .group-menu a,
 .nav-link {
     display: block;
-    color: var(--color-bg);
+    color: white(--color-text);
     padding: 6px 0;
     text-decoration: none;
     font-size: 0.95rem;

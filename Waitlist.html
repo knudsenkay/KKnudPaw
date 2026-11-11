@@ -9,71 +9,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waitlist</title>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script src="waitlist.js" defer></script>
-</head>
-
-<body>
-
-    <!-- Header -->
-
-
-    <main class="page-container">
-
-        <section class="waitlist-section">
-            <h1>Join the Waitlist</h1>
-            <p>Fill out the form below to be added to our waitlist for upcoming litters.</p>
-
-
-
-
-
-            <form id="waitlistForm" class="waitlist-form">
-
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input id="name" name="name" type="text" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input id="email" name="email" type="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input id="phone" name="phone" type="tel" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="puppy">Preferred Puppy / Litter</label>
-                    <select id="puppy" name="puppy" required>
-                        <option value="">Select an option</option>
-                        <option value="Hermione">Hermione Litter</option>
-
-                        <option value="Any">Any Available</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Additional Notes</label>
-                    <textarea id="message" name="message" rows="4"></textarea>
-                </div>
-
-
-
-
-
-
-
-            </form>
-            
-            
-<a href="#" id="emailLink" class="btn">
-    Join the Waitlist
-</a>
-
-
 <script>
 document.getElementById('emailLink').addEventListener('click', function(e) {
     e.preventDefault();
@@ -103,6 +38,74 @@ ${message}`
         `mailto:kknudpaw.spaniels@gmail.com?subject=${subject}&body=${body}`;
 });
 </script>
+</head>
+
+<body>
+
+    <!-- Header -->
+
+
+    <main class="page-container">
+
+        <section class="waitlist-section">
+            <h1>Join the Waitlist</h1>
+            <p>Fill out the form below and send the email to be added to our waitlist for upcoming litters/trained dogs.</p>
+
+            <p>Please understand that I usually only have 1-2 dogs in training at a time. Because of this I can devote more time to them and also meet their needs.</p>
+
+
+
+            <form id="waitlistForm" class="waitlist-form">
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input id="name" name="name" type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input id="email" name="email" type="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input id="phone" name="phone" type="tel" required>
+                </div>
+              <div class="form-group">
+                    <label for="location">Location</label>
+                    <input id="location" name="location" type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dog">Preferred Dog / Litter</label>
+                    <select id="dog" name="dog" required>
+                        <option value="">Select an option</option>
+                        <option value="Hermione">Hermione Litter</option>
+                        <option value="Litter">Any Litter</option>
+                        <option value="Trained">Any Trained</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Additional Notes</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+
+
+
+
+
+
+
+            </form>
+            
+            
+<a href="#" id="emailLink" class="btn">
+    Join the Waitlist
+</a>
+
+
+
 
         </section>
 

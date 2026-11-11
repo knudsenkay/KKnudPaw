@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     Promise.all([
-        loadComponent("header", "Main/header.html"),
-        loadComponent("main-nav", "Main/navigation.html"),
-        loadComponent("footer", "Main/footer.html")
+        loadComponent("header", "header.html"),
+        loadComponent("main-nav", "navigation.html"),
+        loadComponent("footer", "footer.html")
     ]).then(() => {
         if (typeof initNavDropdowns === "function") initNavDropdowns();
         if (typeof initGroupDropdowns === "function") initGroupDropdowns();

@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     Promise.all([
-        loadComponent("header", "header.html"),
-        loadComponent("main-nav", "navigation.html"),
-        loadComponent("footer", "footer.html")
+        loadComponent("head", "000H.html"),
+        loadComponent("nav", "000N.html"),
+        loadComponent("foot", "000F.html")
     ]).then(() => {
         if (typeof initNavDropdowns === "function") initNavDropdowns();
         if (typeof initGroupDropdowns === "function") initGroupDropdowns();
@@ -35,5 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loadCSS("styles/style.css");
     loadCSS("styles/theme.css");
     loadJS("styles/global.js");
+    loadJS("styles/waitlist.js");
 
 });

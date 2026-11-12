@@ -2,8 +2,8 @@
 <script src="styles/autoload.js"></script>
 
 
-<div id="header"></div>
-<div id="main-nav"></div>
+<div id="head"></div>
+<div id="nav"></div>
 
 
 
@@ -52,16 +52,6 @@
 
     </section>
 
-    <div id="footer"></div>
-
-    <script>
-        fetch("footer.html")
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById("footer").innerHTML = data;
-            })
-            .catch(error => console.error("Error loading footer:", error));
-    </script>
-
+<div id="foot"></div>
 </body>
 </html>

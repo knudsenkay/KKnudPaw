@@ -3,12 +3,12 @@
 ================================ */
 
 :root {
-    --purple-dark: #4b2a7f;      /* header background */
-    --purple-mid: #6a3ea1;       /* menu background */
-    --purple-light: #d9c7f3;     /* page background */
-    --white-text: #ffffff;      /* header text */
-    --text-white: #ffffff;        /* body text */
-    --border-light: #bfa9e6;     /* soft borders */
+    --purple-dark: #4b2a7f;
+    --purple-mid: #6a3ea1;
+    --purple-light: #d9c7f3;
+    --white-text: #ffffff;
+    --text-white: #ffffff;
+    --border-light: #bfa9e6;
 
     --menu-hover: #8b5bd1;
 }
@@ -36,7 +36,7 @@ a:hover {
 
 
 /* ================================
-   HEADER (matches screenshot)
+   HEADER
 ================================ */
 
 #header {
@@ -64,7 +64,7 @@ a:hover {
 
 
 /* ================================
-   MAIN NAVIGATION GRID (matches screenshot)
+   MAIN NAVIGATION GRID
 ================================ */
 
 #main-nav {
@@ -101,7 +101,7 @@ a:hover {
 
 
 /* ================================
-   DROPDOWN BUTTONS (if used)
+   DROPDOWN BUTTONS
 ================================ */
 
 .nav-dropdown-btn {
@@ -130,7 +130,7 @@ a:hover {
     display: block;
     padding: 8px 15px;
     font-size: 1rem;
-        color: #ffffff;
+    color: #ffffff;
 }
 
 .nav-link:hover {
@@ -171,7 +171,7 @@ a:hover {
     height: auto;
     border-radius: 10px;
     object-fit: cover;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px #00000033;
     transition: transform 0.2s ease;
 }
 
@@ -188,7 +188,7 @@ a:hover {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.8);
+    background: #000000cc;
 
     justify-content: center;
     align-items: center;
@@ -199,7 +199,7 @@ a:hover {
     max-width: 90%;
     max-height: 90%;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.4);
+    box-shadow: 0 0 20px #ffffff66;
 }
 
 #imgPopupClose {

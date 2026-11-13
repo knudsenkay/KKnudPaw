@@ -290,7 +290,20 @@ img {
     background: var(--purple-mid);
     color: var(--text-light);
 }
+/* Disabled nav items (coming soon) -- must NOT appear clickable */
+.nav-link[aria-disabled="true"] {
+    pointer-events: none;
+    opacity: 0.55;
+    text-decoration: line-through;
+    cursor: default;
+}
 
+/* Also suppress the hover/focus background on the parent selector chain */
+.nav-link[aria-disabled="true"]:hover,
+.nav-link[aria-disabled="true"]:focus-visible {
+    background: transparent;
+    color: var(--purple-dark);
+}
 /* --- Shared dropdown animation --- */
 @keyframes fadeSlideIn {
     from { opacity: 0; transform: translateY(-4px); }

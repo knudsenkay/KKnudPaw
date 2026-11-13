@@ -1,18 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKnudPaw Spaniels -- Home</title>
 
-<script src="styles/autoload.js"></script>
+    <!-- Preconnect for Poppins font (from theme.css) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-
-<div id="head"></div>
-<div id="nav"></div>
-
-
-
-
+    <!-- Autoloader: fetches head/nav/foot, CSS, and global.js -->
+    <script src="autoload.js" defer></script>
+</head>
 <body>
+    <!-- Autoload injects the header partial here -->
+    <div id="head"></div>
 
+    <!-- Autoload injects the nav partial here -->
+    <div id="nav"></div>
 
+    <main>
+        <!-- HERO lives on the page, not in the partial -->
+        <section class="hero">
+            <h1>KKnudPaw Spaniels</h1>
+            <p>Ethical, ANKC-registered Spaniels raised with care in Perth, WA.</p>
+        </section>
 
-    <section class="breed-standard">
+        <!-- Optional full-bleed hero image -->
+        <img
+            src="images/Spaniels.jpg"
+            alt="Spaniel dogs"
+            class="hero-image"
+        >
+
+        <!-- Page-specific content -->
+        <section class="breed-standard">
+            <!-- ... -->
+
 
         <img src="images/Training.jpg" alt="Training">
 
@@ -55,8 +79,10 @@
             </div>
         </div>
 
-    </section>
+        </section>
+    </main>
 
-<div id="foot"></div>
+    <!-- Autoload injects the footer partial here -->
+    <div id="foot"></div>
 </body>
 </html>

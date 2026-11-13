@@ -1,27 +1,22 @@
 /* ============================================================
-   ROOT VARIABLES -- Elegant Show Theme
+   THEME TOKENS (page-specific)
+   Global palette lives in theme.css
 ============================================================ */
 :root {
-
-    --color-primary: #4a2e6f;
+    --color-text:       #1f1533;
+    --color-primary:    #4a2e6f;
     --color-primary-hover: #321f4c;
-    --color-accent: #e8b923;
-
+    --color-accent:     #e8b923;
     --shadow-sm: 0 2px 6px #0000001f;
     --shadow-md: 0 8px 24px #0000002e;
 }
 
-
 /* ============================================================
-   PAGE BACKGROUND
+   TYPOGRAPHY
 ============================================================ */
 body {
-
-    color: var(--color-text);
-    margin: 0;
     font-family: 'Poppins', Arial, sans-serif;
 }
-
 
 /* ============================================================
    BUTTONS
@@ -33,34 +28,67 @@ body {
     box-shadow: 0 4px 14px #00000040;
     padding: 10px 20px;
     cursor: pointer;
+    border: none;
+    font-weight: 600;
 }
 
 .btn-accent {
     background: var(--color-accent);
-    color: #ffffff(--color-text);
+    color: var(--color-text);
 }
 
+.btn-primary {
+    background: var(--color-primary);
+    color: #ffffff;
+}
+.btn-primary:hover { background: var(--color-primary-hover); }
 
 /* ============================================================
-   IMAGE POPUP
+   HERO SECTION
 ============================================================ */
-.img-popup {
-    position: fixed;
-    inset: 0;
-    background: #000000cc;
-    display: none;
-    justify-content: center;
+.hero {
+    background: linear-gradient(135deg,
+        #1b1324, #4a2e6f 40%, #e8b923 100%);
+    color: #f7e9d7;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin: 0 0 12px;
+}
+
+.hero p {
+    max-width: 640px;
+    margin: 1rem auto 0;
+    font-size: 1.05rem;
+}
+
+/* ============================================================
+   LOGO BLOCK
+============================================================ */
+.logo {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    z-index: 9999;
-    cursor: zoom-out;
+    text-align: center;
 }
 
-.img-popup img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
+.logo-img {
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 8px;
 }
 
+.logo p {
+    font-size: 0.9rem;
+    margin: 0;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+}
 
 /* ============================================================
    DOG CARD GALLERY
@@ -82,163 +110,18 @@ body {
     gap: 20px;
     max-width: 1200px;
     margin: 30px auto;
+    padding: 0 20px;
 }
 
-.dog-card img {
-    width: 100%;
-    display: block;
-    border-radius: 10px;
-}
-
-.dog-card a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.dog-card h3 {
-    margin-top: 10px;
-}
+.dog-card a { color: inherit; text-decoration: none; }
+.dog-card h3 { margin-top: 10px; }
 
 @media (max-width: 768px) {
-    .dog-card-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .dog-card-container { grid-template-columns: repeat(2, 1fr); }
 }
-
 @media (max-width: 480px) {
-    .dog-card-container {
-        grid-template-columns: 1fr;
-    }
+    .dog-card-container { grid-template-columns: 1fr; }
 }
-
-
-/* ============================================================
-   FOOTER
-============================================================ */
-footer {
-    background: #1b1324;
-    color: #f7e9d7;
-    font-size: 0.95rem;
-    padding: 22px;
-    letter-spacing: 0.04em;
-    text-align: center;
-}
-
-
-/* ============================================================
-   HERO SECTION
-============================================================ */
-.hero {
-    padding: 0 !important;
-    background: linear-gradient(135deg,
-        #1b1324, #4a2e6f 40%, #e8b923 100%);
-    color: #f7e9d7;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-}
-
-.hero p {
-    max-width: 640px;
-    margin: 1rem auto 0;
-    font-size: 1.05rem;
-}
-
-
-/* ============================================================
-   LOGO HEADER
-============================================================ */
-.logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.logo-img {
-    max-width: 120px;
-    height: auto;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.logo p {
-    font-size: 0.9rem;
-    margin: 0;
-    letter-spacing: 0.05em;
-}
-
-
-/* ============================================================
-   GROUPED NAVIGATION MENU
-============================================================ */
-
-.nav-dropdown {
-    display: none;
-    background: var(--color-primary);
-    padding: 12px;
-    border-radius: 8px;
-    margin-top: 10px;
-}
-
-.show {
-    display: block !important;
-}
-
-.nav-dropdown-btn {
-    background: var(--color-primary);
-    color: #ffffff(--color-text);
-    padding: 12px 22px;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
-}
-
-.group-btn {
-    background: var(--color-primary-hover);
-    color: #ffffff(--color-text);
-    padding: 10px;
-    border: none;
-    width: 100%;
-    text-align: left;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 6px;
-}
-
-.group-menu {
-    display: none;
-    padding-left: 20px;
-    margin-top: 6px;
-}
-
-.group-menu a,
-.nav-link {
-    display: block;
-    color: #ffffff(--color-text);
-    padding: 6px 0;
-    text-decoration: none;
-    font-size: 0.95rem;
-}
-
-.group-menu a:hover {
-    background: var(--color-primary);
-    padding-left: 10px;
-    border-radius: 4px;
-}
-
-.strike {
-    text-decoration: line-through;
-    opacity: 0.7;
-}
-
 
 /* ============================================================
    PEDIGREE TABLE
@@ -249,7 +132,7 @@ table {
     text-align: center;
     background: #fffdf7;
     border: 1px solid #4a2e6f59;
-    box-shadow: 0 6px 18px #0000002e;
+    box-shadow: var(--shadow-md);
 }
 
 caption {
@@ -257,14 +140,13 @@ caption {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin-bottom: 10px;
-    color: #4a2e6f;
+    color: var(--color-primary);
 }
 
 th, td {
     padding: 6px 8px;
     border: 1px solid #e8b92359;
 }
-
 
 /* ============================================================
    WAITLIST FORM
@@ -284,11 +166,15 @@ th, td {
 
 .waitlist-form button {
     background: var(--color-primary);
-    color: var(--color-bg);
+    color: #ffffff;
+    border: none;
     border-radius: 999px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+    padding: 10px 20px;
+    cursor: pointer;
 }
+.waitlist-form button:hover { background: var(--color-primary-hover); }
 
 .colour-select {
     display: flex;
@@ -303,26 +189,4 @@ th, td {
     align-items: center;
     gap: 8px;
     font-size: 1rem;
-}
-
-.gallery-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.gallery-container img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-    box-shadow: 0 2px 8px #00000033;
-    transition: transform 0.2s ease;
-}
-
-.gallery-container img:hover {
-    transform: scale(1.03);
 }

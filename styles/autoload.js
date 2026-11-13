@@ -88,7 +88,6 @@
 
         const scripts = Promise.all([
             loadJS("styles/global.js"),
-            loadJS("styles/waitlist.js")
         ]);
 
         // 2) Load stylesheets (fire-and-forget is fine; they apply when ready).

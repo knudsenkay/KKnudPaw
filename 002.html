@@ -1,66 +1,73 @@
-<script src="styles/global.js"></script>
-<script src="styles/autoload.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKnudPaw Spaniels -- Breed Info</title>
 
+    <!-- Preconnect for Poppins font (from theme.css) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<div id="head"></div>
-<div id="nav"></div>
+    <!-- Autoloader: fetches head/nav/foot, CSS, and global.js -->
+    <script src="styles/autoload.js" defer></script>
+</head>
+<body>
+    <!-- Autoload injects the header partial here -->
+    <div id="head"></div>
 
+    <!-- Autoload injects the nav partial here -->
+    <div id="nav"></div>
 
+    <main>
+        <!-- Page title -->
+        <section class="breed-standard">
+            <h1 class="page-title">Breed Info</h1>
+            <p>Learn about the temperament, grooming needs, colours, and breed
+               standards of the Spaniels we raise.</p>
+        </section>
 
+        <!-- Topic cards -->
+        <section class="section">
+            <div class="dog-card-container">
 
+                <article class="dog-card">
+                    <a href="022.html">
+                        <h3>Temperament</h3>
+                        <p>Spaniels are affectionate, gentle, eager to please,
+                           and thrive in family environments.</p>
+                    </a>
+                </article>
 
+                <article class="dog-card">
+                    <a href="017.html">
+                        <h3>Grooming</h3>
+                        <p>Regular brushing, ear care, and coat maintenance are
+                           essential for keeping your Spaniel healthy.</p>
+                    </a>
+                </article>
 
+                <article class="dog-card">
+                    <a href="012.html">
+                        <h3>Colours</h3>
+                        <p>Spaniels come in a wide range of colours including
+                           golden, black, roan, parti, chocolate, sable, and more.</p>
+                    </a>
+                </article>
 
-<section style="text-align:center;" class="breed-standard">
+                <article class="dog-card">
+                    <a href="007.html">
+                        <h3>ANKC Standards</h3>
+                        <p>We follow DogsWest and ANKC breed standards to ensure
+                           ethical, responsible breeding.</p>
+                    </a>
+                </article>
 
+            </div>
+        </section>
+    </main>
 
-
-<!-- PAGE CONTENT -->
-<section style="text-align:center;" class="breed-standard">
-
-
-
-
-
-
-<main>
-<section class="breed-standard">
-    <h1>Breed Info</h1>
-
-</section>
-</main>
-
-
-    <article>
-
-    <h2>Breed Information</h2>
-    <p>Learn about the temperament, grooming needs, colours, and breed standards of the Spaniels we raise.</p>
-
-    <div class="dog-card-container">
-    
-    <article class="dog-card">
-          <a href="022.html"class="nav-link"><h3>Temperament</h3></a>
-        <p>Spaniels are affectionate, gentle, eager to please, and thrive in family environments.</p>
-    </article>
-
-    <article class="dog-card">
-          <a href="017.html"class="nav-link"><h3>Grooming</h3></a>
-        <p>Regular brushing, ear care, and coat maintenance are essential for keeping your Spaniel healthy.</p>
-    </article>
-
-    <article class="dog-card">
-          <a href="012.html"class="nav-link"><h3>Colours</h3></a>
-        <p>Spaniels come in a wide range of colours including golden, black, roan, parti, chocolate, sable, and more.</p>
-    </article>
-
-    <article class="dog-card">
-          <a href="007.html"class="nav-link"><h3>Breed Standards</h3></a>
-        <p>We follow DogsWest and ANKC breed standards to ensure ethical, responsible breeding.</p>
-    </article>
-</section>
-
-
-
-<div id="foot"></div>
+    <!-- Autoload injects the footer partial here -->
+    <div id="foot"></div>
 </body>
 </html>

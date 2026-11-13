@@ -1,61 +1,85 @@
-<script src="styles/global.js"></script>
-<script src="styles/autoload.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKnudPaw Spaniels -- Clumber Spaniel</title>
 
+    <!-- Preconnect for Poppins font (from theme.css) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<div id="head"></div>
-<div id="nav"></div>
+    <!-- Autoloader: fetches head/nav/foot, CSS, and global.js -->
+    <script src="styles/autoload.js" defer></script>
+</head>
+<body>
+    <!-- Autoload injects the header partial here -->
+    <div id="head"></div>
 
+    <!-- Autoload injects the nav partial here -->
+    <div id="nav"></div>
 
-<section style="text-align:center;" class="breed-standard">
+    <main>
+        <!-- Page title -->
+        <section class="breed-standard">
+            <h1 class="page-title">Breed Info -- Clumber Spaniel</h1>
+            <p>The Clumber Spaniel is calm, dignified, and known for its gentle
+               nature and distinctive heavy build.</p>
+        </section>
 
-
-<img src="images/CS.jpg">
-
-
-
-<main>
-<section class="breed-standard">
-    <h1>Clumber Spaniel</h1>
-
-</section>
-</main>
-
-
-    <article>
-
-    <h2>Clumber Spaniel</h2>
-    <p>The Clumber Spaniel is calm, dignified, and known for its gentle nature and distinctive heavy build.</p>
-
-    <div class="dog-card-container">
-        <div><a href="024.html"  class="dog-card">
-                       <img src="images/CS-Temperament.jpg"> </a>
-            <h3>Temperament</h3>
-            <p>Friendly, gentle, loyal, and excellent with families.</p>
+        <!-- Hero image -->
+        <div class="container">
+            <img
+                src="images/CS.jpg"
+                alt="Clumber Spaniel"
+                class="hero-image"
+            >
         </div>
 
-        <div><a href="019.html"  class="dog-card">
-                       <img src="images/CS-Grooming.jpg"> </a>
+        <!-- Topic cards -->
+        <section class="section">
+            <div class="dog-card-container">
 
-            <h3>Grooming</h3>
-            <p>Regular brushing, ear care, and coat trimming recommended.</p>
-            <p>Sanitary, Comfort, .</p>
-        </div>
+                <div class="dog-card">
+                    <a href="024.html">
+                        <img src="images/CS-Temperament.jpg" alt="">
+                        <h3>Temperament</h3>
+                    </a>
+                    <p>Calm, dignified, and affectionate with family. Deliberate
+                       and steady; aloof with strangers.</p>
+                </div>
 
-        <div><a href="014.html"  class="dog-card">
-                       <img src="images/CS-Colours.jpg"> </a>
-            <h3>Colours</h3>
-            <p>Golden, black, roan, parti, chocolate, sable, and more.</p>
-        </div>
-        
-        <div><a href="009.html"  class="dog-card">
-                       <img src="images/CS-Standard.jpg"> </a>
-            <h3>ANKC Breed Standards</h3>
-            <p></p>
-        </div>
-    </div>
-</section>
+                <div class="dog-card">
+                    <a href="019.html">
+                        <img src="images/CS-Grooming.jpg" alt="">
+                        <h3>Grooming</h3>
+                    </a>
+                    <p>Dense double coat needs regular brushing, especially during
+                       seasonal shedding. Regular ear cleaning and paw/feather
+                       trims recommended.</p>
+                </div>
 
+                <div class="dog-card">
+                    <a href="014.html">
+                        <img src="images/CS-Colours.jpg" alt="">
+                        <h3>Colours</h3>
+                    </a>
+                    <p>Predominantly white with lemon or orange markings.</p>
+                </div>
 
-<div id="foot"></div>
+                <div class="dog-card">
+                    <a href="009.html">
+                        <img src="images/CS-Standard.jpg" alt="">
+                        <h3>ANKC Breed Standards</h3>
+                    </a>
+                    <p>Official DogsWest and ANKC standards for the breed.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Autoload injects the footer partial here -->
+    <div id="foot"></div>
 </body>
 </html>

@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Autoloader: fetches head/nav/foot, CSS, and global.js -->
-    <script src="autoload.js" defer></script>
+    <script src="styles/autoload.js" defer></script>
 </head>
 <body>
     <!-- Autoload injects the header partial here -->
@@ -20,65 +20,76 @@
     <div id="nav"></div>
 
     <main>
-        <!-- HERO lives on the page, not in the partial -->
+        <!-- ============================================
+             HERO (full-bleed band)
+             ============================================ -->
         <section class="hero">
             <h1>KKnudPaw Spaniels</h1>
             <p>Ethical, ANKC-registered Spaniels raised with care in Perth, WA.</p>
         </section>
 
-        <!-- Optional full-bleed hero image -->
-        <img
-            src="images/Spaniels.jpg"
-            alt="Spaniel dogs"
-            class="hero-image"
-        >
-
-        <!-- Page-specific content -->
-        <section class="breed-standard">
-            <!-- ... -->
-
-
-        <img src="images/Training.jpg" alt="Training">
-
-        <h1>My Dogs</h1>
-
-        <div class="dog-card-container">
-
-            <div class="dog-card">
-                <a href="028.html">
-                    <img src="images/CKCS.jpg" alt="Cavalier King Charles Spaniel">
-                    <h3>Cavalier</h3>
-                </a>
-            </div>
-
-            <div class="dog-card">
-                <a href="029.html">
-                    <img src="images/CS.jpg" alt="Clumber Spaniel">
-                    <h3>Clumber</h3>
-                </a>
-            </div>
-
-            <div class="dog-card">
-                <a href="030.html">
-                    <img src="images/ECS.jpg" alt="English Cocker Spaniel">
-                    <h3>Cocker</h3>
-                </a>
-            </div>
-
-            <div class="dog-card">
-                <a href="031.html">
-                    <img src="images/SS.jpg" alt="English Springer Spaniel">
-                    <h3>Springer</h3>
-                </a>
-            </div>
-            <div class="dog-card">
-                <a href="038.html">
-                    <img src="images/Training.jpg" alt="Training">
-                    <h3>Training</h3>
-                </a>
-            </div>
+        <!-- ============================================
+             HERO IMAGE (contained, centered)
+             ============================================ -->
+        <div class="container">
+            <img
+                src="images/Spaniels.jpg"
+                alt="Spaniel dogs"
+                class="hero-image"
+            >
         </div>
 
+        <!-- ============================================
+             BREED STANDARD / INTRO
+             ============================================ -->
+        <section class="breed-standard">
+            <!-- Breed standard / intro content goes here -->
+        </section>
+
+        <!-- ============================================
+             MY DOGS (gallery)
+             ============================================ -->
+        <section class="section">
+            <h2 class="page-title">My Dogs</h2>
+
+            <div class="dog-card-container">
+
+                <div class="dog-card">
+                    <a href="028.html">
+                        <img src="images/CKCS.jpg" alt="Cavalier King Charles Spaniel">
+                        <h3>Cavalier</h3>
+                    </a>
+                </div>
+
+                <div class="dog-card">
+                    <a href="029.html">
+                        <img src="images/CS.jpg" alt="Clumber Spaniel">
+                        <h3>Clumber</h3>
+                    </a>
+                </div>
+
+                <div class="dog-card">
+                    <a href="030.html">
+                        <img src="images/ECS.jpg" alt="English Cocker Spaniel">
+                        <h3>Cocker</h3>
+                    </a>
+                </div>
+
+                <div class="dog-card">
+                    <a href="031.html">
+                        <img src="images/SS.jpg" alt="English Springer Spaniel">
+                        <h3>Springer</h3>
+                    </a>
+                </div>
+
+                <div class="dog-card">
+                    <a href="038.html">
+                        <img src="images/Training.jpg" alt="Dog training session">
+                        <h3>Training</h3>
+                    </a>
+                </div>
+
+            </div>
         </section>
     </main>
 

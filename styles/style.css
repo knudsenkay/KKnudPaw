@@ -161,6 +161,7 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 0 !important;
+    transition: transform 0.2s ease;
 }
 
 .logo {
@@ -168,6 +169,7 @@ footer {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    transition: transform 0.2s ease;
 }
 
 .logo-text h1,

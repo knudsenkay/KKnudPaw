@@ -6,8 +6,8 @@
     --purple-dark: #4b2a7f;      /* header background */
     --purple-mid: #6a3ea1;       /* menu background */
     --purple-light: #d9c7f3;     /* page background */
-    --purple-text: #ffffff;      /* header text */
-    --text-dark: #2a1a40;        /* body text */
+    --purple-text: #white;      /* header text */
+    --text-dark: #white;        /* body text */
     --border-light: #bfa9e6;     /* soft borders */
 
     --menu-hover: #8b5bd1;

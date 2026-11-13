@@ -6,8 +6,8 @@
     --purple-dark: #4b2a7f;      /* header background */
     --purple-mid: #6a3ea1;       /* menu background */
     --purple-light: #d9c7f3;     /* page background */
-    --purple-text: #white;      /* header text */
-    --text-dark: #white;        /* body text */
+    --white-text: #ffffff;      /* header text */
+    --text-white: #ffffff;        /* body text */
     --border-light: #bfa9e6;     /* soft borders */
 
     --menu-hover: #8b5bd1;
@@ -87,7 +87,7 @@ a:hover {
 
 .nav-grid a {
     background: var(--purple-mid);
-    color: white;
+    color: #ffffff;
     padding: 10px 12px;
     border-radius: 6px;
     text-align: center;
@@ -106,7 +106,7 @@ a:hover {
 
 .nav-dropdown-btn {
     background: var(--purple-mid);
-    color: white;
+    color: #ffffff;
     padding: 12px 20px;
     border: none;
     border-radius: 8px;
@@ -130,12 +130,12 @@ a:hover {
     display: block;
     padding: 8px 15px;
     font-size: 1rem;
-        color: white;
+        color: #ffffff;
 }
 
 .nav-link:hover {
     background: var(--menu-hover);
-    color: white;
+    color: #ffffff;
     border-radius: 6px;
 }
 
@@ -207,7 +207,7 @@ a:hover {
     top: 20px;
     right: 30px;
     font-size: 2rem;
-    color: white;
+    color: #ffffff;
     cursor: pointer;
 }
 
@@ -218,7 +218,7 @@ a:hover {
 
 .box {
     border: 1px solid var(--border-light);
-    background: white;
+    background: #ffffff;
     padding: 15px;
     border-radius: 10px;
     margin: 20px auto;

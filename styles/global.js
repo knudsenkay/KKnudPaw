@@ -3,7 +3,7 @@
    - Safe against missing elements
    - Idempotent (safe to call multiple times)
    - Accessible (aria-expanded, Escape, outside click)
-============================================================ */
+   ============================================================ */
 
 (function () {
     "use strict";
@@ -27,25 +27,45 @@
         if (isElement(menu)) menu.classList.toggle("show", open);
     }
 
-    function closeAll(selector) {
-        document.querySelectorAll(selector).forEach((btn) => {
-            const menu = getTarget(btn, "dropdown") || getTarget(btn, "group");
+    // Collapse every group (nested) menu. Optionally scope to a container.
+    function closeAllGroups(root) {
+        const scope = isElement(root) ? root : document;
+        scope.querySelectorAll(".group-btn").forEach((btn) => {
+            const menu = getTarget(btn, "group");
             setExpanded(btn, menu, false);
         });
     }
 
+    // Collapse every top-level dropdown (and, transitively, its groups).
+    function closeAllTopLevel() {
+        document.querySelectorAll(".nav-dropdown-btn").forEach((btn) => {
+            const menu = getTarget(btn, "dropdown");
+            setExpanded(btn, menu, false);
+        });
+    }
+
+    function closeAll() {
+        closeAllTopLevel();
+        closeAllGroups();
+    }
+
     // Close any open dropdown when clicking outside
     document.addEventListener("click", (e) => {
-        const insideNav = e.target.closest(".nav-dropdown-btn, .group-btn, .nav-dropdown, .group-menu");
+        // e.target can be a non-Element (e.g. document) in rare cases
+        if (!isElement(e.target)) return;
+
+        const insideNav = e.target.closest(
+            ".nav-dropdown-btn, .group-btn, .nav-dropdown, .group-menu"
+        );
         if (!insideNav) {
-            closeAll(".nav-dropdown-btn, .group-btn");
+            closeAll();
         }
     });
 
     // Escape closes everything
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
-            closeAll(".nav-dropdown-btn, .group-btn");
+            closeAll();
         }
     });
 
@@ -65,18 +85,20 @@
                 e.preventDefault();
                 const isOpen = menu.classList.contains("show");
 
-                // close siblings (single-open behavior)
+                // Single-open behavior: collapse every other top-level
+                // dropdown...
                 document.querySelectorAll(".nav-dropdown-btn").forEach((other) => {
                     if (other !== btn) {
                         const otherMenu = getTarget(other, "dropdown");
                         setExpanded(other, otherMenu, false);
                     }
                 });
-                // also collapse any nested group menus
-                document.querySelectorAll(".group-btn").forEach((g) => {
-                    const gm = getTarget(g, "group");
-                    setExpanded(g, gm, false);
-                });
+
+                // ...and every group menu (inside any dropdown), regardless
+                // of whether we're opening or closing this one. This keeps
+                // nested state consistent: closing a top-level dropdown
+                // also collapses its child groups so it reopens fresh.
+                closeAllGroups();
 
                 setExpanded(btn, menu, !isOpen);
             });
@@ -98,6 +120,27 @@
             btn.addEventListener("click", (e) => {
                 e.preventDefault();
                 const isOpen = menu.classList.contains("show");
+
+                // Close sibling group menus at the same depth (single-open
+                // within a parent) but leave ancestor/descendant state alone
+                // unless we're collapsing this branch.
+                const parentMenu = btn.parentElement;
+                if (isElement(parentMenu)) {
+                    parentMenu.querySelectorAll(":scope > .group-menu").forEach((sibling) => {
+                        if (sibling === menu) return;
+                        // Find the button controlling this sibling
+                        const sibBtn = parentMenu.querySelector(
+                            `:scope > .group-btn[data-group="${sibling.id}"]`
+                        );
+                        if (sibBtn) setExpanded(sibBtn, sibling, false);
+                    });
+                }
+
+                // If we're closing this branch, collapse descendants too.
+                if (isOpen) {
+                    closeAllGroups(menu);
+                }
+
                 setExpanded(btn, menu, !isOpen);
             });
         });

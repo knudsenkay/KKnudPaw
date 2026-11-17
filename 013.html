@@ -1,57 +1,151 @@
-<script src="styles/global.js"></script>
-<script src="styles/autoload.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cavalier King Charles Spaniel Colours | KKnudPaw Spaniels</title>
 
+<style>
+    :root{
+        --brand:#7a4a2b; --brand-dark:#4d2d18; --brand-light:#f6ede4;
+        --accent:#c98a4b; --ink:#2f2a26; --ink-soft:#5f564e; --paper:#fffdfa;
+        --card-radius:14px;
+        --shadow-sm:0 2px 6px rgba(60,40,20,.08);
+        --shadow-md:0 8px 22px rgba(60,40,20,.14);
+        --max-width:1100px;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    body{
+        margin:0; padding:0 1.25rem 3rem;
+        background:var(--paper); color:var(--ink);
+        font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+        font-size:1rem; line-height:1.65; -webkit-font-smoothing:antialiased;
+    }
+    img{max-width:100%;height:auto;display:block}
+
+    /* Hero */
+    .hero{width:100%;max-width:var(--max-width);margin-inline:auto;padding:1.75rem 0 1rem;text-align:center}
+    .hero img{margin-inline:auto;border-radius:var(--card-radius);box-shadow:var(--shadow-md)}
+    .hero h1{
+        margin:1.75rem 0 0; font-size:clamp(1.9rem,4vw,2.75rem);
+        line-height:1.2; letter-spacing:-.02em; color:var(--brand-dark);
+    }
+    .hero h1::after{
+        content:""; display:block; width:72px; height:4px;
+        margin:.75rem auto 0; border-radius:4px; background:var(--accent);
+    }
+
+    /* Breed intro */
+    .breed-intro{width:100%;max-width:var(--max-width);margin:0 auto;padding:.5rem 0 1rem;text-align:center}
+    .breed-intro h2{
+        margin:1rem 0 .5rem; font-size:clamp(1.25rem,2.5vw,1.5rem);
+        color:var(--brand);
+    }
+    .breed-intro p{max-width:60ch;margin:0 auto;color:var(--ink-soft);font-size:1.0625rem}
+
+    /* Colour section */
+    .colour-section{width:100%;max-width:var(--max-width);margin:2.5rem auto 0}
+    .colour-section h3{
+        margin:0 0 1.25rem; padding-bottom:.5rem;
+        border-bottom:2px solid var(--brand-light);
+        font-size:clamp(1.125rem,2.5vw,1.375rem);
+        color:var(--brand); text-align:center;
+    }
+
+    /* Colour grid */
+    .colour-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
+        gap:1.25rem;
+    }
+
+    /* Colour card */
+    .colour-card{
+        overflow:hidden; background:#fff;
+        border:1px solid #efe4d8; border-radius:var(--card-radius);
+        box-shadow:var(--shadow-sm);
+        transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+    }
+    .colour-card:hover,
+    .colour-card:focus-within{
+        transform:translateY(-4px);
+        border-color:var(--accent); box-shadow:var(--shadow-md);
+    }
+    .colour-card img{
+        width:100%; aspect-ratio:1/1; object-fit:cover;
+        background:var(--brand-light);
+    }
+    .colour-card h4{
+        margin:0; padding:.85rem 1rem;
+        text-align:center; font-size:.9375rem; font-weight:600;
+        color:var(--brand-dark);
+        border-top:1px solid #f4ece3;
+    }
+
+    @media (max-width:600px){
+        body{padding-inline:1rem}
+        .colour-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.85rem}
+        .colour-card h4{padding:.6rem .5rem;font-size:.875rem}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+        .colour-card{transition:none}
+        .colour-card:hover,.colour-card:focus-within{transform:none}
+    }
+    :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+</style>
+
+<script src="styles/global.js" defer></script>
+<script src="styles/autoload.js" defer></script>
+</head>
+<body>
 
 <div id="head"></div>
 <div id="nav"></div>
 
-
-
-<section style="text-align:center;" class="breed-standard">
-
-
-<img src="images/CKCS-Standard.jpg">
-
-
-
 <main>
-<section class="breed-standard">
-    <h1>Cavalier King Charles Spaniel Colours</h1>
-    <h2>Cavalier King Charles Spaniel</h2>
-    <p>The Cavalier is gentle, affectionate, and known for its expressive eyes and loving nature.</p>
 
+    <section class="hero">
+        <img src="images/CKCS-Standard.jpg" alt="Cavalier King Charles Spaniel">
+        <h1>Cavalier King Charles Spaniel Colours</h1>
+    </section>
 
-</section>
+    <section class="breed-intro">
+        <h2>Cavalier King Charles Spaniel</h2>
+        <p>The Cavalier is gentle, affectionate, and known for its expressive eyes and loving nature.</p>
+    </section>
+
+    <section class="colour-section" aria-labelledby="ckcs-colours">
+        <h3 id="ckcs-colours">Recognised Colours</h3>
+        <div class="colour-grid">
+
+            <article class="colour-card">
+                <img src="images/colour/CKCS-Blenheim.jpg" alt="Blenheim Cavalier King Charles Spaniel" loading="lazy" decoding="async">
+                <h4>Blenheim</h4>
+            </article>
+
+            <article class="colour-card">
+                <img src="images/colour/CKCS-Ruby.jpg" alt="Ruby Cavalier King Charles Spaniel" loading="lazy" decoding="async">
+                <h4>Ruby</h4>
+            </article>
+
+            <article class="colour-card">
+                <img src="images/colour/CKCS-TriColour.jpg" alt="TriColour Cavalier King Charles Spaniel" loading="lazy" decoding="async">
+                <h4>TriColour</h4>
+            </article>
+
+            <article class="colour-card">
+                <img src="images/colour/CKCS-Black,Tan.jpg" alt="Black and Tan Cavalier King Charles Spaniel" loading="lazy" decoding="async">
+                <h4>Black and Tan</h4>
+            </article>
+
+        </div>
+    </section>
+
 </main>
 
-
-    <article>
-        <div class="dog-card-container">
-
-<div class="dog-card-container">
-
-        <div class="dog-card">
-            <img src="images/colour/CKCS-Blenheim.jpg">
-            <h3>Blenheim</h3>
-        </div>
-        <div class="dog-card">
-            <img src="images/colour/CKCS-Ruby.jpg">
-            <h3>Ruby</h3>
-        </div>
-        <div class="dog-card">
-            <img src="images/colour/CKCS-TriColour.jpg">
-            <h3>TriColour</h3>
-        </div>
-        <div class="dog-card">
-            <img src="images/colour/CKCS-Black,Tan.jpg">
-            <h3>Black and Tan</h3>
-        </div>
-
-    </div>
-</section>
-
-
 <div id="foot"></div>
+
 </body>
 </html>
-

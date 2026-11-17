@@ -1,62 +1,189 @@
-<script src="styles/global.js"></script>
-<script src="styles/autoload.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grooming | KKnudPaw Spaniels</title>
 
+<style>
+    :root{
+        --brand:#7a4a2b; --brand-dark:#4d2d18; --brand-light:#f6ede4;
+        --accent:#c98a4b; --ink:#2f2a26; --ink-soft:#5f564e; --paper:#fffdfa;
+        --card-radius:14px;
+        --shadow-sm:0 2px 6px rgba(60,40,20,.08);
+        --shadow-md:0 8px 22px rgba(60,40,20,.14);
+        --max-width:1100px;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    body{
+        margin:0; padding:0 1.25rem 3rem;
+        background:var(--paper); color:var(--ink);
+        font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+        font-size:1rem; line-height:1.65; -webkit-font-smoothing:antialiased;
+    }
+    img{max-width:100%;height:auto;display:block}
+
+    /* Hero */
+    .hero{width:100%;max-width:var(--max-width);margin-inline:auto;padding:1.75rem 0 1rem;text-align:center}
+    .hero img{margin-inline:auto;border-radius:var(--card-radius);box-shadow:var(--shadow-md)}
+    .hero h1{
+        margin:1.75rem 0 0; font-size:clamp(1.9rem,4vw,2.75rem);
+        line-height:1.2; letter-spacing:-.02em; color:var(--brand-dark);
+    }
+    .hero h1::after{
+        content:""; display:block; width:72px; height:4px;
+        margin:.75rem auto 0; border-radius:4px; background:var(--accent);
+    }
+
+    /* Prose column */
+    .prose{width:100%;max-width:74ch;margin:2rem auto 0;text-align:left}
+    .prose h2{
+        margin:0 0 .75rem; font-size:clamp(1.35rem,2.5vw,1.65rem);
+        line-height:1.3; color:var(--brand);
+    }
+    .prose h3{
+        margin:2.25rem 0 1rem; padding-bottom:.4rem;
+        border-bottom:2px solid var(--brand-light);
+        font-size:clamp(1.125rem,2vw,1.25rem); color:var(--brand);
+    }
+    .prose h4{margin:0 0 .6rem;font-size:1.0625rem;color:var(--brand)}
+    .prose p{margin:0 0 1rem;color:var(--ink-soft)}
+    .prose .lede{font-size:1.0625rem;color:var(--ink-soft)}
+    .prose > ul{margin:0 0 1.25rem;padding:0;list-style:none}
+    .prose > ul > li{
+        position:relative; padding-left:1.25rem; margin-bottom:.45rem;
+        color:var(--ink-soft);
+    }
+    .prose > ul > li::before{
+        content:""; position:absolute; left:0; top:.72em;
+        width:.4rem; height:.4rem; border-radius:50%; background:var(--accent);
+    }
+
+    /* Style chips */
+    .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.25rem 0 1.75rem;padding:0;list-style:none}
+    .chip{
+        padding:.4rem 1rem; background:var(--brand-light);
+        border:1px solid #e8d9c9; border-radius:999px;
+        font-size:.875rem; font-weight:600; color:var(--brand-dark);
+    }
+
+    /* Grooming essentials grid */
+    .spec-grid{
+        display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+        gap:1.25rem; margin:1.25rem 0 2rem;
+    }
+    .spec-card{
+        padding:1.4rem; background:#fff; border:1px solid #efe4d8;
+        border-radius:var(--card-radius); box-shadow:var(--shadow-sm);
+        transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+    }
+    .spec-card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:var(--shadow-md)}
+    .spec-card dl{margin:0;display:grid;gap:.5rem;font-size:.9375rem}
+    .spec-card dt{
+        font-size:.75rem; font-weight:700; letter-spacing:.06em;
+        text-transform:uppercase; color:var(--ink-soft);
+    }
+    .spec-card dd{margin:0;color:var(--ink-soft)}
+
+    @media (max-width:600px){
+        body{padding-inline:1rem}
+        .spec-grid{gap:1rem}
+    }
+    @media (prefers-reduced-motion:reduce){
+        .spec-card{transition:none}
+        .spec-card:hover{transform:none}
+    }
+    :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+</style>
+
+<script src="styles/global.js" defer></script>
+<script src="styles/autoload.js" defer></script>
+</head>
+<body>
 
 <div id="head"></div>
 <div id="nav"></div>
 
-
-<section style="text-align:center;" class="breed-standard">
-
-
-<img src="images/Spaniels.jpg">
-
-    <h1>Grooming</h1>
-
 <main>
-<section class="breed-standard">
 
+    <section class="hero">
+        <img src="images/Spaniels.jpg" alt="KKnudPaw Spaniels">
+        <h1>Grooming</h1>
+    </section>
 
-</section>
-</main>
+    <article class="prose">
 
+        <p class="lede">Regular grooming is essential for maintaining the health and beauty of your English Cocker Spaniel's coat, which requires brushing, bathing, and ear care.</p>
 
-    <article>
+        <!-- Wrap each label in an <a href="…"> to turn it into a link -->
+        <ul class="chips" aria-label="Available grooming styles">
+            <li class="chip">Sanitary / Puppy Groom</li>
+            <li class="chip">Comfort Clip</li>
+            <li class="chip">Hand Strip</li>
+        </ul>
 
+        <h3>Grooming Essentials</h3>
 
+        <div class="spec-grid">
 
+            <div class="spec-card">
+                <h4>Brushing</h4>
+                <dl>
+                    <dt>Frequency</dt>
+                    <dd>Brush at least three to four times a week, and daily during shedding seasons. This helps prevent mats and tangles in the dense, medium-length coat.</dd>
+                    <dt>Tools</dt>
+                    <dd>Use a slicker brush for removing tangles and loose hair, a wide-toothed comb for detangling feathered areas, and a pin brush for smoothing the coat.</dd>
+                </dl>
+            </div>
 
+            <div class="spec-card">
+                <h4>Bathing</h4>
+                <dl>
+                    <dt>Schedule</dt>
+                    <dd>Bathe your dog every 4 to 6 weeks to keep the coat clean without stripping natural oils. Use a gentle dog shampoo to maintain coat health.</dd>
+                </dl>
+            </div>
 
+            <div class="spec-card">
+                <h4>Trimming</h4>
+                <dl>
+                    <dt>Areas to trim</dt>
+                    <dd>Regularly trim the hair around the ears, feet, and tail to maintain a neat appearance and reduce debris collection. Professional grooming every 6 to 8 weeks can help manage coat length and maintain the breed's characteristic look.</dd>
+                </dl>
+            </div>
 
-<div style="text-align:center;">
-        <a class="btn">Sanitary/Puppy Groom</a>
-        <a class="btn">Comfort Clip</a>
-        <a class="btn">Hand Strip</a>
-            <p>Regular grooming is essential for maintaining the health and beauty of your English Cocker Spaniel's coat, which requires brushing, bathing, and ear care.
-Grooming Essentials
-Brushing:
-Frequency: Brush your English Cocker Spaniel at least three to four times a week, and daily during shedding seasons. This helps prevent mats and tangles in their dense, medium-length coat .
-Tools: Use a slicker brush for removing tangles and loose hair, a wide-toothed comb for detangling feathered areas, and a pin brush for smoothing the coat.
-Bathing:
-Schedule: Bathe your dog every 4 to 6 weeks to keep the coat clean without stripping natural oils. Use a gentle dog shampoo to maintain coat health.
-Trimming:
-Areas to Trim: Regularly trim the hair around the ears, feet, and tail to maintain a neat appearance and reduce debris collection. Professional grooming every 6 to 8 weeks can help manage coat length and maintain the breed's characteristic look.
-Ear Care:
-Cleaning: Check and clean your dog's ears weekly to prevent infections, as their long, floppy ears are prone to issues without proper care .
-Nail Trimming:
-Frequency: Trim your dog's nails every few weeks to support proper paw health and comfort during walks.
-Additional Tips
-Conditioning Treatments: Integrate conditioning treatments a few times a month to enhance coat softness and detangle stubborn knots.
-Positive Experience: Make grooming a positive experience by using treats and praise, ensuring your dog feels comfortable during the process.
-By following these grooming practices, you can keep your English Cocker Spaniel looking great and feeling healthy, while also preventing common grooming-related issues. Regular grooming not only enhances their appearance but also contributes to their overall well-being.</p>
+            <div class="spec-card">
+                <h4>Ear Care</h4>
+                <dl>
+                    <dt>Cleaning</dt>
+                    <dd>Check and clean your dog's ears weekly to prevent infections, as long, floppy ears are prone to issues without proper care.</dd>
+                </dl>
+            </div>
+
+            <div class="spec-card">
+                <h4>Nail Trimming</h4>
+                <dl>
+                    <dt>Frequency</dt>
+                    <dd>Trim your dog's nails every few weeks to support proper paw health and comfort during walks.</dd>
+                </dl>
+            </div>
+
         </div>
 
+        <h3>Additional Tips</h3>
+        <ul>
+            <li><strong>Conditioning treatments</strong> -- Integrate conditioning treatments a few times a month to enhance coat softness and detangle stubborn knots.</li>
+            <li><strong>Positive experience</strong> -- Make grooming a positive experience by using treats and praise, ensuring your dog feels comfortable during the process.</li>
+        </ul>
 
-    </div>
-</section>
+        <p>By following these grooming practices, you can keep your English Cocker Spaniel looking great and feeling healthy, while also preventing common grooming-related issues. Regular grooming not only enhances their appearance but also contributes to their overall well-being.</p>
 
+    </article>
+
+</main>
 
 <div id="foot"></div>
+
 </body>
 </html>
-

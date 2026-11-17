@@ -1,124 +1,219 @@
-<script src="styles/global.js"></script>
-<script src="styles/autoload.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Springer Spaniel Breed Standard | KKnudPaw Spaniels</title>
 
+<style>
+    :root{
+        --brand:#7a4a2b; --brand-dark:#4d2d18; --brand-light:#f6ede4;
+        --accent:#c98a4b; --ink:#2f2a26; --ink-soft:#5f564e; --paper:#fffdfa;
+        --card-radius:14px;
+        --shadow-sm:0 2px 6px rgba(60,40,20,.08);
+        --shadow-md:0 8px 22px rgba(60,40,20,.14);
+        --max-width:1100px;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    body{
+        margin:0; padding:0 1.25rem 3rem;
+        background:var(--paper); color:var(--ink);
+        font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+        font-size:1rem; line-height:1.65; -webkit-font-smoothing:antialiased;
+    }
+    img{max-width:100%;height:auto;display:block}
+
+    .hero{width:100%;max-width:var(--max-width);margin-inline:auto;padding:1.75rem 0 1rem;text-align:center}
+    .hero img{margin-inline:auto;border-radius:var(--card-radius);box-shadow:var(--shadow-md)}
+    .kicker{
+        margin:1.75rem 0 .35rem;
+        font-size:.75rem; font-weight:700; letter-spacing:.14em;
+        text-transform:uppercase; color:var(--accent);
+    }
+    .hero h1{
+        margin:0; font-size:clamp(1.75rem,4vw,2.6rem);
+        line-height:1.2; letter-spacing:-.02em; color:var(--brand-dark);
+    }
+    .hero h1::after{
+        content:""; display:block; width:72px; height:4px;
+        margin:.75rem auto 0; border-radius:4px; background:var(--accent);
+    }
+    .updated{
+        display:inline-block; margin:1rem 0 0;
+        padding:.3rem .9rem;
+        background:var(--brand-light); border:1px solid #e8d9c9;
+        border-radius:999px;
+        font-size:.8125rem; color:var(--ink-soft);
+    }
+
+    .standard-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+        gap:1.25rem;
+        width:100%; max-width:var(--max-width);
+        margin:2.5rem auto 0;
+        align-items:start;
+    }
+
+    .standard-card{
+        padding:1.5rem;
+        background:#fff;
+        border:1px solid #efe4d8; border-radius:var(--card-radius);
+        box-shadow:var(--shadow-sm);
+        transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+    }
+    .standard-card:hover{
+        transform:translateY(-3px);
+        border-color:var(--accent); box-shadow:var(--shadow-md);
+    }
+    .standard-card h2{
+        margin:0 0 .65rem; padding-bottom:.5rem;
+        border-bottom:2px solid var(--brand-light);
+        font-size:1rem; font-weight:700; letter-spacing:.02em;
+        color:var(--brand);
+    }
+    .standard-card p{margin:0 0 .65rem;color:var(--ink-soft);font-size:.9375rem}
+    .standard-card p:last-child{margin-bottom:0}
+    .standard-card--wide{grid-column:1/-1}
+
+    @media (max-width:600px){
+        body{padding-inline:1rem}
+        .standard-grid{gap:1rem}
+        .standard-card{padding:1.25rem}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+        .standard-card{transition:none}
+        .standard-card:hover{transform:none}
+    }
+    :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+</style>
+
+<script src="styles/global.js" defer></script>
+<script src="styles/autoload.js" defer></script>
+</head>
+<body>
 
 <div id="head"></div>
 <div id="nav"></div>
 
-
-
-<section style="text-align:center;" class="breed-standard">
-
-
-
-
-
-
-<img src="images/SS-Standard.jpg">
-
-<h3>ANKC Breed Standards</h3>
-
 <main>
-<section class="breed-standard">
-<h1> English Springer Spaniel </h1>
-<p> Last updated: 10 May 2010  </p>
 
+    <section class="hero">
+        <img src="images/SS-Standard.jpg" alt="English Springer Spaniel">
+        <p class="kicker">ANKC Breed Standards</p>
+        <h1>English Springer Spaniel</h1>
+        <p class="updated">Last updated: 10 May 2010</p>
+    </section>
 
-</section>
-</main>
+    <div class="standard-grid">
 
-    <article>
-        <div class="dog-card-container">
-            <div class="dog-card"><h2>Group</h2>
-<p> Group 3 (Gundogs)   </p>
-</div>
+        <article class="standard-card">
+            <h2>Group</h2>
+            <p>Group 3 (Gundogs)</p>
+        </article>
 
-    <div class="dog-card"><h2>General Appearance</h2>
-<p>  Symmetrically built, compact, strong, merry, active. Highest on leg and raciest in build of all British land Spaniels.  </p>
-</div>
+        <article class="standard-card">
+            <h2>General Appearance</h2>
+            <p>Symmetrically built, compact, strong, merry, active. Highest on leg and raciest in build of all British land Spaniels.</p>
+        </article>
 
-            <div class="dog-card"><h2>Characteristics</h2>
-<p>  Breed is of ancient and pure origins, oldest of sporting gundogs; original purpose was finding and springing game for net, falcon or greyhound. Now used to find, flush and retrieve game for gun.  </p>
-</div>
+        <article class="standard-card">
+            <h2>Characteristics</h2>
+            <p>Breed is of ancient and pure origins, oldest of sporting gundogs; original purpose was finding and springing game for net, falcon or greyhound. Now used to find, flush and retrieve game for gun.</p>
+        </article>
 
-            <div class="dog-card"><h2>Temperament</h2>
-<p>  Friendly, happy disposition, biddable. Timidity or aggression highly undesirable.  </p>
-</div>
+        <article class="standard-card">
+            <h2>Temperament</h2>
+            <p>Friendly, happy disposition, biddable. Timidity or aggression highly undesirable.</p>
+        </article>
 
-            <div class="dog-card"><h2>Head And Skull</h2>
-<p>  Skull of medium length, fairly broad, slightly rounded, rising from foreface, making a brow or stop, divided by fluting between eyes, dying away along forehead towards occipital bone which should not be prominent. Cheeks flat. Foreface of proportionate length to skull, fairly broad and deep, well chiselled below eyes, fairly deep and square in flew. Nostrils well developed.  </p>
-</div>
+        <article class="standard-card">
+            <h2>Head and Skull</h2>
+            <p>Skull of medium length, fairly broad, slightly rounded, rising from foreface, making a brow or stop, divided by fluting between eyes, dying away along forehead towards occipital bone which should not be prominent. Cheeks flat. Foreface of proportionate length to skull, fairly broad and deep, well chiselled below eyes, fairly deep and square in flew. Nostrils well developed.</p>
+        </article>
 
-            <div class="dog-card"><h2>Eyes</h2>
-<p>  Medium size, almond shaped, not prominent nor sunken, well set in (not showing haw), alert, kind expression. Dark hazel. Light eyes undesirable.  </p>
-</div>
+        <article class="standard-card">
+            <h2>Eyes</h2>
+            <p>Medium size, almond shaped, not prominent nor sunken, well set in (not showing haw), alert, kind expression. Dark hazel. Light eyes undesirable.</p>
+        </article>
 
-            <div class="dog-card"><h2>Ears</h2>
+        <article class="standard-card">
+            <h2>Ears</h2>
+            <p>Lobular, good length and width, fairly close to head, set in line with eye. Nicely feathered.</p>
+        </article>
 
-<p>  Lobular, good length and width, fairly close to head, set in line with eye. Nicely feathered.  </p></div>
+        <article class="standard-card">
+            <h2>Mouth</h2>
+            <p>Jaws strong, with a perfect, regular and complete scissor bite, i.e. upper teeth closely overlapping lower teeth and set square to the jaws.</p>
+        </article>
 
-            <div class="dog-card"><h2>Mouth</h2>
-<p> Jaws strong, with a perfect, regular and complete scissor bite, i.e. Upper teeth closely overlapping lower teeth and set square to the jaws.   </p>
-</div>
+        <article class="standard-card">
+            <h2>Neck</h2>
+            <p>Good length, strong and muscular, free from throatiness, slightly arched, tapering towards head.</p>
+        </article>
 
-            <div class="dog-card"><h2>Neck</h2>
-<p>  Good length, strong and muscular, free from throatiness, slightly arched, tapering towards head.  </p>
-</div>
+        <article class="standard-card">
+            <h2>Forequarters</h2>
+            <p>Forelegs straight and well boned. Shoulders sloping and well laid. Elbows set well to body. Strong flexible pasterns.</p>
+        </article>
 
-            <div class="dog-card"><h2>Forequarters</h2>
-<p> Forelegs straight and well boned. Shoulders sloping and well laid. Elbows set well to body. Strong flexible pasterns.   </p>
-</div>
+        <article class="standard-card">
+            <h2>Body</h2>
+            <p>Strong, neither too long nor too short. Chest deep, well developed. Well sprung ribs. Loin muscular, strong with slight arch and well coupled.</p>
+        </article>
 
-            <div class="dog-card"><h2>Body</h2>
-<p> Strong, neither too long nor too short. Chest deep, well developed. Well sprung ribs. Loin muscular, strong with slight arch and well coupled.   </p>
-</div>
+        <article class="standard-card">
+            <h2>Hindquarters</h2>
+            <p>Hindlegs well let down. Stifles and hocks moderately bent. Thighs broad, muscular, well developed. Coarse hocks undesirable.</p>
+        </article>
 
-            <div class="dog-card"><h2>Hindquarters</h2>
-<p>  Hindlegs well let down. Stifles and hocks moderately bent. Thighs broad, muscular, well developed. Coarse hocks undesirable.  </p>
-</div>
+        <article class="standard-card">
+            <h2>Feet</h2>
+            <p>Tight, compact, well rounded, with strong full pads.</p>
+        </article>
 
-            <div class="dog-card"><h2>Feet</h2>
-<p> Tight, compact, well rounded, with strong full pads.   </p>
-</div>
+        <article class="standard-card">
+            <h2>Tail</h2>
+            <p>Undocked: set low, never carried above level of back. Well feathered with lively action. In balance with the rest of the dog.</p>
+        </article>
 
-            <div class="dog-card"><h2>Tail</h2>
-<p>  Undocked: Set low, never carried above level of back. Well feathered with lively action. In balance with the rest of the dog.  </p>
-</div>
+        <article class="standard-card">
+            <h2>Gait / Movement</h2>
+            <p>Strictly his own. Forelegs swing straight forward from shoulder, throwing feet well forward in an easy free manner. Hocks driving well under body, following in line with forelegs. At slow movement may have a pacing stride typical of this breed.</p>
+        </article>
 
-            <div class="dog-card"><h2>Gait/Movement</h2>
-<p>  Strictly his own. Forelegs swing straight forward from shoulder, throwing feet well forward in an easy free manner. Hocks driving well under body, following in line with forelegs. At slow movement may have a pacing stride typical of this breed.  </p>
-</div>
+        <article class="standard-card">
+            <h2>Coat</h2>
+            <p>Close, straight and weather resisting, never coarse. Moderate feathering on ears, forelegs, body and hindquarters.</p>
+        </article>
 
-            <div class="dog-card"><h2>Coat</h2>
-<p> Close, straight and weather resisting, never coarse. Moderate feathering on ears, forelegs, body and hindquarters.   </p>
-</div>
+        <article class="standard-card">
+            <h2>Colour</h2>
+            <p>Liver and white, black and white, or either of these colours with tan markings.</p>
+        </article>
 
-            <div class="dog-card"><h2>Colour</h2>
-<p> Liver and white, black and white, or either of these colours with tan markings.   </p>
-</div>
+        <article class="standard-card">
+            <h2>Sizes</h2>
+            <p>Height: approx. 51 cms (20 ins).</p>
+        </article>
 
-            <div class="dog-card"><h2>Sizes</h2>
-<p> Height: approx. 51 cms (20 ins).   </p>
-</div>
+        <article class="standard-card">
+            <h2>Faults</h2>
+            <p>Any departure from the foregoing points should be considered a fault and the seriousness with which the fault should be regarded should be in exact proportion to its degree and its effect upon the health and welfare of the dog, and on the dog's ability to perform its traditional work.</p>
+        </article>
 
-            <div class="dog-card"><h2>Faults</h2>
-<p> Any departure from the foregoing points should be considered a fault and the seriousness with which the fault should be regarded should be in exact proportion to its degree and its effect upon the health and welfare of the dog, and on the dog’s ability to perform its traditional work.   </p>
-</div>
-
-            <div class="dog-card"><h2>Notes</h2>
-<p> Male animals should have two apparently normal testicles fully descended into the scrotum.   </p>
-</div>
-
-    </article>
-
-</p>
-        </div>
-
+        <article class="standard-card">
+            <h2>Notes</h2>
+            <p>Male animals should have two apparently normal testicles fully descended into the scrotum.</p>
+        </article>
 
     </div>
-</section>
 
+</main>
 
 <div id="foot"></div>
+
 </body>
 </html>

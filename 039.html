@@ -1,74 +1,284 @@
-<script src="styles/global.js"></script>
-<script src="styles/autoload.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puppies Available | KKnudPaw Spaniels</title>
 
+<style>
+    /* ---------- Design tokens (shared site palette) ---------- */
+    :root {
+        --brand:        #7a4a2b;
+        --brand-dark:   #4d2d18;
+        --brand-light:  #f6ede4;
+        --accent:       #c98a4b;
+        --ink:          #2f2a26;
+        --ink-soft:     #5f564e;
+        --paper:        #fffdfa;
+        --card-radius:  14px;
+        --shadow-sm:    0 2px 6px rgba(60, 40, 20, .08);
+        --shadow-md:    0 8px 22px rgba(60, 40, 20, .14);
+        --max-width:    1100px;
+    }
 
+    /* ---------- Base ---------- */
+    *,
+    *::before,
+    *::after { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+        margin: 0;
+        padding: 0 1.25rem 3rem;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 1rem;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ---------- Page header ---------- */
+    .breed-standard {
+        width: 100%;
+        max-width: var(--max-width);
+        margin-inline: auto;
+        padding: 1.5rem 0 .5rem;
+        text-align: center;
+    }
+
+    .breed-standard h2 {
+        margin: 0 0 .5rem;
+        font-size: clamp(1.9rem, 4vw, 2.75rem);
+        line-height: 1.2;
+        letter-spacing: -.02em;
+        color: var(--brand-dark);
+    }
+
+    .breed-standard h2::after {
+        content: "";
+        display: block;
+        width: 72px;
+        height: 4px;
+        margin: .75rem auto 0;
+        border-radius: 4px;
+        background: var(--accent);
+    }
+
+    .breed-standard p {
+        max-width: 54ch;
+        margin: 1rem auto 0;
+        font-size: 1.0625rem;
+        color: var(--ink-soft);
+    }
+
+    /* ---------- Year card grid ---------- */
+    .dog-card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.25rem;
+        width: 100%;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 2rem 0 2.5rem;
+        text-align: left;
+    }
+
+    /* ---------- Year card ---------- */
+    .puppy-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: .4rem;
+        padding: 1.5rem 1.4rem;
+        background: #fff;
+        border: 1px solid #efe4d8;
+        border-radius: var(--card-radius);
+        box-shadow: var(--shadow-sm);
+        transition: transform .25s ease, box-shadow .25s ease,
+                    border-color .25s ease;
+    }
+
+    .puppy-card:hover,
+    .puppy-card:focus-within {
+        transform: translateY(-4px);
+        border-color: var(--accent);
+        box-shadow: var(--shadow-md);
+    }
+
+    .puppy-card h3 {
+        margin: 0 0 .35rem;
+        font-size: 1.625rem;
+        line-height: 1.15;
+        letter-spacing: -.01em;
+    }
+
+    /* Year link */
+    .nav-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        color: var(--brand);
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    /* The <s> wrapper is neutralised so years don't read as "struck out" */
+    .nav-btn s { text-decoration: none; }
+
+    .nav-btn::after {
+        content: "\2192";
+        font-size: .85em;
+        color: var(--accent);
+        transition: transform .2s ease;
+    }
+
+    .puppy-card:hover .nav-btn::after,
+    .puppy-card:focus-within .nav-btn::after {
+        transform: translateX(4px);
+    }
+
+    /* Stretch the link over the whole card for a bigger hit area */
+    .nav-btn::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: var(--card-radius);
+    }
+
+    /* Detail rows */
+    .puppy-card p {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        margin: 0;
+        padding-bottom: .35rem;
+        border-bottom: 1px dashed #f0e5d9;
+        font-size: .9375rem;
+        color: var(--ink-soft);
+    }
+
+    .puppy-card p:last-of-type { border-bottom: 0; }
+
+    .puppy-card p strong {
+        font-weight: 600;
+        color: var(--brand-dark);
+        text-align: right;
+    }
+
+    /* ---------- Responsive tweaks ---------- */
+    @media (max-width: 600px) {
+        body { padding-inline: 1rem; }
+        .dog-card-container { gap: 1rem; }
+        .puppy-card { padding: 1.25rem 1.15rem; }
+    }
+
+    /* ---------- Accessibility ---------- */
+    @media (prefers-reduced-motion: reduce) {
+        .puppy-card,
+        .nav-btn::after { transition: none; }
+
+        .puppy-card:hover,
+        .puppy-card:focus-within { transform: none; }
+
+        .puppy-card:hover .nav-btn::after { transform: none; }
+    }
+
+    :focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 3px;
+    }
+</style>
+
+<script src="styles/global.js" defer></script>
+<script src="styles/autoload.js" defer></script>
+</head>
+<body>
+
+<!-- Header / nav / footer are injected by autoload.js -->
 <div id="head"></div>
 <div id="nav"></div>
 
-
-<section style="text-align:center;" class="breed-standard">
 <main>
-    <h2>Puppies Available</h2>
-    <p>Current litters and upcoming litters.</p>
-</main>
-</section>
-<div class="dog-card-container">
+
+    <section class="breed-standard">
+        <h2>Puppies Available</h2>
+        <p>Current litters and upcoming litters.</p>
+    </section>
+
+    <div class="dog-card-container">
+
         <div class="puppy-card">
             <h3><a href="PuppiesAvailable/2027.html" class="nav-btn"><s>2027</s></a></h3>
-            <p>Born: Date</p>
-            <p>Parents: Dam × Sire</p>
-            <p>Status: Available / Reserved / Waitlist Only</p>
+            <p><span>Born</span><strong>Date</strong></p>
+            <p><span>Parents</span><strong>Dam × Sire</strong></p>
+            <p><span>Status</span><strong>Available / Reserved / Waitlist Only</strong></p>
         </div>
+
         <div class="puppy-card">
             <h3><a href="PuppiesAvailable/2028.html" class="nav-btn"><s>2028</s></a></h3>
-            <p>Born: Date</p>
-            <p>Parents: Dam × Sire</p>
-            <p>Status: Available / Reserved / Waitlist Only</p>
+            <p><span>Born</span><strong>Date</strong></p>
+            <p><span>Parents</span><strong>Dam × Sire</strong></p>
+            <p><span>Status</span><strong>Available / Reserved / Waitlist Only</strong></p>
         </div>
+
         <div class="puppy-card">
             <h3><a href="PuppiesAvailable/2029.html" class="nav-btn"><s>2029</s></a></h3>
-            <p>Born: Date</p>
-            <p>Parents: Dam × Sire</p>
-            <p>Status: Available / Reserved / Waitlist Only</p>
+            <p><span>Born</span><strong>Date</strong></p>
+            <p><span>Parents</span><strong>Dam × Sire</strong></p>
+            <p><span>Status</span><strong>Available / Reserved / Waitlist Only</strong></p>
         </div>
+
         <div class="puppy-card">
             <h3><a href="PuppiesAvailable/2030.html" class="nav-btn"><s>2030</s></a></h3>
-            <p>Born: Date</p>
-            <p>Parents: Dam × Sire</p>
-            <p>Status: Available / Reserved / Waitlist Only</p>
+            <p><span>Born</span><strong>Date</strong></p>
+            <p><span>Parents</span><strong>Dam × Sire</strong></p>
+            <p><span>Status</span><strong>Available / Reserved / Waitlist Only</strong></p>
         </div>
+
         <div class="puppy-card">
             <h3><a href="PuppiesAvailable/2031.html" class="nav-btn"><s>2031</s></a></h3>
-            <p>Born: Date</p>
-            <p>Parents: Dam × Sire</p>
-            <p>Status: Available / Reserved / Waitlist Only</p>
+            <p><span>Born</span><strong>Date</strong></p>
+            <p><span>Parents</span><strong>Dam × Sire</strong></p>
+            <p><span>Status</span><strong>Available / Reserved / Waitlist Only</strong></p>
         </div>
+
         <div class="puppy-card">
             <h3><a href="PuppiesAvailable/2032.html" class="nav-btn"><s>2032</s></a></h3>
-            <p>Born: Date</p>
-            <p>Parents: Dam × Sire</p>
-            <p>Status: Available / Reserved / Waitlist Only</p>
+            <p><span>Born</span><strong>Date</strong></p>
+            <p><span>Parents</span><strong>Dam × Sire</strong></p>
+            <p><span>Status</span><strong>Available / Reserved / Waitlist Only</strong></p>
         </div>
+
         <div class="puppy-card">
             <h3><a href="PuppiesAvailable/2033.html" class="nav-btn"><s>2033</s></a></h3>
-            <p>Born: Date</p>
-            <p>Parents: Dam × Sire</p>
-            <p>Status: Available / Reserved / Waitlist Only</p>
+            <p><span>Born</span><strong>Date</strong></p>
+            <p><span>Parents</span><strong>Dam × Sire</strong></p>
+            <p><span>Status</span><strong>Available / Reserved / Waitlist Only</strong></p>
         </div>
+
         <div class="puppy-card">
             <h3><a href="PuppiesAvailable/2034.html" class="nav-btn"><s>2034</s></a></h3>
-            <p>Born: Date</p>
-            <p>Parents: Dam × Sire</p>
-            <p>Status: Available / Reserved / Waitlist Only</p>
+            <p><span>Born</span><strong>Date</strong></p>
+            <p><span>Parents</span><strong>Dam × Sire</strong></p>
+            <p><span>Status</span><strong>Available / Reserved / Waitlist Only</strong></p>
         </div>
+
         <div class="puppy-card">
             <h3><a href="PuppiesAvailable/2035.html" class="nav-btn"><s>2035</s></a></h3>
-            <p>Born: Date</p>
-            <p>Parents: Dam × Sire</p>
-            <p>Status: Available / Reserved / Waitlist Only</p>
+            <p><span>Born</span><strong>Date</strong></p>
+            <p><span>Parents</span><strong>Dam × Sire</strong></p>
+            <p><span>Status</span><strong>Available / Reserved / Waitlist Only</strong></p>
         </div>
+
     </div>
-</section>
+
+</main>
+
 <div id="foot"></div>
+
 </body>
 </html>

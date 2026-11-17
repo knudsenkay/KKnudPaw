@@ -1,135 +1,237 @@
-<script src="styles/global.js"></script>
-<script src="styles/autoload.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Springer Spaniel Temperament | KKnudPaw Spaniels</title>
 
+<style>
+    /* ---------- Design tokens (shared site palette) ---------- */
+    :root {
+        --brand:        #7a4a2b;
+        --brand-dark:   #4d2d18;
+        --brand-light:  #f6ede4;
+        --accent:       #c98a4b;
+        --ink:          #2f2a26;
+        --ink-soft:     #5f564e;
+        --paper:        #fffdfa;
+        --card-radius:  14px;
+        --shadow-sm:    0 2px 6px rgba(60, 40, 20, .08);
+        --shadow-md:    0 8px 22px rgba(60, 40, 20, .14);
+        --max-width:    1100px;
+    }
 
+    /* ---------- Base ---------- */
+    *,
+    *::before,
+    *::after { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+        margin: 0;
+        padding: 0 1.25rem 3rem;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 1rem;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ---------- Hero ---------- */
+    .breed-hero {
+        width: 100%;
+        max-width: var(--max-width);
+        margin-inline: auto;
+        padding: 1.75rem 0 1rem;
+        text-align: center;
+    }
+
+    .breed-hero img {
+        margin-inline: auto;
+        border-radius: var(--card-radius);
+        box-shadow: var(--shadow-md);
+    }
+
+    .breed-hero h1 {
+        margin: 1.75rem 0 0;
+        font-size: clamp(1.9rem, 4vw, 2.75rem);
+        line-height: 1.2;
+        letter-spacing: -.02em;
+        color: var(--brand-dark);
+    }
+
+    .breed-hero h1::after {
+        content: "";
+        display: block;
+        width: 72px;
+        height: 4px;
+        margin: .75rem auto 0;
+        border-radius: 4px;
+        background: var(--accent);
+    }
+
+    /* ---------- Prose article ---------- */
+    .prose {
+        width: 100%;
+        max-width: 72ch;
+        margin: 2rem auto 0;
+        padding: 0 0 1rem;
+        text-align: left;
+    }
+
+    .prose h2 {
+        margin: 0 0 1rem;
+        font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+        line-height: 1.3;
+        color: var(--brand);
+    }
+
+    .prose .lede {
+        margin: 0 0 1.5rem;
+        padding-bottom: 1.25rem;
+        border-bottom: 2px solid var(--brand-light);
+        font-size: 1.125rem;
+        color: var(--ink-soft);
+    }
+
+    .prose h4 {
+        margin: 1.75rem 0 .5rem;
+        font-size: 1.0625rem;
+        color: var(--brand);
+    }
+
+    .prose p {
+        margin: 0 0 1rem;
+        color: var(--ink-soft);
+    }
+
+    .prose ul {
+        margin: 0 0 1rem;
+        padding: 0;
+        list-style: none;
+    }
+
+    .prose li {
+        position: relative;
+        padding-left: 1.25rem;
+        margin-bottom: .4rem;
+        color: var(--ink-soft);
+    }
+
+    .prose li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: .7em;
+        width: .4rem;
+        height: .4rem;
+        border-radius: 50%;
+        background: var(--accent);
+    }
+
+    /* ---------- Responsive tweaks ---------- */
+    @media (max-width: 600px) {
+        body { padding-inline: 1rem; }
+    }
+
+    /* ---------- Accessibility ---------- */
+    :focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 3px;
+    }
+</style>
+
+<script src="styles/global.js" defer></script>
+<script src="styles/autoload.js" defer></script>
+</head>
+<body>
+
+<!-- Header / nav / footer are injected by autoload.js -->
 <div id="head"></div>
 <div id="nav"></div>
 
-
-
-<section style="text-align:center;" class="breed-standard">
-
-
-<img src="images/SS-Temperament.jpg">
-
-
-
 <main>
-<section class="breed-standard">
-    <h1>Springer Spaniel Temperament</h1>
 
-</section>
+    <section class="breed-hero">
+        <img src="images/SS-Temperament.jpg" alt="Springer Spaniel">
+        <h1>Springer Spaniel Temperament</h1>
+    </section>
+
+    <article class="prose">
+
+        <h2>Springer Spaniel</h2>
+        <p class="lede">The Springer Spaniel is energetic, athletic, and highly trainable -- perfect for active families.</p>
+
+        <h4>🧡 Core Temperament Traits</h4>
+        <p>Springer Spaniels are known for being:</p>
+        <ul>
+            <li><strong>Friendly &amp; outgoing</strong> -- They greet life (and people) with enthusiasm.</li>
+            <li><strong>Energetic &amp; athletic</strong> -- Much higher drive than Cockers, Cavaliers, or Clumbers.</li>
+            <li><strong>Intelligent &amp; eager to work</strong> -- They thrive when given tasks, training, or jobs.</li>
+            <li><strong>Affectionate &amp; loyal</strong> -- They bond deeply with their families.</li>
+            <li><strong>Alert &amp; responsive</strong> -- They notice everything and react quickly.</li>
+        </ul>
+        <p>They're often described as cheerful, bouncy, and eager.</p>
+
+        <h4>🧒 Around Kids &amp; Families</h4>
+        <p>Springers are typically excellent family dogs:</p>
+        <ul>
+            <li>Playful and fun for active kids</li>
+            <li>Gentle when properly trained</li>
+            <li>Thrive in busy, engaged households</li>
+            <li>Need consistent boundaries because their enthusiasm can become overwhelming</li>
+        </ul>
+        <p>They're loving companions but not as mellow as Cavaliers or Clumbers.</p>
+
+        <h4>🐾 With Other Dogs &amp; Pets</h4>
+        <ul>
+            <li>Generally friendly and social</li>
+            <li>Can be competitive or assertive if not well‑socialised</li>
+            <li>Strong prey drive -- more likely to chase birds, rabbits, or fast‑moving animals</li>
+            <li>Usually good with other dogs, but their energy can annoy calmer breeds</li>
+        </ul>
+        <p>They do best with other active pets.</p>
+
+        <h4>🧠 Trainability &amp; Intelligence</h4>
+        <p>Springers are highly trainable:</p>
+        <ul>
+            <li>Quick learners</li>
+            <li>Love having a job (retrieving, agility, obedience, scent work)</li>
+            <li>Respond well to positive reinforcement</li>
+            <li>Can become anxious or destructive if under‑stimulated</li>
+            <li>Need mental challenges as much as physical exercise</li>
+        </ul>
+        <p>They're one of the most versatile working spaniels.</p>
+
+        <h4>⚡ Energy Level &amp; Exercise Needs</h4>
+        <p>Springers are high‑energy:</p>
+        <ul>
+            <li>60–90 minutes of daily exercise</li>
+            <li>Off‑leash running or structured play</li>
+            <li>Mental stimulation (training, puzzles, scent games)</li>
+            <li>They excel in sports like agility, flyball, and field work</li>
+        </ul>
+        <p>They're not a couch‑potato breed.</p>
+
+        <h4>🏡 Ideal Home Type</h4>
+        <p>A Springer Spaniel thrives in:</p>
+        <ul>
+            <li>Active households</li>
+            <li>Families who enjoy outdoor activities</li>
+            <li>Homes with time for training and engagement</li>
+            <li>Environments where they aren't left alone for long periods</li>
+        </ul>
+        <p>They're happiest when they're busy and included.</p>
+
+    </article>
+
 </main>
 
-
-    <article>
-
-    <h2>Springer Spaniel</h2>
-    <p>The Springer Spaniel is energetic, athletic, and highly trainable -- perfect for active families.</p>
-
-
-
-
-
-
-            <h3>Temperament</h3>
-            <p>
-
-
-<h4>🧡 Core Temperament Traits</h4>
-
-Springer Spaniels are known for being:
-
-• Friendly & outgoing -- They greet life (and people) with enthusiasm.
-• Energetic & athletic -- Much higher drive than Cockers, Cavaliers, or Clumbers.
-• Intelligent & eager to work -- They thrive when given tasks, training, or jobs.
-• Affectionate & loyal -- They bond deeply with their families.
-• Alert & responsive -- They notice everything and react quickly.
-
-
-They’re often described as cheerful, bouncy, and eager.
-
----
-
-<h4>🧒 Around Kids & Families</h4>
-
-Springers are typically excellent family dogs:
-
-• Playful and fun for active kids
-• Gentle when properly trained
-• Thrive in busy, engaged households
-• Need consistent boundaries because their enthusiasm can become overwhelming
-
-
-They’re loving companions but not as mellow as Cavaliers or Clumbers.
-
----
-
-<h4>🐾 With Other Dogs & Pets</h4>
-
-• Generally friendly and social
-• Can be competitive or assertive if not well‑socialized
-• Strong prey drive -- more likely to chase birds, rabbits, or fast‑moving animals
-• Usually good with other dogs, but their energy can annoy calmer breeds
-
-
-They do best with other active pets.
-
----
-
-<h4>🧠 Trainability & Intelligence</h4>
-
-Springers are highly trainable:
-
-• Quick learners
-• Love having a job (retrieving, agility, obedience, scent work)
-• Respond well to positive reinforcement
-• Can become anxious or destructive if under‑stimulated
-• Need mental challenges as much as physical exercise
-
-
-They’re one of the most versatile working spaniels.
-
----
-
-<h4>⚡ Energy Level & Exercise Needs</h4>
-
-Springers are high‑energy:
-
-• 60–90 minutes of daily exercise
-• Off‑leash running or structured play
-• Mental stimulation (training, puzzles, scent games)
-• They excel in sports like agility, flyball, and field work
-
-
-They’re not a couch‑potato breed.
-
----
-
-<h4>🏡 Ideal Home Type</h4>
-
-A Springer Spaniel thrives in:
-
-• Active households
-• Families who enjoy outdoor activities
-• Homes with time for training and engagement
-• Environments where they aren’t left alone for long periods
-
-
-They’re happiest when they’re busy and included.
-
-
----
-
-
-            </p>
-        </div>
-
-
-    </div>
-</section>
-
-
 <div id="foot"></div>
+
 </body>
 </html>

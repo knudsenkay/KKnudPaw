@@ -1,135 +1,281 @@
-<script src="styles/global.js"></script>
-<script src="styles/autoload.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spaniel Breeds General Temperament | KKnudPaw Spaniels</title>
 
+<style>
+    /* ---------- Design tokens (shared site palette) ---------- */
+    :root {
+        --brand:        #7a4a2b;
+        --brand-dark:   #4d2d18;
+        --brand-light:  #f6ede4;
+        --accent:       #c98a4b;
+        --ink:          #2f2a26;
+        --ink-soft:     #5f564e;
+        --paper:        #fffdfa;
+        --card-radius:  14px;
+        --shadow-sm:    0 2px 6px rgba(60, 40, 20, .08);
+        --shadow-md:    0 8px 22px rgba(60, 40, 20, .14);
+        --max-width:    1100px;
+    }
 
+    /* ---------- Base ---------- */
+    *,
+    *::before,
+    *::after { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+        margin: 0;
+        padding: 0 1.25rem 3rem;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 1rem;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ---------- Hero ---------- */
+    .breed-hero {
+        width: 100%;
+        max-width: var(--max-width);
+        margin-inline: auto;
+        padding: 1.75rem 0 1rem;
+        text-align: center;
+    }
+
+    .breed-hero img {
+        margin-inline: auto;
+        border-radius: var(--card-radius);
+        box-shadow: var(--shadow-md);
+    }
+
+    .breed-hero h1 {
+        margin: 1.75rem 0 0;
+        font-size: clamp(1.9rem, 4vw, 2.75rem);
+        line-height: 1.2;
+        letter-spacing: -.02em;
+        color: var(--brand-dark);
+    }
+
+    .breed-hero h1::after {
+        content: "";
+        display: block;
+        width: 72px;
+        height: 4px;
+        margin: .75rem auto 0;
+        border-radius: 4px;
+        background: var(--accent);
+    }
+
+    /* ---------- Prose article ---------- */
+    .prose {
+        width: 100%;
+        max-width: 72ch;
+        margin: 2rem auto 0;
+        padding: 0 0 1rem;
+        text-align: left;
+    }
+
+    .prose .lede {
+        margin: 0 0 1.25rem;
+        font-size: 1.125rem;
+        color: var(--ink-soft);
+    }
+
+    .prose h2 {
+        margin: 2.5rem 0 1rem;
+        padding-bottom: .5rem;
+        border-bottom: 2px solid var(--brand-light);
+        font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+        line-height: 1.3;
+        color: var(--brand);
+    }
+
+    .prose h3 {
+        margin: 2rem 0 .75rem;
+        font-size: clamp(1.125rem, 2vw, 1.25rem);
+        line-height: 1.35;
+        color: var(--brand-dark);
+    }
+
+    .prose p {
+        margin: 0 0 1rem;
+        color: var(--ink-soft);
+    }
+
+    .prose ul {
+        margin: 0 0 1rem;
+        padding: 0;
+        list-style: none;
+    }
+
+    .prose li {
+        position: relative;
+        padding-left: 1.25rem;
+        margin-bottom: .4rem;
+        color: var(--ink-soft);
+    }
+
+    .prose li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: .7em;
+        width: .4rem;
+        height: .4rem;
+        border-radius: 50%;
+        background: var(--accent);
+    }
+
+    .prose hr {
+        border: 0;
+        border-top: 1px solid #efe4d8;
+        margin: 2rem 0;
+    }
+
+    /* ---------- Summary highlight ---------- */
+    .prose .summary {
+        margin-top: 2rem;
+        padding: 1.25rem 1.5rem;
+        background: var(--brand-light);
+        border-left: 4px solid var(--accent);
+        border-radius: 0 var(--card-radius) var(--card-radius) 0;
+    }
+
+    .prose .summary p {
+        margin: 0;
+        color: var(--brand-dark);
+        font-weight: 500;
+    }
+
+    /* ---------- Responsive tweaks ---------- */
+    @media (max-width: 600px) {
+        body { padding-inline: 1rem; }
+    }
+
+    /* ---------- Accessibility ---------- */
+    :focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 3px;
+    }
+</style>
+
+<script src="styles/global.js" defer></script>
+<script src="styles/autoload.js" defer></script>
+</head>
+<body>
+
+<!-- Header / nav / footer are injected by autoload.js -->
 <div id="head"></div>
 <div id="nav"></div>
 
-<section style="text-align:center;" class="breed-standard">
-<img src="images/Spaniels.jpg">
+<main>
 
-<body>
-  <header>
-    <h1>Spaniel Breeds General Temperament</h1>
-  </header>
+    <section class="breed-hero">
+        <img src="images/Spaniels.jpg" alt="KKnudPaw Spaniels">
+        <h1>Spaniel Breeds General Temperament</h1>
+    </section>
 
+    <article class="prose">
 
-Spaniels -- across all breeds -- share a recognisable temperament profile shaped by centuries of work flushing game, retrieving birds, and partnering closely with humans. Despite differences between Clumbers, Cockers, Springers, Cavaliers, and others, their core behavioural traits are remarkably consistent.
-Here’s a clear, evidence‑based summary of general spaniel temperament, grounded in current sources.
+        <p class="lede">Spaniels -- across all breeds -- share a recognisable temperament profile shaped by centuries of work flushing game, retrieving birds, and partnering closely with humans. Despite differences between Clumbers, Cockers, Springers, Cavaliers, and others, their core behavioural traits are remarkably consistent. Here's a clear, evidence‑based summary of general spaniel temperament, grounded in current sources.</p>
 
----
+        <hr>
 
-<h2>General Spaniel Temperament (All Breeds)</h2>
+        <h2>General Spaniel Temperament (All Breeds)</h2>
+        <p>Spaniels are broadly described as affectionate, intelligent, energetic, and deeply people‑oriented. Most spaniels were bred to work all day in the field, which still influences their behaviour today.</p>
 
-Spaniels are broadly described as affectionate, intelligent, energetic, and deeply people‑oriented. Most spaniels were bred to work all day in the field, which still influences their behaviour today.
-com.au +1
+        <h3>🧡 Core Temperament Traits</h3>
+        <ul>
+            <li><strong>Affectionate &amp; "velcro‑like"</strong> -- Spaniels bond strongly with their humans and dislike long periods alone.</li>
+            <li><strong>Intelligent &amp; eager to please</strong> -- Their historic role required quick learning and responsiveness.</li>
+            <li><strong>Energetic &amp; enthusiastic</strong> -- Most spaniels have moderate to high energy and thrive with activity.</li>
+            <li><strong>Social &amp; friendly</strong> -- They generally get along well with people, kids, and other dogs.</li>
+        </ul>
 
----
+        <hr>
 
-<h3>🧡 Core Temperament Traits</h3>
+        <h3>🧒 Family Compatibility</h3>
+        <p>Spaniels are typically excellent family dogs:</p>
+        <ul>
+            <li>Gentle and patient with children</li>
+            <li>Thrive in active households</li>
+            <li>Adapt well to multi‑pet homes when socialised early</li>
+        </ul>
+        <p>Their affectionate nature makes them wonderful companions, but their need for engagement means they're not ideal for families who are away most of the day.</p>
 
-• Affectionate & "velcro‑like" -- Spaniels bond strongly with their humans and dislike long periods alone.
-doggytalks.com
-• Intelligent & eager to please -- Their historic role required quick learning and responsiveness.
-com.au
-• Energetic & enthusiastic -- Most spaniels have moderate to high energy and thrive with activity.
-doggytalks.com
-• Social & friendly -- They generally get along well with people, kids, and other dogs.
-com.au
+        <hr>
 
+        <h3>🐾 With Other Dogs &amp; Pets</h3>
+        <ul>
+            <li>Generally friendly and sociable</li>
+            <li>Strong scent and chase instincts may appear, especially in sporting types</li>
+            <li>Early socialisation helps them coexist well with cats and small animals</li>
+        </ul>
 
----
+        <hr>
 
-<h3>🧒 Family Compatibility</h3>
+        <h3>🧠 Trainability &amp; Intelligence</h3>
+        <p>Spaniels are:</p>
+        <ul>
+            <li>Quick learners</li>
+            <li>Highly responsive to positive reinforcement</li>
+            <li>Naturally suited to obedience, agility, and scent work</li>
+        </ul>
+        <p>Their eagerness to please makes training enjoyable, but their energy must be channelled constructively.</p>
 
-Spaniels are typically excellent family dogs:
+        <hr>
 
-• Gentle and patient with children
-• Thrive in active households
-• Adapt well to multi‑pet homes when socialised early
-com.au
+        <h3>⚡ Energy Level &amp; Exercise Needs</h3>
+        <p>Most spaniels require:</p>
+        <ul>
+            <li>30–90 minutes of daily exercise, depending on breed</li>
+            <li>Mental stimulation (sniffing games, training, puzzle toys)</li>
+            <li>Opportunities to explore and use their natural instincts</li>
+        </ul>
+        <p>Working lines (Springers, Field Spaniels, Irish Water Spaniels) need the most exercise; toy lines (Cavaliers, English Toy Spaniels) need less but still benefit from daily activity.</p>
 
+        <hr>
 
-Their affectionate nature makes them wonderful companions, but their need for engagement means they’re not ideal for families who are away most of the day.
+        <h3>🏡 Ideal Home Type</h3>
+        <p>Spaniels thrive in:</p>
+        <ul>
+            <li>Active homes</li>
+            <li>Families who enjoy outdoor activities</li>
+            <li>Environments with companionship and engagement</li>
+        </ul>
+        <p>They are not suited to low‑interaction households or owners who prefer a very low‑energy dog.</p>
 
----
+        <hr>
 
-<h3>🐾 With Other Dogs & Pets</h3>
+        <h3>🧬 Why All Spaniels Share These Traits</h3>
+        <p>Spaniels were historically bred to:</p>
+        <ul>
+            <li>Work closely with humans</li>
+            <li>Flush and retrieve game</li>
+            <li>Stay alert, responsive, and energetic</li>
+        </ul>
+        <p>This working heritage explains their affectionate nature, intelligence, and need for activity.</p>
 
-• Generally friendly and sociable
-• Strong scent and chase instincts may appear, especially in sporting types
-• Early socialisation helps them coexist well with cats and small animals
-com.au
+        <hr>
 
+        <h3>📌 Summary: The Spaniel Temperament in One Line</h3>
+        <div class="summary">
+            <p>Spaniels are affectionate, intelligent, energetic, and deeply people‑oriented dogs who thrive in active, engaged households.</p>
+        </div>
 
----
+    </article>
 
-<h3>🧠 Trainability & Intelligence</h3>
-
-Spaniels are:
-
-• Quick learners
-• Highly responsive to positive reinforcement
-• Naturally suited to obedience, agility, and scent work
-com.au
-
-
-Their eagerness to please makes training enjoyable, but their energy must be channelled constructively.
-
----
-
-<h3>⚡ Energy Level & Exercise Needs</h3>
-
-Most spaniels require:
-
-• 30–90 minutes of daily exercise, depending on breed
-• Mental stimulation (sniffing games, training, puzzle toys)
-• Opportunities to explore and use their natural instincts
-PuppySimply
-
-
-Working lines (Springers, Field Spaniels, Irish Water Spaniels) need the most exercise; toy lines (Cavaliers, English Toy Spaniels) need less but still benefit from daily activity.
-
----
-
-<h3>🏡 Ideal Home Type</h3>
-
-Spaniels thrive in:
-
-• Active homes
-• Families who enjoy outdoor activities
-• Environments with companionship and engagement
-com.au
-
-
-They are not suited to low‑interaction households or owners who prefer a very low‑energy dog.
-
----
-
-<h3>🧬 Why All Spaniels Share These Traits</h3>
-
-Spaniels were historically bred to:
-
-• Work closely with humans
-• Flush and retrieve game
-• Stay alert, responsive, and energetic
-com.au
-
-
-This working heritage explains their affectionate nature, intelligence, and need for activity.
-
----
-
-<h3>📌 Summary: The Spaniel Temperament in One Line</h3>
-
-Spaniels are affectionate, intelligent, energetic, and deeply people‑oriented dogs who thrive in active, engaged households.
-
----
-
-
-
+</main>
 
 <div id="foot"></div>
+
 </body>
 </html>
-

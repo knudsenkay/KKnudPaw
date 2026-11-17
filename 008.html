@@ -1,133 +1,247 @@
-<script src="styles/global.js"></script>
-<script src="styles/autoload.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cavalier King Charles Spaniel Breed Standard | KKnudPaw Spaniels</title>
 
+<style>
+    :root{
+        --brand:#7a4a2b; --brand-dark:#4d2d18; --brand-light:#f6ede4;
+        --accent:#c98a4b; --ink:#2f2a26; --ink-soft:#5f564e; --paper:#fffdfa;
+        --card-radius:14px;
+        --shadow-sm:0 2px 6px rgba(60,40,20,.08);
+        --shadow-md:0 8px 22px rgba(60,40,20,.14);
+        --max-width:1100px;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    body{
+        margin:0; padding:0 1.25rem 3rem;
+        background:var(--paper); color:var(--ink);
+        font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+        font-size:1rem; line-height:1.65; -webkit-font-smoothing:antialiased;
+    }
+    img{max-width:100%;height:auto;display:block}
+
+    /* ---------- Hero ---------- */
+    .hero{width:100%;max-width:var(--max-width);margin-inline:auto;padding:1.75rem 0 1rem;text-align:center}
+    .hero img{margin-inline:auto;border-radius:var(--card-radius);box-shadow:var(--shadow-md)}
+    .kicker{
+        margin:1.75rem 0 .35rem;
+        font-size:.75rem; font-weight:700; letter-spacing:.14em;
+        text-transform:uppercase; color:var(--accent);
+    }
+    .hero h1{
+        margin:0; font-size:clamp(1.75rem,4vw,2.6rem);
+        line-height:1.2; letter-spacing:-.02em; color:var(--brand-dark);
+    }
+    .hero h1::after{
+        content:""; display:block; width:72px; height:4px;
+        margin:.75rem auto 0; border-radius:4px; background:var(--accent);
+    }
+    .updated{
+        display:inline-block; margin:1rem 0 0;
+        padding:.3rem .9rem;
+        background:var(--brand-light); border:1px solid #e8d9c9;
+        border-radius:999px;
+        font-size:.8125rem; color:var(--ink-soft);
+    }
+
+    /* ---------- Standard grid ---------- */
+    .standard-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+        gap:1.25rem;
+        width:100%; max-width:var(--max-width);
+        margin:2.5rem auto 0;
+        align-items:start;
+    }
+
+    /* ---------- Standard card ---------- */
+    .standard-card{
+        padding:1.5rem;
+        background:#fff;
+        border:1px solid #efe4d8; border-radius:var(--card-radius);
+        box-shadow:var(--shadow-sm);
+        transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+    }
+    .standard-card:hover{
+        transform:translateY(-3px);
+        border-color:var(--accent); box-shadow:var(--shadow-md);
+    }
+    .standard-card h2{
+        margin:0 0 .65rem; padding-bottom:.5rem;
+        border-bottom:2px solid var(--brand-light);
+        font-size:1rem; font-weight:700; letter-spacing:.02em;
+        color:var(--brand);
+    }
+    .standard-card p{margin:0 0 .65rem;color:var(--ink-soft);font-size:.9375rem}
+    .standard-card p:last-child{margin-bottom:0}
+    .standard-card .sub{
+        display:block; margin:.9rem 0 .25rem;
+        font-size:.75rem; font-weight:700; letter-spacing:.08em;
+        text-transform:uppercase; color:var(--brand-dark);
+    }
+    .standard-card .sub:first-of-type{margin-top:0}
+
+    /* Wide cards span the full row on large screens */
+    .standard-card--wide{grid-column:1/-1}
+
+    /* ---------- Responsive ---------- */
+    @media (max-width:600px){
+        body{padding-inline:1rem}
+        .standard-grid{gap:1rem}
+        .standard-card{padding:1.25rem}
+    }
+
+    /* ---------- Accessibility ---------- */
+    @media (prefers-reduced-motion:reduce){
+        .standard-card{transition:none}
+        .standard-card:hover{transform:none}
+    }
+    :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+</style>
+
+<script src="styles/global.js" defer></script>
+<script src="styles/autoload.js" defer></script>
+</head>
+<body>
 
 <div id="head"></div>
 <div id="nav"></div>
 
-
-<!-- Your page content -->
-
-
-
-
-
-
-<section style="text-align:center;" class="breed-standard">
-
-
-
-
-
-
-<img src="images/CKCS-Standard.jpg">
-
-<h3>ANKC Breed Standards</h3>
-
 <main>
-<section class="breed-standard">
-<h1>Cavalier King Charles Spaniel</h1>
-<p>Last updated: 03 Aug 2008</p>
 
+    <section class="hero">
+        <img src="images/CKCS-Standard.jpg" alt="Cavalier King Charles Spaniel">
+        <p class="kicker">ANKC Breed Standards</p>
+        <h1>Cavalier King Charles Spaniel</h1>
+        <p class="updated">Last updated: 03 Aug 2008</p>
+    </section>
 
-</section>
+    <div class="standard-grid">
+
+        <article class="standard-card">
+            <h2>Group</h2>
+            <p>Group 1 (Toys)</p>
+        </article>
+
+        <article class="standard-card">
+            <h2>General Appearance</h2>
+            <p>Active, graceful and well balanced, with gentle expression.</p>
+        </article>
+
+        <article class="standard-card">
+            <h2>Characteristics</h2>
+            <p>Sporting, affectionate, absolutely fearless.</p>
+        </article>
+
+        <article class="standard-card">
+            <h2>Temperament</h2>
+            <p>Gay, friendly, non-aggressive; no tendency to nervousness.</p>
+        </article>
+
+        <article class="standard-card">
+            <h2>Head and Skull</h2>
+            <p>Skull almost flat between ears. Stop shallow. Length from base of stop to tip of nose about 3.8 cms (1½ ins). Nostrils black and well developed without flesh marks, muzzle well tapered. Lips well developed but not pendulous. Face well filled below eyes. Any tendency to snipiness undesirable.</p>
+        </article>
+
+        <article class="standard-card">
+            <h2>Eyes</h2>
+            <p>Large, dark, round but not prominent; spaced well apart.</p>
+        </article>
+
+        <article class="standard-card">
+            <h2>Ears</h2>
+            <p>Long, set high, with plenty of feather.</p>
+        </article>
+
+        <article class="standard-card">
+            <h2>Mouth</h2>
+            <p>Jaws strong, with a perfect, regular and complete scissor bite, i.e. the upper teeth closely overlapping the lower teeth and set square to the jaws.</p>
+        </article>
+
+        <article class="standard-card">
+            <h2>Neck</h2>
+            <p>Moderate length, slightly arched.</p>
+        </article>
+
+        <article class="standard-card">
+            <h2>Forequarters</h2>
+            <p>Chest moderate, shoulders well laid back; straight legs, moderately boned.</p>
+        </article>
+
+        <article class="standard-card">
+            <h2>Body</h2>
+            <p>Short-coupled with good spring of rib. Level back.</p>
+        </article>
+
+        <article class="standard-card">
+            <h2>Hindquarters</h2>
+            <p>Legs with moderate bone; well turned stifle -- no tendency to cow or sickle hocks.</p>
+        </article>
+
+        <article class="standard-card">
+            <h2>Feet</h2>
+            <p>Compact, cushioned and well feathered.</p>
+        </article>
+
+        <article class="standard-card">
+            <h2>Tail</h2>
+            <p>Length of tail in balance with body, well set on, carried happily but never much above the level of the back.</p>
+        </article>
+
+        <article class="standard-card">
+            <h2>Gait / Movement</h2>
+            <p>Free moving and elegant in action, plenty of drive from behind. Fore and hind legs move parallel when viewed from in front and behind.</p>
+        </article>
+
+        <article class="standard-card">
+            <h2>Coat</h2>
+            <p>Long, silky, free from curl. Slight wave permissible. Plenty of feathering. Totally free from trimming.</p>
+        </article>
+
+        <article class="standard-card standard-card--wide">
+            <h2>Colour</h2>
+            <p>Recognised colours are:</p>
+
+            <span class="sub">Black and Tan</span>
+            <p>Raven black with tan markings above the eyes, on cheeks, inside ears, on chest and legs and underside of tail. Tan should be bright. White marks undesirable.</p>
+
+            <span class="sub">Ruby</span>
+            <p>Whole coloured rich red. White markings undesirable.</p>
+
+            <span class="sub">Blenheim</span>
+            <p>Rich chestnut markings well broken up, on pearly white ground. Markings evenly divided on head, leaving room between ears for much valued lozenge mark or spot (a unique characteristic of the breed).</p>
+
+            <span class="sub">Tricolour</span>
+            <p>Black and white well spaced, broken up, with tan markings over eyes, cheeks, inside ears, inside legs, and on underside of tail.</p>
+
+            <p>Any other colour or combination of colours highly undesirable.</p>
+        </article>
+
+        <article class="standard-card">
+            <h2>Sizes</h2>
+            <p>Weight: 5.4–8.2 kg (12–18 lbs).</p>
+            <p>A small well-balanced dog well within these weights desirable.</p>
+        </article>
+
+        <article class="standard-card">
+            <h2>Faults</h2>
+            <p>Any departure from the foregoing points should be considered a fault and the seriousness with which the fault should be regarded should be in exact proportion to its degree and its effect upon the health and welfare of the dog.</p>
+        </article>
+
+        <article class="standard-card">
+            <h2>Notes</h2>
+            <p>Male animals should have two apparently normal testicles fully descended into the scrotum.</p>
+        </article>
+
+    </div>
+
 </main>
 
-    <article>
-        <div class="dog-card-container">
-            <div class="dog-card"><h2>Group</h2>
-<p>Group 1 (Toys)</p>
-</div>
-
-    <div class="dog-card"><h2>General Appearance</h2>
-<p>Active, graceful and well balanced, with gentle expression.</p>
-</div>
-
-            <div class="dog-card"><h2>Characteristics</h2>
-<p>Sporting, affectionate, absolutely fearless.</p>
-</div>
-
-            <div class="dog-card"><h2>Temperament</h2>
-<p>Gay, friendly, non-aggressive; no tendency to nervousness.</p>
-</div>
-
-            <div class="dog-card"><h2>Head And Skull</h2>
-<p>Skull almost flat between ears. Stop shallow. Length from base of stop to tip of nose about 3.8 cms (11û2 ins). Nostrils black and well developed without flesh marks, muzzle well tapered. Lips well developed but not pendulous. Face well filled below eyes. Any tendency to snipiness undesirable.</p>
-</div>
-
-            <div class="dog-card"><h2>Eyes</h2>
-<p>Large, dark, round but not prominent; spaced well apart.</p>
-</div>
-
-            <div class="dog-card"><h2>Ears</h2>
-<p>Long, set high, with plenty of feather.</p>
-</div>
-
-            <div class="dog-card"><h2>Mouth</h2>
-<p>Jaws strong, with a perfect, regular and complete scissor bite, i.e. the upper teeth closely overlapping the lower teeth and set square to the jaws.</p>
-</div>
-
-            <div class="dog-card"><h2>Neck</h2>
-<p>Moderate length, slightly arched.</p>
-</div>
-
-            <div class="dog-card"><h2>Forequarters</h2>
-<p>Chest moderate, shoulders well laid back; straight legs, moderately boned.</p>
-</div>
-
-            <div class="dog-card"><h2>Body</h2>
-<p>Short-coupled with good spring of rib. Level back.</p>
-</div>
-
-            <div class="dog-card"><h2>Hindquarters</h2>
-<p>Legs with moderate bone; well turned stifle - no tendency to cow or sickle hocks.</p>
-</div>
-
-            <div class="dog-card"><h2>Feet</h2>
-<p>Compact, cushioned and well feathered.</p>
-</div>
-
-            <div class="dog-card"><h2>Tail</h2>
-<p>Length of tail in balance with body, well set on, carried happily but never much above the level of the back.</p>
-</div>
-
-            <div class="dog-card"><h2>Gait/Movement</h2>
-<p>Free moving and elegant in action, plenty of drive from behind. Fore and hind legs move parallel when viewed from in front and behind.</p>
-</div>
-
-            <div class="dog-card"><h2>Coat</h2>
-<p>Long, silky, free from curl. Slight wave permissible. Plenty of feathering. Totally free from trimming.</p>
-</div>
-
-            <div class="dog-card"><h2>Colour</h2>
-<p>Recognised colours are:</p>
-<p>Black and Tan - Raven black with tan markings above the eyes, on cheeks, inside ears, on chest and legs and underside of tail. Tan should be bright. White marks undesirable.</p>
-<p>Ruby - Whole coloured rich red. White markings undesirable.</p>
-<p>Blenheim - Rich chestnut markings well broken up, on pearly white ground. Markings evenly divided on head, leaving room between ears for much valued lozenge mark or spot (a unique characteristic of the breed).</p>
-<p>Tricolour - Black and white well spaced, broken up, with tan markings over eyes, cheeks, inside ears, inside legs, and on underside of tail.</p>
-<p>Any other colour or combination of colours highly undesirable.</p>
-</div>
-
-            <div class="dog-card"><h2>Sizes</h2>
-<p>Weight: 5.4-8.2 kg (12-18 lbs).</p>
-<p>A small well-balanced dog well within these weights desirable.</p>
-</div>
-
-            <div class="dog-card"><h2>Faults</h2>
-<p>Any departure from the foregoing points should be considered a fault and the seriousness with which the fault should be regarded should be in exact proportion to its degree and its effect upon the health and welfare of the dog.</p>
-</div>
-
-            <div class="dog-card"><h2>Notes</h2>
-<p>Male animals should have two apparently normal testicles fully descended into the scrotum.</p>
-</div>
-
-    </article>
-
-
-
-
-
-
 <div id="foot"></div>
+
 </body>
 </html>

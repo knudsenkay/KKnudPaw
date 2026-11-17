@@ -1,46 +1,192 @@
-<script src="styles/global.js"></script>
-<script src="styles/autoload.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Cocker Spaniel | Our Dogs</title>
 
+<style>
+    /* ---------- Design tokens (shared site palette) ---------- */
+    :root {
+        --brand:        #7a4a2b;
+        --brand-dark:   #4d2d18;
+        --brand-light:  #f6ede4;
+        --accent:       #c98a4b;
+        --ink:          #2f2a26;
+        --ink-soft:     #5f564e;
+        --paper:        #fffdfa;
+        --card-radius:  14px;
+        --shadow-sm:    0 2px 6px rgba(60, 40, 20, .08);
+        --shadow-md:    0 8px 22px rgba(60, 40, 20, .14);
+        --max-width:    1100px;
+    }
 
+    /* ---------- Base ---------- */
+    *,
+    *::before,
+    *::after { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+        margin: 0;
+        padding: 0 1.25rem 3rem;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 1rem;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ---------- Hero ---------- */
+    .breed-hero {
+        width: 100%;
+        max-width: var(--max-width);
+        margin-inline: auto;
+        padding: 1.75rem 0 1rem;
+        text-align: center;
+    }
+
+    .breed-hero img {
+        margin-inline: auto;
+        border-radius: var(--card-radius);
+        box-shadow: var(--shadow-md);
+    }
+
+    .breed-hero h1 {
+        margin: 1.75rem 0 0;
+        font-size: clamp(1.9rem, 4vw, 2.75rem);
+        line-height: 1.2;
+        letter-spacing: -.02em;
+        color: var(--brand-dark);
+    }
+
+    .breed-hero h1::after {
+        content: "";
+        display: block;
+        width: 72px;
+        height: 4px;
+        margin: .75rem auto 0;
+        border-radius: 4px;
+        background: var(--accent);
+    }
+
+    /* ---------- Breed section ---------- */
+    .breed-standard {
+        width: 100%;
+        max-width: var(--max-width);
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .breed-standard h2 {
+        margin: 2rem 0 .5rem;
+        font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+        color: var(--brand);
+    }
+
+    .breed-standard > p {
+        max-width: 62ch;
+        margin: 0 auto;
+        font-size: 1.0625rem;
+        color: var(--ink-soft);
+    }
+
+    /* ---------- Dog link cards ---------- */
+    .dog-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.25rem;
+        max-width: 460px;
+        margin: 2rem auto 0;
+    }
+
+    .nav-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem 1.35rem;
+        background: #fff;
+        border: 1px solid #efe4d8;
+        border-radius: var(--card-radius);
+        box-shadow: var(--shadow-sm);
+        color: var(--brand-dark);
+        font-size: 1.0625rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform .2s ease, box-shadow .2s ease,
+                    border-color .2s ease;
+    }
+
+    .nav-btn::after {
+        content: "\2192";
+        font-size: 1.1em;
+        color: var(--accent);
+        transition: transform .2s ease;
+    }
+
+    .nav-btn:hover,
+    .nav-btn:focus-visible {
+        transform: translateY(-3px);
+        border-color: var(--accent);
+        box-shadow: var(--shadow-md);
+    }
+
+    .nav-btn:hover::after,
+    .nav-btn:focus-visible::after {
+        transform: translateX(4px);
+    }
+
+    /* ---------- Responsive tweaks ---------- */
+    @media (max-width: 600px) {
+        body { padding-inline: 1rem; }
+    }
+
+    /* ---------- Accessibility ---------- */
+    @media (prefers-reduced-motion: reduce) {
+        .nav-btn,
+        .nav-btn::after { transition: none; }
+        .nav-btn:hover { transform: none; }
+    }
+
+    :focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 3px;
+    }
+</style>
+
+<script src="styles/global.js" defer></script>
+<script src="styles/autoload.js" defer></script>
+</head>
+<body>
+
+<!-- Header / nav / footer are injected by autoload.js -->
 <div id="head"></div>
 <div id="nav"></div>
 
-
-<section style="text-align:center;" class="breed-standard">
-
-
-<img src="images/ECS.jpg">
-
-
-
 <main>
-<section class="breed-standard">
-    <h1>Our Dogs</h1>
 
-</section>
+    <section class="breed-hero">
+        <img src="images/ECS.jpg" alt="English Cocker Spaniel">
+        <h1>Our Dogs</h1>
+    </section>
+
+    <article class="breed-standard">
+        <h2>English Cocker Spaniel</h2>
+        <p>The English Cocker Spaniel is affectionate, intelligent, eager to please, and known for its beautiful silky coat.</p>
+
+        <div class="dog-links">
+            <a href="OurDogs-Cocker-Hermione.html" class="nav-btn">Hermione</a>
+        </div>
+    </article>
+
 </main>
 
-
-    <article>
-
-    <h2>English Cocker Spaniel</h2>
-    <p>The English Cocker Spaniel is affectionate, intelligent, eager to please, and known for its beautiful silky coat.</p>
-
-
-    <div class="dog-card-container">
-<br> 
-<div class="nav-button-container">
-        <a href="OurDogs-Cocker-Hermione.html" class="nav-btn">Hermione</a>
-
-
-
-
-</div>
-
-
-</section>
-
-
 <div id="foot"></div>
+
 </body>
 </html>

@@ -1,115 +1,229 @@
-<script src="styles/global.js"></script>
-<script src="styles/autoload.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clumber Spaniel Temperament | KKnudPaw Spaniels</title>
 
+<style>
+    /* ---------- Design tokens (shared site palette) ---------- */
+    :root {
+        --brand:        #7a4a2b;
+        --brand-dark:   #4d2d18;
+        --brand-light:  #f6ede4;
+        --accent:       #c98a4b;
+        --ink:          #2f2a26;
+        --ink-soft:     #5f564e;
+        --paper:        #fffdfa;
+        --card-radius:  14px;
+        --shadow-sm:    0 2px 6px rgba(60, 40, 20, .08);
+        --shadow-md:    0 8px 22px rgba(60, 40, 20, .14);
+        --max-width:    1100px;
+    }
 
+    /* ---------- Base ---------- */
+    *,
+    *::before,
+    *::after { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+        margin: 0;
+        padding: 0 1.25rem 3rem;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 1rem;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ---------- Hero ---------- */
+    .breed-hero {
+        width: 100%;
+        max-width: var(--max-width);
+        margin-inline: auto;
+        padding: 1.75rem 0 1rem;
+        text-align: center;
+    }
+
+    .breed-hero img {
+        margin-inline: auto;
+        border-radius: var(--card-radius);
+        box-shadow: var(--shadow-md);
+    }
+
+    .breed-hero h1 {
+        margin: 1.75rem 0 0;
+        font-size: clamp(1.9rem, 4vw, 2.75rem);
+        line-height: 1.2;
+        letter-spacing: -.02em;
+        color: var(--brand-dark);
+    }
+
+    .breed-hero h1::after {
+        content: "";
+        display: block;
+        width: 72px;
+        height: 4px;
+        margin: .75rem auto 0;
+        border-radius: 4px;
+        background: var(--accent);
+    }
+
+    /* ---------- Prose article ---------- */
+    .prose {
+        width: 100%;
+        max-width: 72ch;
+        margin: 2rem auto 0;
+        padding: 0 0 1rem;
+        text-align: left;
+    }
+
+    .prose h2 {
+        margin: 0 0 1rem;
+        font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+        line-height: 1.3;
+        color: var(--brand);
+    }
+
+    .prose .lede {
+        margin: 0 0 1.5rem;
+        padding-bottom: 1.25rem;
+        border-bottom: 2px solid var(--brand-light);
+        font-size: 1.125rem;
+        color: var(--ink-soft);
+    }
+
+    .prose h4 {
+        margin: 1.75rem 0 .5rem;
+        font-size: 1.0625rem;
+        color: var(--brand);
+    }
+
+    .prose p {
+        margin: 0 0 1rem;
+        color: var(--ink-soft);
+    }
+
+    .prose ul {
+        margin: 0 0 1rem;
+        padding: 0;
+        list-style: none;
+    }
+
+    .prose li {
+        position: relative;
+        padding-left: 1.25rem;
+        margin-bottom: .4rem;
+        color: var(--ink-soft);
+    }
+
+    .prose li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: .7em;
+        width: .4rem;
+        height: .4rem;
+        border-radius: 50%;
+        background: var(--accent);
+    }
+
+    /* ---------- Responsive tweaks ---------- */
+    @media (max-width: 600px) {
+        body { padding-inline: 1rem; }
+    }
+
+    /* ---------- Accessibility ---------- */
+    :focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 3px;
+    }
+</style>
+
+<script src="styles/global.js" defer></script>
+<script src="styles/autoload.js" defer></script>
+</head>
+<body>
+
+<!-- Header / nav / footer are injected by autoload.js -->
 <div id="head"></div>
 <div id="nav"></div>
 
-
-<section style="text-align:center;" class="breed-standard">
-
-
-<img src="images/CS-Temperament.jpg">
-
-
-
 <main>
-<section class="breed-standard">
-    <h1>Clumber Spaniel Temperament</h1>
 
-</section>
+    <section class="breed-hero">
+        <img src="images/CS-Temperament.jpg" alt="Clumber Spaniel">
+        <h1>Clumber Spaniel Temperament</h1>
+    </section>
+
+    <article class="prose">
+
+        <h2>Clumber Spaniel</h2>
+        <p class="lede">The Clumber Spaniel is calm, dignified, and known for its gentle nature and distinctive heavy build.</p>
+
+        <p>Clumber Spaniels are known for having one of the gentlest, mellowest, and most affectionate temperaments in the spaniel family. Here's a clear, structured breakdown of what their temperament is really like.</p>
+
+        <h4>🧡 Core Temperament Traits</h4>
+        <ul>
+            <li><strong>Gentle &amp; laid‑back</strong> -- Often described as "couch potatoes," Clumbers are calm, slow‑moving, and easygoing.</li>
+            <li><strong>Affectionate &amp; loyal</strong> -- They bond deeply with their people and thrive on companionship.</li>
+            <li><strong>Thoughtful &amp; dignified</strong> -- They carry themselves with a steady, almost serious demeanour.</li>
+            <li><strong>Independent streak</strong> -- They're smart and trainable but sometimes think they know better than you.</li>
+            <li><strong>Mischievous at times</strong> -- Despite their calm vibe, they can be cheeky and stubborn when it suits them.</li>
+        </ul>
+
+        <h4>🧒 Around Kids &amp; Families</h4>
+        <p>Clumber Spaniels are typically excellent family dogs:</p>
+        <ul>
+            <li>Patient and tolerant with children</li>
+            <li>Not overly excitable or jumpy</li>
+            <li>Prefer calm households but adapt well to busy families</li>
+        </ul>
+        <p>Their mellow nature makes them safe and predictable companions.</p>
+
+        <h4>🐾 With Other Dogs &amp; Pets</h4>
+        <ul>
+            <li>Usually friendly and sociable</li>
+            <li>Their hunting background gives them strong scent instincts, but they're not aggressive</li>
+            <li>They coexist well with other dogs and pets when properly introduced</li>
+        </ul>
+
+        <h4>🧠 Trainability &amp; Intelligence</h4>
+        <ul>
+            <li>Bright and capable, especially with scent work</li>
+            <li>Respond well to positive reinforcement</li>
+            <li>Can be slow to mature, so training requires patience</li>
+            <li>Occasional stubbornness means consistency is key</li>
+        </ul>
+
+        <h4>⚡ Energy Level &amp; Exercise Needs</h4>
+        <p>Even though they're mellow, Clumbers still need:</p>
+        <ul>
+            <li>Daily walks</li>
+            <li>Mental stimulation (sniffing games, tracking, puzzle toys)</li>
+            <li>Moderate play sessions</li>
+        </ul>
+        <p>They're not high‑energy athletes, but they're not sedentary either.</p>
+
+        <h4>🏡 Ideal Home Type</h4>
+        <p>A Clumber Spaniel thrives in:</p>
+        <ul>
+            <li>Calm homes with steady routines</li>
+            <li>Families who enjoy relaxed companionship</li>
+            <li>Environments where they can lounge but still get daily activity</li>
+            <li>Homes that appreciate a thoughtful, loyal, slow‑and‑steady dog</li>
+        </ul>
+
+    </article>
+
 </main>
 
-
-    <article>
-
-    <h2>Clumber Spaniel</h2>
-    <p>The Clumber Spaniel is calm, dignified, and known for its gentle nature and distinctive heavy build.</p>
-
-
-
-
-
-
-            <h3>Temperament</h3>
-            <p>Clumber Spaniels are known for having one of the gentlest, mellowest, and most affectionate temperaments in the spaniel family. Based on the page you’re viewing  bing.com and broader breed information, here’s a clear, structured breakdown of what their temperament is really like.
-
----
-
-<h4>🧡 Core Temperament Traits</h4>
-
-• Gentle & laid‑back -- Often described as "couch potatoes," Clumbers are calm, slow-moving, and easygoing.
-• Affectionate & loyal -- They bond deeply with their people and thrive on companionship.
-• Thoughtful & dignified -- They carry themselves with a steady, almost serious demeanor.
-• Independent streak -- They’re smart and trainable but sometimes think they know better than you.
-• Mischievous at times -- Despite their calm vibe, they can be cheeky and stubborn when it suits them.
-
-
----
-
-<h4>🧒 Around Kids & Families</h4>
-
-Clumber Spaniels are typically excellent family dogs:
-
-• Patient and tolerant with children
-• Not overly excitable or jumpy
-• Prefer calm households but adapt well to busy families
-
-
-Their mellow nature makes them safe and predictable companions.
-
----
-
-<h4>🐾 With Other Dogs & Pets</h4>
-
-• Usually friendly and sociable
-• Their hunting background gives them strong scent instincts, but they’re not aggressive
-• They coexist well with other dogs and pets when properly introduced
-
-
----
-
-<h4>🧠 Trainability & Intelligence</h4>
-
-• Bright and capable, especially with scent work
-• Respond well to positive reinforcement
-• Can be slow to mature, so training requires patience
-• Occasional stubbornness means consistency is key
-
-
----
-
-<h4>⚡ Energy Level & Exercise Needs</h4>
-
-Even though they’re mellow, Clumbers still need:
-
-• Daily walks
-• Mental stimulation (sniffing games, tracking, puzzle toys)
-• Moderate play sessions
-
-
-They’re not high-energy athletes, but they’re not sedentary either.
-
----
-
-<h4>🏡 Ideal Home Type</h4>
-
-A Clumber Spaniel thrives in:
-
-• Calm homes with steady routines
-• Families who enjoy relaxed companionship
-• Environments where they can lounge but still get daily activity
-• Homes that appreciate a thoughtful, loyal, slow-and-steady dog
-
-
-</p>
-        </div>
-
-
-    </div>
-</section>
-
-
 <div id="foot"></div>
+
 </body>
 </html>

@@ -1,157 +1,509 @@
-<!-- MAIN MENU BUTTON -->
-<button class="nav-dropdown-btn" data-dropdown="main-menu">📂 Menu</button>
+<style>
+    /* ---------- Nav shell (sticky bar) ---------- */
+    .nav-shell {
+        position: sticky;
+        top: 0;
+        z-index: 90;
+        padding: .85rem 1.25rem;
+        background: var(--brand, #7a4a2b);
+        box-shadow: 0 2px 10px rgba(60, 40, 20, .18);
+    }
+    .nav-shell-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        position: relative;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    .nav-brand {
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: .02em;
+        text-decoration: none;
+        opacity: .92;
+    }
+    .nav-brand:hover,
+    .nav-brand:focus-visible { opacity: 1; }
 
-<!-- MAIN MENU DROPDOWN -->
-<div id="main-menu" class="nav-dropdown">
+    /* ---------- Menu toggle button ---------- */
+    .nav-dropdown-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: .55rem;
+        padding: .6rem 1.15rem;
+        background: var(--paper, #fffdfa);
+        border: 0;
+        border-radius: 999px;
+        color: var(--brand-dark, #4d2d18);
+        font: inherit;
+        font-size: .9375rem;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+        transition: background .2s, color .2s;
+    }
+    .nav-dropdown-btn:hover,
+    .nav-dropdown-btn:focus-visible {
+        background: var(--brand-light, #f6ede4);
+    }
+    .nav-dropdown-btn[aria-expanded="true"] {
+        background: var(--accent, #c98a4b);
+        color: #fff;
+    }
+    .nav-dropdown-btn .nav-icon {
+        font-size: 1.1em;
+        line-height: 1;
+    }
 
-    <!-- Home Page -->
-    <button class="group-btn" data-group="group-home">🏠 Home Page</button>
-    <div id="group-home" class="group-menu">
-        <a href="001.html" class="nav-link">Home Page</a>
-    </div>
+    /* ---------- Dropdown panel ---------- */
+    .nav-dropdown {
+        position: absolute;
+        top: calc(100% + .85rem);
+        left: 0;
+        right: 0;
+        display: none;
+        padding: .75rem;
+        background: var(--paper, #fffdfa);
+        border-radius: 16px;
+        box-shadow: 0 18px 44px rgba(60, 40, 20, .28);
+        max-height: calc(100vh - 140px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .nav-dropdown.open { display: block; }
 
-    <!-- BREED INFO (with nested sub-groups) -->
-    <button class="group-btn" data-group="group-breedinfo">ℹ️ Breed Info</button>
-    <div id="group-breedinfo" class="group-menu">
+    /* ---------- Group button ---------- */
+    .group-btn {
+        display: flex;
+        align-items: center;
+        gap: .55rem;
+        width: 100%;
+        padding: .85rem 1rem;
+        margin: 0 0 .15rem;
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        color: var(--brand-dark, #4d2d18);
+        font: inherit;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: left;
+        cursor: pointer;
+        transition: background .15s, border-color .15s;
+    }
+    .group-btn::after {
+        content: "";
+        display: inline-block;
+        width: .5em;
+        height: .5em;
+        margin-left: auto;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg) translateY(-2px);
+        transition: transform .25s;
+        opacity: .55;
+    }
+    .group-btn[aria-expanded="true"] {
+        background: var(--brand-light, #f6ede4);
+        border-color: #e8d9c9;
+    }
+    .group-btn[aria-expanded="true"]::after {
+        transform: rotate(-135deg) translateY(-2px);
+        opacity: .85;
+    }
+    .group-btn:hover,
+    .group-btn:focus-visible {
+        background: var(--brand-light, #f6ede4);
+        border-color: #e8d9c9;
+    }
 
-        <a href="002.html" class="nav-link">Breed Info OverView</a>
-        <a href="003.html" class="nav-link">Cavalier</a>
-        <a href="004.html" class="nav-link">Clumber</a>
-        <a href="005.html" class="nav-link">Cocker</a>
-        <a href="006.html" class="nav-link">Springer</a>
+    /* Nested group buttons */
+    .group-menu .group-btn {
+        font-size: .9375rem;
+        padding: .7rem .85rem;
+    }
 
-        <!-- ANKC (sub-group) -->
-        <button class="group-btn" data-group="group-ankc">🔖 ANKC</button>
-        <div id="group-ankc" class="group-menu">
-            <a href="007.html" class="nav-link">ANKC Overview</a>
-            <a href="008.html" class="nav-link">Cavalier</a>
-            <a href="009.html" class="nav-link">Clumber</a>
-            <a href="010.html" class="nav-link">Cocker</a>
-            <a href="011.html" class="nav-link">Springer</a>
+    /* ---------- Group menu ---------- */
+    .group-menu {
+        display: none;
+        margin: 0 0 .5rem 1rem;
+        padding: .25rem 0 .25rem 1.15rem;
+        border-left: 2px solid #efe4d8;
+    }
+    .group-menu.open { display: block; }
+
+    /* ---------- Nav links ---------- */
+    .nav-link {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        padding: .55rem .9rem;
+        margin: .15rem 0;
+        border-radius: 8px;
+        color: var(--ink-soft, #5f564e);
+        font-size: .9375rem;
+        text-decoration: none;
+        transition: background .15s, color .15s;
+    }
+    .nav-link[href]:hover,
+    .nav-link[href]:focus-visible {
+        background: var(--brand-light, #f6ede4);
+        color: var(--brand-dark, #4d2d18);
+    }
+    .nav-link[aria-disabled="true"] {
+        color: #b5a797;
+        cursor: not-allowed;
+    }
+    .nav-link[aria-disabled="true"]::after {
+        content: "Soon";
+        margin-left: auto;
+        font-size: .6875rem;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: #c9bbaa;
+    }
+    .nav-link.active {
+        background: var(--accent, #c98a4b);
+        color: #fff;
+        font-weight: 600;
+    }
+    .nav-link.active:hover { background: #b87a3e; }
+    .nav-link.active::after { color: rgba(255, 255, 255, .7); }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 600px) {
+        .nav-shell { padding: .65rem 1rem; }
+        .nav-brand { font-size: .9375rem; }
+        .nav-dropdown {
+            border-radius: 12px;
+            max-height: calc(100vh - 120px);
+            padding: .5rem;
+        }
+        .group-btn { font-size: .9375rem; padding: .75rem .85rem; }
+        .nav-link { font-size: .9rem; padding: .5rem .75rem; }
+    }
+
+    /* ---------- Accessibility ---------- */
+    @media (prefers-reduced-motion: reduce) {
+        .nav-dropdown-btn,
+        .group-btn,
+        .group-btn::after,
+        .nav-link { transition: none; }
+    }
+    :focus-visible {
+        outline: 3px solid var(--accent, #c98a4b);
+        outline-offset: 3px;
+    }
+</style>
+
+<div class="nav-shell">
+    <div class="nav-shell-inner">
+
+        <a class="nav-brand" href="001.html">KKnudPaw</a>
+
+        <button
+            class="nav-dropdown-btn"
+            data-dropdown="main-menu"
+            aria-expanded="false"
+            aria-controls="main-menu"
+        >
+            <span class="nav-icon" aria-hidden="true">☰</span>
+            <span>Menu</span>
+        </button>
+
+        <div id="main-menu" class="nav-dropdown" aria-hidden="true">
+
+            <!-- Home -->
+            <button class="group-btn" data-group="group-home" aria-expanded="false" aria-controls="group-home">
+                🏠 Home Page
+            </button>
+            <div id="group-home" class="group-menu" aria-hidden="true">
+                <a href="001.html" class="nav-link">Home Page</a>
+            </div>
+
+            <!-- Breed Info -->
+            <button class="group-btn" data-group="group-breedinfo" aria-expanded="false" aria-controls="group-breedinfo">
+                ℹ️ Breed Info
+            </button>
+            <div id="group-breedinfo" class="group-menu" aria-hidden="true">
+
+                <a href="002.html" class="nav-link">Breed Info Overview</a>
+                <a href="003.html" class="nav-link">Cavalier</a>
+                <a href="004.html" class="nav-link">Clumber</a>
+                <a href="005.html" class="nav-link">Cocker</a>
+                <a href="006.html" class="nav-link">Springer</a>
+
+                <button class="group-btn" data-group="group-ankc" aria-expanded="false" aria-controls="group-ankc">
+                    🔖 ANKC
+                </button>
+                <div id="group-ankc" class="group-menu" aria-hidden="true">
+                    <a href="007.html" class="nav-link">ANKC Overview</a>
+                    <a href="008.html" class="nav-link">Cavalier</a>
+                    <a href="009.html" class="nav-link">Clumber</a>
+                    <a href="010.html" class="nav-link">Cocker</a>
+                    <a href="011.html" class="nav-link">Springer</a>
+                </div>
+
+                <button class="group-btn" data-group="group-colours" aria-expanded="false" aria-controls="group-colours">
+                    🎨 Colours
+                </button>
+                <div id="group-colours" class="group-menu" aria-hidden="true">
+                    <a href="012.html" class="nav-link">Colours Overview</a>
+                    <a href="013.html" class="nav-link">Cavalier Colours</a>
+                    <a href="014.html" class="nav-link">Clumber Colours</a>
+                    <a href="015.html" class="nav-link">Cocker Colours</a>
+                    <a href="016.html" class="nav-link">Springer Colours</a>
+                </div>
+
+                <button class="group-btn" data-group="group-grooming" aria-expanded="false" aria-controls="group-grooming">
+                    🪮 Grooming
+                </button>
+                <div id="group-grooming" class="group-menu" aria-hidden="true">
+                    <a href="017.html" class="nav-link">Grooming Overview</a>
+                    <a href="018.html" class="nav-link">Cavalier Grooming</a>
+                    <a href="019.html" class="nav-link">Clumber Grooming</a>
+                    <a href="020.html" class="nav-link">Cocker Grooming</a>
+                    <a href="021.html" class="nav-link">Springer Grooming</a>
+                </div>
+
+                <button class="group-btn" data-group="group-temperament" aria-expanded="false" aria-controls="group-temperament">
+                    💕 Temperament
+                </button>
+                <div id="group-temperament" class="group-menu" aria-hidden="true">
+                    <a href="022.html" class="nav-link">Temperament Overview</a>
+                    <a href="023.html" class="nav-link">Cavalier Temperament</a>
+                    <a href="024.html" class="nav-link">Clumber Temperament</a>
+                    <a href="025.html" class="nav-link">Cocker Temperament</a>
+                    <a href="026.html" class="nav-link">Springer Temperament</a>
+                </div>
+
+            </div>
+
+            <!-- Our Breeds -->
+            <button class="group-btn" data-group="group-ourbreeds" aria-expanded="false" aria-controls="group-ourbreeds">
+                🐾 Our Breeds
+            </button>
+            <div id="group-ourbreeds" class="group-menu" aria-hidden="true">
+                <a href="027.html" class="nav-link">Overview</a>
+                <a href="028.html" class="nav-link">Cavalier</a>
+                <a href="029.html" class="nav-link">Clumber</a>
+                <a href="030.html" class="nav-link">Cocker</a>
+                <a href="031.html" class="nav-link">Springer</a>
+            </div>
+
+            <!-- Our Dogs -->
+            <button class="group-btn" data-group="group-ourdogs" aria-expanded="false" aria-controls="group-ourdogs">
+                🐶 Our Dogs
+            </button>
+            <div id="group-ourdogs" class="group-menu" aria-hidden="true">
+                <a href="032.html" class="nav-link">Overview</a>
+                <span class="nav-link" aria-disabled="true">Cavalier</span>
+                <span class="nav-link" aria-disabled="true">Clumber</span>
+                <a href="035.html" class="nav-link">Cocker</a>
+                <a href="036.html" class="nav-link">Hermione (Cocker)</a>
+                <span class="nav-link" aria-disabled="true">Springer</span>
+                <a href="038.html" class="nav-link">Training</a>
+            </div>
+
+            <!-- Puppies -->
+            <button class="group-btn" data-group="group-puppies" aria-expanded="false" aria-controls="group-puppies">
+                🍼 Puppies
+            </button>
+            <div id="group-puppies" class="group-menu" aria-hidden="true">
+
+                <a href="039.html" class="nav-link">Availability Overview</a>
+
+                <button class="group-btn" data-group="group-puppies-years" aria-expanded="false" aria-controls="group-puppies-years">
+                    📅 Upcoming Years
+                </button>
+                <div id="group-puppies-years" class="group-menu" aria-hidden="true">
+                    <span class="nav-link" aria-disabled="true">2027</span>
+                    <span class="nav-link" aria-disabled="true">2028</span>
+                    <span class="nav-link" aria-disabled="true">2029</span>
+                    <span class="nav-link" aria-disabled="true">2030</span>
+                    <span class="nav-link" aria-disabled="true">2031</span>
+                    <span class="nav-link" aria-disabled="true">2032</span>
+                    <span class="nav-link" aria-disabled="true">2033</span>
+                    <span class="nav-link" aria-disabled="true">2034</span>
+                    <span class="nav-link" aria-disabled="true">2035</span>
+                </div>
+
+            </div>
+
+            <!-- Puppy Care -->
+            <button class="group-btn" data-group="group-care" aria-expanded="false" aria-controls="group-care">
+                🤱 Puppy Care
+            </button>
+            <div id="group-care" class="group-menu" aria-hidden="true">
+
+                <a href="049.html" class="nav-link">Guide</a>
+
+                <button class="group-btn" data-group="group-care-advanced" aria-expanded="false" aria-controls="group-care-advanced">
+                    📚 Advanced Topics
+                </button>
+                <div id="group-care-advanced" class="group-menu" aria-hidden="true">
+                    <span class="nav-link" aria-disabled="true">Feeding &amp; Nutrition</span>
+                    <span class="nav-link" aria-disabled="true">Training &amp; Socialisation</span>
+                    <span class="nav-link" aria-disabled="true">Health &amp; Vet Care</span>
+                    <span class="nav-link" aria-disabled="true">Home Setup</span>
+                </div>
+
+            </div>
+
+            <!-- Gallery -->
+            <button class="group-btn" data-group="group-gallery" aria-expanded="false" aria-controls="group-gallery">
+                🖼️ Gallery
+            </button>
+            <div id="group-gallery" class="group-menu" aria-hidden="true">
+
+                <button class="group-btn" data-group="group-gallery-years" aria-expanded="false" aria-controls="group-gallery-years">
+                    📅 By Year
+                </button>
+                <div id="group-gallery-years" class="group-menu" aria-hidden="true">
+                    <a href="054.html" class="nav-link">2026 Gallery</a>
+                    <span class="nav-link" aria-disabled="true">2027 Gallery</span>
+                </div>
+
+            </div>
+
+            <!-- Testimonials -->
+            <button class="group-btn" data-group="group-testimonials" aria-expanded="false" aria-controls="group-testimonials">
+                ⭐ Testimonials
+            </button>
+            <div id="group-testimonials" class="group-menu" aria-hidden="true">
+                <a href="056.html" class="nav-link">Testimonials</a>
+            </div>
+
+            <!-- Waitlist -->
+            <button class="group-btn" data-group="group-waitlist" aria-expanded="false" aria-controls="group-waitlist">
+                📝 Waitlist
+            </button>
+            <div id="group-waitlist" class="group-menu" aria-hidden="true">
+                <a href="057.html" class="nav-link">Join Waitlist</a>
+            </div>
+
         </div>
 
-        <!-- Colours (sub-group) -->
-        <button class="group-btn" data-group="group-colours">🎨 Colours</button>
-        <div id="group-colours" class="group-menu">
-            <a href="012.html" class="nav-link">Colours Overview</a>
-            <a href="013.html" class="nav-link">Cavalier Colours</a>
-            <a href="014.html" class="nav-link">Clumber Colours</a>
-            <a href="015.html" class="nav-link">Cocker Colours</a>
-            <a href="016.html" class="nav-link">Springer Colours</a>
-        </div>
-
-        <!-- Grooming (sub-group) -->
-        <button class="group-btn" data-group="group-grooming">🪮 Grooming</button>
-        <div id="group-grooming" class="group-menu">
-            <a href="017.html" class="nav-link">Grooming Overview</a>
-            <a href="018.html" class="nav-link">Cavalier Grooming</a>
-            <a href="019.html" class="nav-link">Clumber Grooming</a>
-            <a href="020.html" class="nav-link">Cocker Grooming</a>
-            <a href="021.html" class="nav-link">Springer Grooming</a>
-        </div>
-
-        <!-- Temperament (sub-group) -->
-        <button class="group-btn" data-group="group-temperament">💕 Temperament</button>
-        <div id="group-temperament" class="group-menu">
-            <a href="022.html" class="nav-link">Temperament Overview</a>
-            <a href="023.html" class="nav-link">Cavalier Temperament</a>
-            <a href="024.html" class="nav-link">Clumber Temperament</a>
-            <a href="025.html" class="nav-link">Cocker Temperament</a>
-            <a href="026.html" class="nav-link">Springer Temperament</a>
-        </div>
-
     </div>
-
-    <!-- OUR BREEDS -->
-    <button class="group-btn" data-group="group-ourbreeds">🐾 Our Breeds</button>
-    <div id="group-ourbreeds" class="group-menu">
-        <a href="027.html" class="nav-link">Overview</a>
-        <a href="028.html" class="nav-link">Cavalier</a>
-        <a href="029.html" class="nav-link">Clumber</a>
-        <a href="030.html" class="nav-link">Cocker</a>
-        <a href="031.html" class="nav-link">Springer</a>
-    </div>
-
-    <!-- OUR DOGS (with sub-groups) -->
-    <button class="group-btn" data-group="group-ourdogs">🐶 Our Dogs</button>
-    <div id="group-ourdogs" class="group-menu">
-
-        <a href="032.html" class="nav-link">Overview</a>
-
-        <span class="nav-link" aria-disabled="true">Cavalier</span>
-        <span class="nav-link" aria-disabled="true">Clumber</span>
-
-        <a href="035.html" class="nav-link">Cocker</a>
-        <a href="036.html" class="nav-link">Hermione (Cocker)</a>
-
-        <span class="nav-link" aria-disabled="true">Springer</span>
-
-        <a href="038.html" class="nav-link">Training</a>
-
-    </div>
-
-    <!-- PUPPIES (with nested year sub-group) -->
-    <button class="group-btn" data-group="group-puppies">🍼 Puppies</button>
-    <div id="group-puppies" class="group-menu">
-
-        <a href="039.html" class="nav-link">Availability Overview</a>
-
-        <!-- Years (sub-group) -->
-        <button class="group-btn" data-group="group-puppies-years">📅 Upcoming Years</button>
-        <div id="group-puppies-years" class="group-menu">
-            <span class="nav-link" aria-disabled="true">2027</span>
-            <span class="nav-link" aria-disabled="true">2028</span>
-            <span class="nav-link" aria-disabled="true">2029</span>
-            <span class="nav-link" aria-disabled="true">2030</span>
-            <span class="nav-link" aria-disabled="true">2031</span>
-            <span class="nav-link" aria-disabled="true">2032</span>
-            <span class="nav-link" aria-disabled="true">2033</span>
-            <span class="nav-link" aria-disabled="true">2034</span>
-            <span class="nav-link" aria-disabled="true">2035</span>
-        </div>
-
-    </div>
-
-    <!-- PUPPY CARE (with sub-group) -->
-    <button class="group-btn" data-group="group-care">🤱 Puppy Care</button>
-    <div id="group-care" class="group-menu">
-
-        <a href="049.html" class="nav-link">Guide</a>
-
-        <!-- Advanced care (sub-group, all coming soon) -->
-        <button class="group-btn" data-group="group-care-advanced">📚 Advanced Topics</button>
-        <div id="group-care-advanced" class="group-menu">
-            <span class="nav-link" aria-disabled="true">Feeding &amp; Nutrition</span>
-            <span class="nav-link" aria-disabled="true">Training &amp; Socialisation</span>
-            <span class="nav-link" aria-disabled="true">Health &amp; Vet Care</span>
-            <span class="nav-link" aria-disabled="true">Home Setup</span>
-        </div>
-
-    </div>
-
-    <!-- GALLERY (with sub-group) -->
-    <button class="group-btn" data-group="group-gallery">🖼️ Gallery</button>
-    <div id="group-gallery" class="group-menu">
-
-        <!-- Years (sub-group, all coming soon) -->
-        <button class="group-btn" data-group="group-gallery-years">📅 By Year</button>
-        <div id="group-gallery-years" class="group-menu">
-            <span class="nav-link" aria-disabled="true">2026 Gallery</span>
-            <span class="nav-link" aria-disabled="true">2027 Gallery</span>
-        </div>
-
-    </div>
-
-    <!-- TESTIMONIALS -->
-    <button class="group-btn" data-group="group-testimonials">⭐ Testimonials</button>
-    <div id="group-testimonials" class="group-menu">
-        <a href="056.html" class="nav-link">Testimonials</a>
-    </div>
-
-    <!-- WAITLIST -->
-    <button class="group-btn" data-group="group-waitlist">📝 WAITLIST</button>
-    <div id="group-waitlist" class="group-menu">
-        <a href="057.html" class="nav-link">Join Waitlist</a>
-    </div>
-
 </div>
+
+<script>
+(function () {
+    if (window.__kknudpawNavBound) return;
+    window.__kknudpawNavBound = true;
+
+    function setAttr(el, name, value) {
+        if (el) el.setAttribute(name, value);
+    }
+    function toggle(el, className, force) {
+        if (!el) return false;
+        if (typeof force === 'boolean') {
+            el.classList.toggle(className, force);
+            return force;
+        }
+        return el.classList.toggle(className);
+    }
+
+    /* Close any open group-menu sibling inside the same parent */
+    function closeGroupSiblings(openMenu) {
+        var parent = openMenu.parentElement;
+        if (!parent) return;
+        Array.prototype.forEach.call(parent.children, function (child) {
+            if (child === openMenu) return;
+            if (child.classList && child.classList.contains('group-menu') && child.classList.contains('open')) {
+                child.classList.remove('open');
+                child.setAttribute('aria-hidden', 'true');
+                var sibBtn = parent.querySelector(':scope > .group-btn[data-group="' + child.id + '"]');
+                setAttr(sibBtn, 'aria-expanded', 'false');
+            }
+        });
+    }
+
+    function closeMainPanel(panel) {
+        if (!panel) return;
+        panel.classList.remove('open');
+        panel.setAttribute('aria-hidden', 'true');
+        var opener = document.querySelector('[data-dropdown="' + panel.id + '"]');
+        setAttr(opener, 'aria-expanded', 'false');
+    }
+
+    document.addEventListener('click', function (e) {
+
+        /* Main menu toggle */
+        var mainBtn = e.target.closest('.nav-dropdown-btn[data-dropdown]');
+        if (mainBtn) {
+            e.preventDefault();
+            var panel = document.getElementById(mainBtn.dataset.dropdown);
+            if (!panel) return;
+            var willOpen = !panel.classList.contains('open');
+            toggle(panel, 'open', willOpen);
+            panel.setAttribute('aria-hidden', willOpen ? 'false' : 'true');
+            mainBtn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+            return;
+        }
+
+        /* Group toggle */
+        var groupBtn = e.target.closest('.group-btn[data-group]');
+        if (groupBtn) {
+            e.preventDefault();
+            var group = document.getElementById(groupBtn.dataset.group);
+            if (!group) return;
+            var willOpenGroup = !group.classList.contains('open');
+            toggle(group, 'open', willOpenGroup);
+            group.setAttribute('aria-hidden', willOpenGroup ? 'false' : 'true');
+            groupBtn.setAttribute('aria-expanded', willOpenGroup ? 'true' : 'false');
+            if (willOpenGroup) closeGroupSiblings(group);
+            return;
+        }
+
+        /* Click outside closes the main menu */
+        if (!e.target.closest('.nav-shell')) {
+            var openPanel = document.querySelector('.nav-dropdown.open');
+            if (openPanel) closeMainPanel(openPanel);
+        }
+    });
+
+    /* Escape closes the main menu and returns focus */
+    document.addEventListener('keydown', function (e) {
+        if (e.key !== 'Escape') return;
+        var openPanel = document.querySelector('.nav-dropdown.open');
+        if (!openPanel) return;
+        closeMainPanel(openPanel);
+        var opener = document.querySelector('[data-dropdown="' + openPanel.id + '"]');
+        if (opener) opener.focus();
+    });
+
+    /* Highlight the current page's link */
+    function markActive() {
+        var file = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link[href]').forEach(function (link) {
+            if (link.getAttribute('href') === file) {
+                link.classList.add('active');
+                link.setAttribute('aria-current', 'page');
+            }
+        });
+    }
+    function initActive() {
+        if (document.querySelector('.nav-link')) {
+            markActive();
+        } else {
+            var obs = new MutationObserver(function () {
+                if (document.querySelector('.nav-link')) {
+                    markActive();
+                    obs.disconnect();
+                }
+            });
+            obs.observe(document.body, { childList: true, subtree: true });
+        }
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initActive);
+    } else {
+        initActive();
+    }
+})();
+</script>

@@ -1,126 +1,220 @@
-<script src="styles/global.js"></script>
-<script src="styles/autoload.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clumber Spaniel Breed Standard | KKnudPaw Spaniels</title>
 
+<style>
+    :root{
+        --brand:#7a4a2b; --brand-dark:#4d2d18; --brand-light:#f6ede4;
+        --accent:#c98a4b; --ink:#2f2a26; --ink-soft:#5f564e; --paper:#fffdfa;
+        --card-radius:14px;
+        --shadow-sm:0 2px 6px rgba(60,40,20,.08);
+        --shadow-md:0 8px 22px rgba(60,40,20,.14);
+        --max-width:1100px;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    body{
+        margin:0; padding:0 1.25rem 3rem;
+        background:var(--paper); color:var(--ink);
+        font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+        font-size:1rem; line-height:1.65; -webkit-font-smoothing:antialiased;
+    }
+    img{max-width:100%;height:auto;display:block}
+
+    .hero{width:100%;max-width:var(--max-width);margin-inline:auto;padding:1.75rem 0 1rem;text-align:center}
+    .hero img{margin-inline:auto;border-radius:var(--card-radius);box-shadow:var(--shadow-md)}
+    .kicker{
+        margin:1.75rem 0 .35rem;
+        font-size:.75rem; font-weight:700; letter-spacing:.14em;
+        text-transform:uppercase; color:var(--accent);
+    }
+    .hero h1{
+        margin:0; font-size:clamp(1.75rem,4vw,2.6rem);
+        line-height:1.2; letter-spacing:-.02em; color:var(--brand-dark);
+    }
+    .hero h1::after{
+        content:""; display:block; width:72px; height:4px;
+        margin:.75rem auto 0; border-radius:4px; background:var(--accent);
+    }
+    .updated{
+        display:inline-block; margin:1rem 0 0;
+        padding:.3rem .9rem;
+        background:var(--brand-light); border:1px solid #e8d9c9;
+        border-radius:999px;
+        font-size:.8125rem; color:var(--ink-soft);
+    }
+
+    .standard-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+        gap:1.25rem;
+        width:100%; max-width:var(--max-width);
+        margin:2.5rem auto 0;
+        align-items:start;
+    }
+
+    .standard-card{
+        padding:1.5rem;
+        background:#fff;
+        border:1px solid #efe4d8; border-radius:var(--card-radius);
+        box-shadow:var(--shadow-sm);
+        transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+    }
+    .standard-card:hover{
+        transform:translateY(-3px);
+        border-color:var(--accent); box-shadow:var(--shadow-md);
+    }
+    .standard-card h2{
+        margin:0 0 .65rem; padding-bottom:.5rem;
+        border-bottom:2px solid var(--brand-light);
+        font-size:1rem; font-weight:700; letter-spacing:.02em;
+        color:var(--brand);
+    }
+    .standard-card p{margin:0 0 .65rem;color:var(--ink-soft);font-size:.9375rem}
+    .standard-card p:last-child{margin-bottom:0}
+    .standard-card--wide{grid-column:1/-1}
+
+    @media (max-width:600px){
+        body{padding-inline:1rem}
+        .standard-grid{gap:1rem}
+        .standard-card{padding:1.25rem}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+        .standard-card{transition:none}
+        .standard-card:hover{transform:none}
+    }
+    :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+</style>
+
+<script src="styles/global.js" defer></script>
+<script src="styles/autoload.js" defer></script>
+</head>
+<body>
 
 <div id="head"></div>
 <div id="nav"></div>
 
-
-<section style="text-align:center;" class="breed-standard">
-
-
-
-
-
-
-<img src="images/CS-Standard.jpg">
-
-<h3>ANKC Breed Standards</h3>
-
 <main>
-<section class="breed-standard">
-<h1>Clumber Spaniel</h1>
-<p> Last updated: 14 Sep 2011  </p>
 
+    <section class="hero">
+        <img src="images/CS-Standard.jpg" alt="Clumber Spaniel">
+        <p class="kicker">ANKC Breed Standards</p>
+        <h1>Clumber Spaniel</h1>
+        <p class="updated">Last updated: 14 Sep 2011</p>
+    </section>
 
-</section>
-</main>
+    <div class="standard-grid">
 
-    <article>
-        <div class="dog-card-container">
-            <div class="dog-card"><h2>Group</h2>
-<p>  Group 3 (Gundogs)  </p>
-</div>
+        <article class="standard-card">
+            <h2>Group</h2>
+            <p>Group 3 (Gundogs)</p>
+        </article>
 
-    <div class="dog-card"><h2>General Appearance</h2>
-<p>  Balanced, well boned, active with a thoughtful expression, overall appearance denoting strength. The Clumber should be firm, fit and capable of a day’s work of beating in heavy cover.  </p>
-</div>
+        <article class="standard-card">
+            <h2>General Appearance</h2>
+            <p>Balanced, well boned, active with a thoughtful expression, overall appearance denoting strength. The Clumber should be firm, fit and capable of a day's work of beating in heavy cover.</p>
+        </article>
 
-            <div class="dog-card"><h2>Characteristics</h2>
-<p>  Stoical, great hearted, highly intelligent with a determined attitude enhancing his natural ability. A silent worker with an excellent nose.  </p>
-</div>
+        <article class="standard-card">
+            <h2>Characteristics</h2>
+            <p>Stoical, great hearted, highly intelligent with a determined attitude enhancing his natural ability. A silent worker with an excellent nose.</p>
+        </article>
 
-            <div class="dog-card"><h2>Temperament</h2>
-<p>  Steady, reliable kind and dignified; more aloof than other Spaniels, showing no tendency towards aggression.  </p>
-</div>
+        <article class="standard-card">
+            <h2>Temperament</h2>
+            <p>Steady, reliable, kind and dignified; more aloof than other Spaniels, showing no tendency towards aggression.</p>
+        </article>
 
-            <div class="dog-card"><h2>Head And Skull</h2>
-<p> Large, square, medium length, broad on top with decided occiput, heavy brows, deep stop. Square muzzle with well-developed flews. No exaggeration in head and skull.   </p>
-</div>
+        <article class="standard-card">
+            <h2>Head and Skull</h2>
+            <p>Large, square, medium length, broad on top with decided occiput, heavy brows, deep stop. Square muzzle with well-developed flews. No exaggeration in head and skull.</p>
+        </article>
 
-            <div class="dog-card"><h2>Eyes</h2>
-<p> Clean, dark amber. Full light eyes highly undesirable. Acceptable to have some haw showing, but without excess. Free from obvious eye problems.   </p>
-</div>
+        <article class="standard-card">
+            <h2>Eyes</h2>
+            <p>Clean, dark amber. Full light eyes highly undesirable. Acceptable to have some haw showing, but without excess. Free from obvious eye problems.</p>
+        </article>
 
-            <div class="dog-card"><h2>Ears</h2>
-<p> Large, vine leaf shaped, well covered with straight hair. Hanging slightly forward, feather not to extend below leather.   </p>
-</div>
+        <article class="standard-card">
+            <h2>Ears</h2>
+            <p>Large, vine leaf shaped, well covered with straight hair. Hanging slightly forward, feather not to extend below leather.</p>
+        </article>
 
-            <div class="dog-card"><h2>Mouth</h2>
-<p> Jaws strong, with a perfect, regular and complete scissor bite, i.e. Upper teeth closely overlapping lower teeth and set square to the jaws.   </p>
-</div>
+        <article class="standard-card">
+            <h2>Mouth</h2>
+            <p>Jaws strong, with a perfect, regular and complete scissor bite, i.e. upper teeth closely overlapping lower teeth and set square to the jaws.</p>
+        </article>
 
-            <div class="dog-card"><h2>Neck</h2>
-<p> Fairly long, thick, powerful.   </p>
-</div>
+        <article class="standard-card">
+            <h2>Neck</h2>
+            <p>Fairly long, thick, powerful.</p>
+        </article>
 
-            <div class="dog-card"><h2>Forequarters</h2>
-<p> Shoulders strong, sloping, muscular, legs short, straight, well boned, strong.   </p>
-</div>
+        <article class="standard-card">
+            <h2>Forequarters</h2>
+            <p>Shoulders strong, sloping, muscular, legs short, straight, well boned, strong.</p>
+        </article>
 
-            <div class="dog-card"><h2>Body</h2>
-<p> Long, well muscled and strong. Chest deep. Well sprung ribs which are carried well back. Muscular loin, well let down in flank.   </p>
-</div>
+        <article class="standard-card">
+            <h2>Body</h2>
+            <p>Long, well muscled and strong. Chest deep. Well sprung ribs which are carried well back. Muscular loin, well let down in flank.</p>
+        </article>
 
-            <div class="dog-card"><h2>Hindquarters</h2>
-<p> Very powerful and well developed. Hocks low, stifles well bent and set straight.   </p>
-</div>
+        <article class="standard-card">
+            <h2>Hindquarters</h2>
+            <p>Very powerful and well developed. Hocks low, stifles well bent and set straight.</p>
+        </article>
 
-            <div class="dog-card"><h2>Feet</h2>
-<p>  Large, round, well covered with hair.  </p>
-</div>
+        <article class="standard-card">
+            <h2>Feet</h2>
+            <p>Large, round, well covered with hair.</p>
+        </article>
 
-            <div class="dog-card"><h2>Tail</h2>
-<p>
-Undocked: Set low. Well feathered, carried level with back.   </p>
-</div>
+        <article class="standard-card">
+            <h2>Tail</h2>
+            <p>Undocked: set low. Well feathered, carried level with back.</p>
+        </article>
 
-            <div class="dog-card"><h2>Gait/Movement</h2>
-<p> Moving straight fore and aft, with effortless drive.   </p>
-</div>
+        <article class="standard-card">
+            <h2>Gait / Movement</h2>
+            <p>Moving straight fore and aft, with effortless drive.</p>
+        </article>
 
-            <div class="dog-card"><h2>Coat</h2>
-<p> Abundant, close, silky and straight. Legs and chest well feathered.   </p>
-</div>
+        <article class="standard-card">
+            <h2>Coat</h2>
+            <p>Abundant, close, silky and straight. Legs and chest well feathered.</p>
+        </article>
 
-            <div class="dog-card"><h2>Colour</h2>
-<p> Plain white body preferred, with lemon markings; orange permissible. Slight head markings and freckled muzzle.   </p>
-</div>
+        <article class="standard-card">
+            <h2>Colour</h2>
+            <p>Plain white body preferred, with lemon markings; orange permissible. Slight head markings and freckled muzzle.</p>
+        </article>
 
-            <div class="dog-card"><h2>Sizes</h2>
-<p>  Ideal Weight: Dogs 29.5-34 kgs (65-75 lbs)
+        <article class="standard-card">
+            <h2>Sizes</h2>
+            <p>Ideal weight -- Dogs: 29.5–34 kg (65–75 lbs).</p>
+            <p>Bitches: 25–29.5 kg (55–65 lbs).</p>
+        </article>
 
-Bitches 25-29.5 kgs (55-65 lbs)  </p>
-</div>
+        <article class="standard-card">
+            <h2>Faults</h2>
+            <p>Any departure from the foregoing points should be considered a fault and the seriousness with which the fault should be regarded should be in exact proportion to its degree and its effect upon the health and welfare of the dog, and on the dog's ability to perform its traditional work.</p>
+        </article>
 
-            <div class="dog-card"><h2>Faults</h2>
-<p> Any departure from the foregoing points should be considered a fault and the seriousness with which the fault should be regarded should be in exact proportion to its degree and its effect upon the health and welfare of the dog, and on the dog’s ability to perform its traditional work.   </p>
-</div>
-
-            <div class="dog-card"><h2>Notes</h2>
-<p>  Male animals should have two apparently normal testicles fully descended into the scrotum.  </p>
-</div>
-
-    </article>
-
-</p>
-        </div>
-
+        <article class="standard-card">
+            <h2>Notes</h2>
+            <p>Male animals should have two apparently normal testicles fully descended into the scrotum.</p>
+        </article>
 
     </div>
-</section>
 
+</main>
 
 <div id="foot"></div>
+
 </body>
 </html>

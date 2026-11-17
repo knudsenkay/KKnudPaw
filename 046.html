@@ -1,86 +1,418 @@
-<script src="styles/global.js"></script>
-<script src="styles/autoload.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Floyd × Hermione Litter -- Born 06/04/2027 | KKnudPaw Spaniels</title>
 
+<style>
+    /* ---------- Design tokens (shared site palette) ---------- */
+    :root {
+        --brand:        #7a4a2b;
+        --brand-dark:   #4d2d18;
+        --brand-light:  #f6ede4;
+        --accent:       #c98a4b;
+        --ink:          #2f2a26;
+        --ink-soft:     #5f564e;
+        --paper:        #fffdfa;
+        --card-radius:  14px;
+        --shadow-sm:    0 2px 6px rgba(60, 40, 20, .08);
+        --shadow-md:    0 8px 22px rgba(60, 40, 20, .14);
+        --max-width:    1100px;
+    }
 
+    /* ---------- Base ---------- */
+    *,
+    *::before,
+    *::after { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+        margin: 0;
+        padding: 0 1.25rem 3rem;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 1rem;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ---------- Section wrapper ---------- */
+    .page-section {
+        width: 100%;
+        max-width: var(--max-width);
+        margin-inline: auto;
+        padding: 1.5rem 0 2rem;
+    }
+
+    /* ---------- Headings ---------- */
+    .page-section > h2 {
+        margin: 0 0 .5rem;
+        text-align: center;
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        line-height: 1.2;
+        letter-spacing: -.02em;
+        color: var(--brand-dark);
+    }
+
+    .page-section > h2::after {
+        content: "";
+        display: block;
+        width: 72px;
+        height: 4px;
+        margin: .75rem auto 0;
+        border-radius: 4px;
+        background: var(--accent);
+    }
+
+    .page-section > h3 {
+        margin: 2.75rem 0 1.25rem;
+        text-align: center;
+        font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+        line-height: 1.3;
+        color: var(--brand);
+    }
+
+    /* ---------- Litter meta (DOB / parents) ---------- */
+    .litter-meta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: .75rem;
+        margin: 1.5rem 0 2rem;
+    }
+
+    .litter-meta p {
+        display: flex;
+        flex-direction: column;
+        gap: .15rem;
+        min-width: 220px;
+        margin: 0;
+        padding: .75rem 1.25rem;
+        background: #fff;
+        border: 1px solid #efe4d8;
+        border-radius: 12px;
+        box-shadow: var(--shadow-sm);
+        text-align: center;
+    }
+
+    .litter-meta span {
+        font-size: .75rem;
+        font-weight: 600;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+    }
+
+    .litter-meta strong {
+        font-size: 1.0625rem;
+        font-weight: 600;
+        color: var(--brand-dark);
+    }
+
+    /* ---------- Intro callout ---------- */
+    .litter-info {
+        max-width: 72ch;
+        margin: 0 auto 1.5rem;
+        padding: 1.25rem 1.5rem;
+        background: var(--brand-light);
+        border-left: 4px solid var(--accent);
+        border-radius: 0 var(--card-radius) var(--card-radius) 0;
+    }
+
+    .litter-info p {
+        margin: 0;
+        color: var(--ink-soft);
+    }
+
+    /* ---------- Card grids ---------- */
+    .dog-card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 1.25rem;
+        text-align: left;
+    }
+
+    /* ---------- Puppy cards ---------- */
+    .puppy-card {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        padding: 0 0 1.25rem;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid #efe4d8;
+        border-radius: var(--card-radius);
+        box-shadow: var(--shadow-sm);
+        transition: transform .25s ease, box-shadow .25s ease,
+                    border-color .25s ease;
+    }
+
+    .puppy-card:hover,
+    .puppy-card:focus-within {
+        transform: translateY(-4px);
+        border-color: var(--accent);
+        box-shadow: var(--shadow-md);
+    }
+
+    .puppy-card img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        background: var(--brand-light);
+    }
+
+    .puppy-card h4 {
+        margin: .9rem 1.25rem 0;
+        font-size: 1.0625rem;
+        color: var(--brand);
+    }
+
+    .puppy-specs {
+        display: grid;
+        gap: .25rem;
+        margin: .25rem 1.25rem 0;
+        padding: 0;
+        list-style: none;
+        font-size: .9375rem;
+    }
+
+    .puppy-specs li {
+        display: flex;
+        justify-content: space-between;
+        gap: .75rem;
+        padding-bottom: .25rem;
+        border-bottom: 1px dashed #f0e5d9;
+        color: var(--ink-soft);
+    }
+
+    .puppy-specs strong {
+        font-weight: 600;
+        color: var(--brand-dark);
+    }
+
+    .puppy-status {
+        align-self: flex-start;
+        margin: .75rem 1.25rem 0;
+        padding: .2rem .7rem;
+        background: #fdf3e6;
+        border: 1px solid #f0dcbf;
+        border-radius: 999px;
+        font-size: .8125rem;
+        font-weight: 600;
+        letter-spacing: .02em;
+        color: #8a5a1f;
+    }
+
+    /* ---------- Parent cards ---------- */
+    .parents-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.25rem;
+        text-align: left;
+    }
+
+    .parent-card {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 1rem;
+        align-items: start;
+        padding: 1rem;
+        background: #fff;
+        border: 1px solid #efe4d8;
+        border-radius: var(--card-radius);
+        box-shadow: var(--shadow-sm);
+        transition: transform .25s ease, box-shadow .25s ease,
+                    border-color .25s ease;
+    }
+
+    .parent-card:hover {
+        transform: translateY(-3px);
+        border-color: var(--accent);
+        box-shadow: var(--shadow-md);
+    }
+
+    .parent-card img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 10px;
+        background: var(--brand-light);
+    }
+
+    .parent-body h4 {
+        margin: 0 0 .4rem;
+        font-size: 1.0625rem;
+        color: var(--brand);
+    }
+
+    .parent-body p {
+        margin: 0 0 .25rem;
+        font-size: .9375rem;
+        color: var(--ink-soft);
+    }
+
+    .parent-body p:last-child { margin-bottom: 0; }
+
+    /* ---------- Waitlist CTA ---------- */
+    .waitlist {
+        margin-top: 2.5rem;
+        padding: 1.75rem;
+        text-align: center;
+        background: #fff;
+        border: 1px solid #efe4d8;
+        border-radius: var(--card-radius);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .waitlist h3 {
+        margin: 0 0 .5rem;
+        font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+        color: var(--brand);
+    }
+
+    .waitlist p {
+        max-width: 52ch;
+        margin: 0 auto 1.25rem;
+        color: var(--ink-soft);
+    }
+
+    .link-button {
+        display: inline-block;
+        padding: .7rem 1.5rem;
+        background: var(--brand);
+        border-radius: 999px;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+        transition: background .2s ease, transform .2s ease;
+    }
+
+    .link-button:hover {
+        background: var(--brand-dark);
+        transform: translateY(-1px);
+    }
+
+    /* ---------- Responsive tweaks ---------- */
+    @media (max-width: 600px) {
+        body { padding-inline: 1rem; }
+        .litter-meta p { min-width: 0; width: 100%; }
+    }
+
+    @media (max-width: 520px) {
+        .parent-card { grid-template-columns: 1fr; }
+        .parent-card img { aspect-ratio: 16 / 9; }
+    }
+
+    /* ---------- Accessibility ---------- */
+    @media (prefers-reduced-motion: reduce) {
+        .puppy-card,
+        .parent-card,
+        .link-button { transition: none; }
+
+        .puppy-card:hover,
+        .puppy-card:focus-within,
+        .parent-card:hover,
+        .link-button:hover { transform: none; }
+    }
+
+    :focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 3px;
+    }
+</style>
+
+<script src="styles/global.js" defer></script>
+<script src="styles/autoload.js" defer></script>
+</head>
+<body>
+
+<!-- Header / nav / footer are injected by autoload.js -->
 <div id="head"></div>
 <div id="nav"></div>
 
+<main class="page-section">
 
-<body>
-
-
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Floyd × Hermione Litter -- Born 06/04/2027</title>
-
-</head>
-
-<body>
-
-
-
-<section class="page-section">
     <h2>Floyd × Hermione -- Litter of 6</h2>
-    <p><strong>Date of Birth:</strong> 06 April 2027</p>
-    <p><strong>Parents:</strong> Floyd (Sire) × Hermione (Dam)</p>
+
+    <div class="litter-meta">
+        <p><span>Date of Birth</span><strong>06 April 2027</strong></p>
+        <p><span>Parents</span><strong>Floyd (Sire) × Hermione (Dam)</strong></p>
+    </div>
 
     <div class="litter-info">
-        <p>This beautiful litter of six arrived safely on the 6th of April, 2027. 
-        Both Floyd and Hermione are exceptional examples of their breed -- 
-        confident, affectionate, well‑structured, and fully health tested. 
+        <p>This beautiful litter of six arrived safely on the 6th of April, 2027.
+        Both Floyd and Hermione are exceptional examples of their breed --
+        confident, affectionate, well‑structured, and fully health tested.
         Their puppies are already showing wonderful temperaments and strong type.</p>
     </div>
 
     <h3>Puppies in This Litter</h3>
 
-<div class="dog-card-container">
+    <div class="dog-card-container">
 
         <div class="puppy-card">
-            <img src="images/placeholder.jpg" alt="Puppy 1">
+            <img src="images/placeholder.jpg" alt="Puppy 1" loading="lazy" decoding="async">
             <h4>Puppy 1</h4>
-            <p>Sex: TBD</p>
-            <p>Colour: TBD</p>
-            <p>Status: Available / Reserved</p>
+            <ul class="puppy-specs">
+                <li><span>Sex</span><strong>TBD</strong></li>
+                <li><span>Colour</span><strong>TBD</strong></li>
+            </ul>
+            <p class="puppy-status">Available / Reserved</p>
         </div>
 
         <div class="puppy-card">
-            <img src="images/placeholder.jpg" alt="Puppy 2">
+            <img src="images/placeholder.jpg" alt="Puppy 2" loading="lazy" decoding="async">
             <h4>Puppy 2</h4>
-            <p>Sex: TBD</p>
-            <p>Colour: TBD</p>
-            <p>Status: Available / Reserved</p>
+            <ul class="puppy-specs">
+                <li><span>Sex</span><strong>TBD</strong></li>
+                <li><span>Colour</span><strong>TBD</strong></li>
+            </ul>
+            <p class="puppy-status">Available / Reserved</p>
         </div>
 
         <div class="puppy-card">
-            <img src="images/placeholder.jpg" alt="Puppy 3">
+            <img src="images/placeholder.jpg" alt="Puppy 3" loading="lazy" decoding="async">
             <h4>Puppy 3</h4>
-            <p>Sex: TBD</p>
-            <p>Colour: TBD</p>
-            <p>Status: Available / Reserved</p>
+            <ul class="puppy-specs">
+                <li><span>Sex</span><strong>TBD</strong></li>
+                <li><span>Colour</span><strong>TBD</strong></li>
+            </ul>
+            <p class="puppy-status">Available / Reserved</p>
         </div>
 
         <div class="puppy-card">
-            <img src="images/placeholder.jpg" alt="Puppy 4">
+            <img src="images/placeholder.jpg" alt="Puppy 4" loading="lazy" decoding="async">
             <h4>Puppy 4</h4>
-            <p>Sex: TBD</p>
-            <p>Colour: TBD</p>
-            <p>Status: Available / Reserved</p>
+            <ul class="puppy-specs">
+                <li><span>Sex</span><strong>TBD</strong></li>
+                <li><span>Colour</span><strong>TBD</strong></li>
+            </ul>
+            <p class="puppy-status">Available / Reserved</p>
         </div>
 
         <div class="puppy-card">
-            <img src="images/placeholder.jpg" alt="Puppy 5">
+            <img src="images/placeholder.jpg" alt="Puppy 5" loading="lazy" decoding="async">
             <h4>Puppy 5</h4>
-            <p>Sex: TBD</p>
-            <p>Colour: TBD</p>
-            <p>Status: Available / Reserved</p>
+            <ul class="puppy-specs">
+                <li><span>Sex</span><strong>TBD</strong></li>
+                <li><span>Colour</span><strong>TBD</strong></li>
+            </ul>
+            <p class="puppy-status">Available / Reserved</p>
         </div>
 
         <div class="puppy-card">
-            <img src="images/placeholder.jpg" alt="Puppy 6">
+            <img src="images/placeholder.jpg" alt="Puppy 6" loading="lazy" decoding="async">
             <h4>Puppy 6</h4>
-            <p>Sex: TBD</p>
-            <p>Colour: TBD</p>
-            <p>Status: Available / Reserved</p>
+            <ul class="puppy-specs">
+                <li><span>Sex</span><strong>TBD</strong></li>
+                <li><span>Colour</span><strong>TBD</strong></li>
+            </ul>
+            <p class="puppy-status">Available / Reserved</p>
         </div>
 
     </div>
@@ -90,29 +422,36 @@
     <div class="parents-section">
 
         <div class="parent-card">
-            <img src="images/floyd.jpg" alt="Floyd">
-            <h4>Floyd -- Sire</h4>
-            <p>Temperament: Gentle, confident, eager to please.</p>
-            <p>Health Tests: Clear.</p>
-            <p>Notes: Beautiful structure and movement.</p>
+            <img src="images/floyd.jpg" alt="Floyd, the sire" loading="lazy" decoding="async">
+            <div class="parent-body">
+                <h4>Floyd -- Sire</h4>
+                <p>Temperament: Gentle, confident, eager to please.</p>
+                <p>Health Tests: Clear.</p>
+                <p>Notes: Beautiful structure and movement.</p>
+            </div>
         </div>
 
         <div class="parent-card">
-            <img src="images/hermione.jpg" alt="Hermione">
-            <h4>Hermione -- Dam</h4>
-            <p>Temperament: Affectionate, intelligent, calm.</p>
-            <p>Health Tests: Clear.</p>
-            <p>Notes: Excellent mother, strong breed type.</p>
+            <img src="images/hermione.jpg" alt="Hermione, the dam" loading="lazy" decoding="async">
+            <div class="parent-body">
+                <h4>Hermione -- Dam</h4>
+                <p>Temperament: Affectionate, intelligent, calm.</p>
+                <p>Health Tests: Clear.</p>
+                <p>Notes: Excellent mother, strong breed type.</p>
+            </div>
         </div>
 
     </div>
 
-    <h3>Waitlist & Applications</h3>
-    <p>To apply for a puppy from this litter, please visit our 
-        <a href="057.html">Waitlist Application</a> page.</p>
+    <div class="waitlist">
+        <h3>Waitlist &amp; Applications</h3>
+        <p>To apply for a puppy from this litter, please visit our Waitlist Application page.</p>
+        <a class="link-button" href="057.html">Waitlist Application</a>
+    </div>
 
-</section>
+</main>
 
 <div id="foot"></div>
+
 </body>
 </html>

@@ -1,10 +1,19 @@
 <style>
+    /* Fallback tokens (in case global.css hasn't loaded yet) */
+    :root {
+        --purple-dark:  #4b2a7f;
+        --purple-mid:   #6a3ea1;
+        --purple-light: #d9c7f3;
+        --purple-soft:  #efe6fb;
+        --purple-hover: #8b5bd1;
+    }
+
     /* ---------- Header ---------- */
     .head {
         padding: 1.75rem 1.25rem 1.35rem;
         text-align: center;
-        background: var(--paper, #fffdfa);
-        border-bottom: 1px solid #efe4d8;
+        background: var(--purple-mid, #6a3ea1);
+        border-bottom: 1px solid var(--purple-dark, #4b2a7f);
     }
     .head .logo {
         display: flex;
@@ -17,11 +26,15 @@
     .head .logo-img {
         width: 96px;
         height: 96px;
-        padding: .3rem;
+        padding: .35rem;
         object-fit: contain;
         border-radius: 50%;
-        background: var(--brand-light, #f6ede4);
-        box-shadow: 0 4px 14px rgba(60, 40, 20, .12);
+        /* Transparent background so a white logo shows against the purple.
+           If your logo is dark, change this to:
+           background: var(--purple-soft, #efe6fb); */
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, .22);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, .18);
     }
     .head .logo p {
         margin: 0;
@@ -29,7 +42,7 @@
         font-weight: 700;
         letter-spacing: .18em;
         text-transform: uppercase;
-        color: var(--accent, #c98a4b);
+        color: var(--purple-light, #d9c7f3);
     }
 
     @media (max-width: 600px) {

@@ -1,67 +1,249 @@
-<script src="styles/global.js"></script>
-<script src="styles/autoload.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grooming | KKnudPaw Cavalier King Charles Spaniels</title>
 
+<style>
+    :root{
+        --brand:#7a4a2b; --brand-dark:#4d2d18; --brand-light:#f6ede4;
+        --accent:#c98a4b; --ink:#2f2a26; --ink-soft:#5f564e; --paper:#fffdfa;
+        --card-radius:14px;
+        --shadow-sm:0 2px 6px rgba(60,40,20,.08);
+        --shadow-md:0 8px 22px rgba(60,40,20,.14);
+        --max-width:1100px;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    body{
+        margin:0; padding:0 1.25rem 3rem;
+        background:var(--paper); color:var(--ink);
+        font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+        font-size:1rem; line-height:1.65; -webkit-font-smoothing:antialiased;
+    }
+    img{max-width:100%;height:auto;display:block}
+
+    /* Hero */
+    .hero{width:100%;max-width:var(--max-width);margin-inline:auto;padding:1.75rem 0 1rem;text-align:center}
+    .hero img{margin-inline:auto;border-radius:var(--card-radius);box-shadow:var(--shadow-md)}
+    .hero h1{
+        margin:1.75rem 0 0; font-size:clamp(1.9rem,4vw,2.75rem);
+        line-height:1.2; letter-spacing:-.02em; color:var(--brand-dark);
+    }
+    .hero h1::after{
+        content:""; display:block; width:72px; height:4px;
+        margin:.75rem auto 0; border-radius:4px; background:var(--accent);
+    }
+
+    /* Prose column */
+    .prose{width:100%;max-width:74ch;margin:2rem auto 0;text-align:left}
+    .prose h2{
+        margin:0 0 .75rem; font-size:clamp(1.35rem,2.5vw,1.65rem);
+        line-height:1.3; color:var(--brand);
+    }
+    .prose h3{
+        margin:2.25rem 0 1rem; padding-bottom:.4rem;
+        border-bottom:2px solid var(--brand-light);
+        font-size:clamp(1.125rem,2vw,1.25rem); color:var(--brand);
+    }
+    .prose h4{margin:0 0 .6rem;font-size:1.0625rem;color:var(--brand)}
+    .prose p{margin:0 0 1rem;color:var(--ink-soft)}
+    .prose .lede{font-size:1.0625rem;color:var(--ink-soft)}
+    .prose > ul{margin:0 0 1.25rem;padding:0;list-style:none}
+    .prose > ul > li{
+        position:relative; padding-left:1.25rem; margin-bottom:.45rem;
+        color:var(--ink-soft);
+    }
+    .prose > ul > li::before{
+        content:""; position:absolute; left:0; top:.72em;
+        width:.4rem; height:.4rem; border-radius:50%; background:var(--accent);
+    }
+
+    /* Style chips */
+    .chips{
+        display:flex; flex-wrap:wrap; gap:.5rem;
+        margin:1.25rem 0 1.75rem; padding:0; list-style:none;
+    }
+    .chip a{
+        display:inline-block; padding:.4rem 1rem;
+        background:var(--brand-light); border:1px solid #e8d9c9;
+        border-radius:999px; font-size:.875rem; font-weight:600;
+        color:var(--brand-dark); text-decoration:none;
+        transition:background .2s ease, border-color .2s ease;
+    }
+    .chip a:hover{background:#efe2d5; border-color:var(--accent)}
+
+    /* Cards */
+    .spec-grid{
+        display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+        gap:1.25rem; margin:1.25rem 0 2rem;
+    }
+    .spec-card, .tip-card{
+        padding:1.4rem; background:#fff; border:1px solid #efe4d8;
+        border-radius:var(--card-radius); box-shadow:var(--shadow-sm);
+        transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .spec-card:hover, .tip-card:hover{
+        transform:translateY(-3px);
+        border-color:var(--accent);
+        box-shadow:var(--shadow-md);
+    }
+    .spec-card dl{margin:0;display:grid;gap:.5rem;font-size:.9375rem}
+    .spec-card dt{
+        font-size:.75rem; font-weight:700; letter-spacing:.06em;
+        text-transform:uppercase; color:var(--ink-soft);
+    }
+    .spec-card dd{margin:0;color:var(--ink-soft)}
+
+    .tips-grid{
+        display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+        gap:1.25rem; margin:1.25rem 0 2rem;
+    }
+    .tip-card h4{margin-top:0}
+    .tip-card p{margin:0}
+
+    @media (max-width:600px){
+        body{padding-inline:1rem}
+        .spec-grid, .tips-grid{gap:1rem}
+    }
+    @media (prefers-reduced-motion:reduce){
+        .spec-card, .tip-card{transition:none}
+        .spec-card:hover, .tip-card:hover{transform:none}
+        .chip a{transition:none}
+    }
+    :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+</style>
+
+<script src="styles/global.js" defer></script>
+<script src="styles/autoload.js" defer></script>
+</head>
+<body>
 
 <div id="head"></div>
 <div id="nav"></div>
 
-
-
-<section style="text-align:center;" class="breed-standard">
-
-
-<img src="images/CKCS-Grooming.jpg">
-
-<h1>Grooming</h1>
-
 <main>
-<section class="breed-standard">
 
+    <section class="hero">
+        <img src="/images/CKCS-Grooming.jpg" alt="KKnudPaw Cavalier King Charles Spaniels">
+        <h1>Grooming</h1>
+    </section>
 
-</section>
-</main>
+    <article class="prose">
 
+        <p class="lede">The Cavalier King Charles Spaniel wears a single, silky coat with a gentle wave and soft feathering on the ears, chest, legs, feet, and tail. That flowing outline is part of the breed’s identity -- and it is maintained through gentle, consistent home care, not heavy clipping.[reference:16]</p>
 
-    <article>
+        <ul class="chips" aria-label="Jump to grooming style details">
+            <li class="chip"><a href="#natural">Natural Feathering</a></li>
+            <li class="chip"><a href="#practical-trim">Practical Trim</a></li>
+            <li class="chip"><a href="#no-clip">Why Not to Clip Short</a></li>
+        </ul>
 
-    <h2>Cavalier King Charles Spaniel</h2>
-    <p>The Cavalier is gentle, affectionate, and known for its expressive eyes and loving nature.</p>
+        <h3>Grooming Essentials</h3>
 
-            <h2>Grooming</h2>
+        <div class="spec-grid">
 
+            <div class="spec-card">
+                <h4>Brushing</h4>
+                <dl>
+                    <dt>Frequency</dt>
+                    <dd>Brush <strong>3–4 times a week at minimum</strong>, and daily if you want to keep the full show-length feathering or during shedding season. A daily 10-minute brush-out keeps the coat flat, soft, and tangle-free.[reference:17][reference:18]</dd>
+                    <dt>Tools &amp; technique</dt>
+                    <dd>Use a <strong>pin brush</strong> for the body and a <strong>metal greyhound comb</strong> to check down to the skin. Always brush in <strong>lines</strong> (line-brushing), not just over the surface -- brushing the topcoat alone hides mats close to the skin.[reference:19][reference:20]</dd>
+                    <dt>Mat zones</dt>
+                    <dd>Pay extra attention <strong>behind the ears, under the armpits, along the belly, and behind the back legs</strong>. These high-friction areas mat first.[reference:21]</dd>
+                </dl>
+            </div>
 
+            <div class="spec-card">
+                <h4>Bathing</h4>
+                <dl>
+                    <dt>Schedule</dt>
+                    <dd>Bathe every <strong>4–6 weeks</strong> with a gentle dog shampoo. Monthly is a reasonable baseline for many pet Cavaliers, but do not over-bathe -- the single coat does not need frequent stripping of natural oils.[reference:22][reference:23]</dd>
+                    <dt>Drying</dt>
+                    <dd>Dry thoroughly and keep the dog warm afterward. A <strong>drying coat</strong> worn for a few hours can help the silky hair lie flat and prevent it from curling as it dries.[reference:24]</dd>
+                </dl>
+            </div>
 
+            <div class="spec-card">
+                <h4>Ear Care</h4>
+                <dl>
+                    <dt>Weekly checks</dt>
+                    <dd>Cavaliers have long, feathered, floppy ears that trap heat and moisture. <strong>Check and clean weekly</strong> with a vet-approved ear cleaner -- lift the flap, look for redness, dark wax, or odour, wipe only the visible part of the canal, and let it air-dry.[reference:25][reference:26]</dd>
+                    <dt>After water</dt>
+                    <dd>Always dry the ears after bathing, swimming, or wet walks. Moisture trapped under the ear flap is the fastest route to a yeast or bacterial infection.[reference:27]</dd>
+                    <dt>Never</dt>
+                    <dd>Do not push cotton buds deep into the canal. Wipe the outer flap and canal opening only.[reference:28]</dd>
+                </dl>
+            </div>
 
+            <div class="spec-card">
+                <h4>Eye Care</h4>
+                <dl>
+                    <dt>Daily wipe</dt>
+                    <dd>Cavaliers are a classic <strong>tear-staining breed</strong>. Wipe under the eyes once or twice daily with a damp soft cloth, sterile saline, or cooled boiled water. Never use shampoo or soap near the eyes.[reference:29]</dd>
+                    <dt>Hair trimming</dt>
+                    <dd>Keep the hair immediately around the eyes lightly trimmed to stop tears wicking into the coat and staining the white markings.[reference:30]</dd>
+                </dl>
+            </div>
 
-<div style="text-align:center;" class="button-container">
-        <a class="btn">Sanitary/Puppy Groom</a>
-        <a class="btn">Comfort Clip</a>
-        <a class="btn">Hand Strip</a>
-            <p>Regular grooming is essential for maintaining the health and beauty of your English Cocker Spaniel's coat, which requires brushing, bathing, and ear care.
-Grooming Essentials
-Brushing:
-Frequency: Brush your English Cocker Spaniel at least three to four times a week, and daily during shedding seasons. This helps prevent mats and tangles in their dense, medium-length coat .
-Tools: Use a slicker brush for removing tangles and loose hair, a wide-toothed comb for detangling feathered areas, and a pin brush for smoothing the coat.
-Bathing:
-Schedule: Bathe your dog every 4 to 6 weeks to keep the coat clean without stripping natural oils. Use a gentle dog shampoo to maintain coat health.
-Trimming:
-Areas to Trim: Regularly trim the hair around the ears, feet, and tail to maintain a neat appearance and reduce debris collection. Professional grooming every 6 to 8 weeks can help manage coat length and maintain the breed's characteristic look.
-Ear Care:
-Cleaning: Check and clean your dog's ears weekly to prevent infections, as their long, floppy ears are prone to issues without proper care .
-Nail Trimming:
-Frequency: Trim your dog's nails every few weeks to support proper paw health and comfort during walks.
-Additional Tips
-Conditioning Treatments: Integrate conditioning treatments a few times a month to enhance coat softness and detangle stubborn knots.
-Positive Experience: Make grooming a positive experience by using treats and praise, ensuring your dog feels comfortable during the process.
-By following these grooming practices, you can keep your English Cocker Spaniel looking great and feeling healthy, while also preventing common grooming-related issues. Regular grooming not only enhances their appearance but also contributes to their overall well-being.</p>
+            <div class="spec-card">
+                <h4>Nail &amp; Paw Care</h4>
+                <dl>
+                    <dt>Nails</dt>
+                    <dd>Trim nails every <strong>3–4 weeks</strong>. If you can hear the nails clicking on the floor, they are overdue.[reference:31]</dd>
+                    <dt>Pads</dt>
+                    <dd>Check paw pads for grass seeds and barley awns after walks in long grass, and keep the hair between the pads trimmed for traction.[reference:32]</dd>
+                </dl>
+            </div>
+
+            <div class="spec-card">
+                <h4>Dental Care</h4>
+                <dl>
+                    <dt>Daily brushing</dt>
+                    <dd>Brush the teeth daily with a canine toothbrush and toothpaste. Small breeds are prone to dental disease, and consistent home care makes a real difference to overall health.[reference:33]</dd>
+                </dl>
+            </div>
+
         </div>
 
+        <h3 id="natural">Natural Feathering vs. Practical Trim</h3>
+        <p>There is no single "correct" Cavalier groom -- the right choice depends on your lifestyle and how much coat you want to manage.</p>
+        <p><strong id="natural">Natural feathering</strong> is the breed-standard look: the silky coat is left long, with only <strong>subtle tidying of the feet, ears, and tail</strong>. It requires the most home brushing -- daily is ideal -- but preserves the classic Cavalier silhouette. A professional groom every <strong>6–8 weeks</strong> keeps the outline neat.[reference:34][reference:35]</p>
+        <p><strong id="practical-trim">Practical trim</strong> shortens the feathering on the legs, belly, and ears while leaving the body coat natural. It is faster to maintain and kinder to a dog who picks up burrs or gets wet often. Some groomers offer a <strong>modified Cocker pet cut</strong> for owners who cannot keep up with full feathering -- this is a reasonable compromise, not a failure.[reference:36]</p>
 
-    </div>
-</section>
+        <h3 id="no-clip">Why Not to Clip the Coat Short</h3>
+        <p>The Cavalier’s coat is <strong>single, not double</strong>, and the silky hair is part of the breed’s natural protection. Clipping the body short removes that protection and changes the texture of the regrowth, which can become woollier and harder to manage. Professional guidance is consistent: <strong>clippers all over? Absolutely not</strong>. Subtle trimming and feather refinement, yes -- a shaved Cavalier, no.[reference:37][reference:38]</p>
 
+        <h3>Additional Tips</h3>
+
+        <div class="tips-grid">
+
+            <div class="tip-card">
+                <h4>Never brush a dry tangle</h4>
+                <p>Spray a light leave-in detangling conditioner into the coat before working through a knot. Brushing a dry tangle snaps the hair shaft and makes the mat worse.[reference:39]</p>
+            </div>
+
+            <div class="tip-card">
+                <h4>Keep ear tips out of the bowl</h4>
+                <p>Long ear feathering trails into water bowls. A <strong>snood</strong> at mealtime or a narrow, elevated bowl keeps the tips clean and dry.[reference:40]</p>
+            </div>
+
+            <div class="tip-card">
+                <h4>Acclimatise early</h4>
+                <p>Slowly get your Cavalier used to having the face, mouth, ears, and feet handled -- and to the sound of the dryer -- before you need to do a full groom. Cooperative care makes every session easier.[reference:41]</p>
+            </div>
+
+        </div>
+
+        <p>By following these grooming practices, you can keep your Cavalier King Charles Spaniel looking like the elegant toy spaniel they are -- silky, feathered, and comfortable -- while protecting the ears, eyes, and coat that make the breed so distinctive.</p>
+
+    </article>
+
+</main>
 
 <div id="foot"></div>
+
 </body>
 </html>
-

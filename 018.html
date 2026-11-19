@@ -38,10 +38,6 @@
 
     /* Prose column */
     .prose{width:100%;max-width:74ch;margin:2rem auto 0;text-align:left}
-    .prose h2{
-        margin:0 0 .75rem; font-size:clamp(1.35rem,2.5vw,1.65rem);
-        line-height:1.3; color:var(--brand);
-    }
     .prose h3{
         margin:2.25rem 0 1rem; padding-bottom:.4rem;
         border-bottom:2px solid var(--brand-light);
@@ -50,15 +46,6 @@
     .prose h4{margin:0 0 .6rem;font-size:1.0625rem;color:var(--brand)}
     .prose p{margin:0 0 1rem;color:var(--ink-soft)}
     .prose .lede{font-size:1.0625rem;color:var(--ink-soft)}
-    .prose > ul{margin:0 0 1.25rem;padding:0;list-style:none}
-    .prose > ul > li{
-        position:relative; padding-left:1.25rem; margin-bottom:.45rem;
-        color:var(--ink-soft);
-    }
-    .prose > ul > li::before{
-        content:""; position:absolute; left:0; top:.72em;
-        width:.4rem; height:.4rem; border-radius:50%; background:var(--accent);
-    }
 
     /* Style chips */
     .chips{
@@ -132,15 +119,15 @@
 
     <article class="prose">
 
-        <p class="lede">The Cavalier King Charles Spaniel wears a single, silky coat with a gentle wave and soft feathering on the ears, chest, legs, feet, and tail. That flowing outline is part of the breed’s identity -- and it is maintained through gentle, consistent home care, not heavy clipping.[reference:16]</p>
+        <p class="lede">The Cavalier King Charles Spaniel wears a single, silky coat with a gentle wave and soft feathering on the ears, chest, legs, feet, and tail. That flowing outline is part of the breed’s identity -- and it is maintained through gentle, consistent home care, not heavy clipping.</p>
 
-        <ul class="chips" aria-label="Jump to grooming style details">
-            <li class="chip"><a href="#natural">Natural Feathering</a></li>
-            <li class="chip"><a href="#practical-trim">Practical Trim</a></li>
-            <li class="chip"><a href="#no-clip">Why Not to Clip Short</a></li>
+        <ul class="chips" aria-label="Jump to grooming sections">
+            <li class="chip"><a href="#essentials">Grooming Essentials</a></li>
+            <li class="chip"><a href="#equipment">Tools &amp; Equipment</a></li>
+            <li class="chip"><a href="#styles">Grooming Styles</a></li>
         </ul>
 
-        <h3>Grooming Essentials</h3>
+        <h3 id="essentials">Grooming Essentials</h3>
 
         <div class="spec-grid">
 
@@ -148,11 +135,11 @@
                 <h4>Brushing</h4>
                 <dl>
                     <dt>Frequency</dt>
-                    <dd>Brush <strong>3–4 times a week at minimum</strong>, and daily if you want to keep the full show-length feathering or during shedding season. A daily 10-minute brush-out keeps the coat flat, soft, and tangle-free.[reference:17][reference:18]</dd>
+                    <dd>Brush <strong>3–4 times a week at minimum</strong>, and daily if you want to keep the full show-length feathering or during shedding season. A daily 10-minute brush-out keeps the coat flat, soft, and tangle-free.</dd>
                     <dt>Tools &amp; technique</dt>
-                    <dd>Use a <strong>pin brush</strong> for the body and a <strong>metal greyhound comb</strong> to check down to the skin. Always brush in <strong>lines</strong> (line-brushing), not just over the surface -- brushing the topcoat alone hides mats close to the skin.[reference:19][reference:20]</dd>
+                    <dd>Use a <strong>pin brush</strong> for the body and a <strong>metal greyhound comb</strong> to check down to the skin. Always brush in <strong>lines</strong> (line-brushing), not just over the surface -- brushing the topcoat alone hides mats close to the skin.</dd>
                     <dt>Mat zones</dt>
-                    <dd>Pay extra attention <strong>behind the ears, under the armpits, along the belly, and behind the back legs</strong>. These high-friction areas mat first.[reference:21]</dd>
+                    <dd>Pay extra attention <strong>behind the ears, under the armpits, along the belly, and behind the back legs</strong>. These high-friction areas mat first.</dd>
                 </dl>
             </div>
 
@@ -160,9 +147,9 @@
                 <h4>Bathing</h4>
                 <dl>
                     <dt>Schedule</dt>
-                    <dd>Bathe every <strong>4–6 weeks</strong> with a gentle dog shampoo. Monthly is a reasonable baseline for many pet Cavaliers, but do not over-bathe -- the single coat does not need frequent stripping of natural oils.[reference:22][reference:23]</dd>
+                    <dd>Bathe every <strong>4–6 weeks</strong> with a gentle dog shampoo. Monthly is a reasonable baseline for many pet Cavaliers, but do not over-bathe -- the single coat does not need frequent stripping of natural oils.</dd>
                     <dt>Drying</dt>
-                    <dd>Dry thoroughly and keep the dog warm afterward. A <strong>drying coat</strong> worn for a few hours can help the silky hair lie flat and prevent it from curling as it dries.[reference:24]</dd>
+                    <dd>Dry thoroughly and keep the dog warm afterward. A <strong>drying coat</strong> worn for a few hours can help the silky hair lie flat and prevent it from curling as it dries.</dd>
                 </dl>
             </div>
 
@@ -170,11 +157,11 @@
                 <h4>Ear Care</h4>
                 <dl>
                     <dt>Weekly checks</dt>
-                    <dd>Cavaliers have long, feathered, floppy ears that trap heat and moisture. <strong>Check and clean weekly</strong> with a vet-approved ear cleaner -- lift the flap, look for redness, dark wax, or odour, wipe only the visible part of the canal, and let it air-dry.[reference:25][reference:26]</dd>
+                    <dd>Cavaliers have long, feathered, floppy ears that trap heat and moisture. <strong>Check and clean weekly</strong> with a vet-approved ear cleaner -- lift the flap, look for redness, dark wax, or odour, wipe only the visible part of the canal, and let it air-dry.</dd>
                     <dt>After water</dt>
-                    <dd>Always dry the ears after bathing, swimming, or wet walks. Moisture trapped under the ear flap is the fastest route to a yeast or bacterial infection.[reference:27]</dd>
+                    <dd>Always dry the ears after bathing, swimming, or wet walks. Moisture trapped under the ear flap is the fastest route to a yeast or bacterial infection.</dd>
                     <dt>Never</dt>
-                    <dd>Do not push cotton buds deep into the canal. Wipe the outer flap and canal opening only.[reference:28]</dd>
+                    <dd>Do not push cotton buds deep into the canal. Wipe the outer flap and canal opening only.</dd>
                 </dl>
             </div>
 
@@ -182,9 +169,9 @@
                 <h4>Eye Care</h4>
                 <dl>
                     <dt>Daily wipe</dt>
-                    <dd>Cavaliers are a classic <strong>tear-staining breed</strong>. Wipe under the eyes once or twice daily with a damp soft cloth, sterile saline, or cooled boiled water. Never use shampoo or soap near the eyes.[reference:29]</dd>
+                    <dd>Cavaliers are a classic <strong>tear-staining breed</strong>. Wipe under the eyes once or twice daily with a damp soft cloth, sterile saline, or cooled boiled water. Never use shampoo or soap near the eyes.</dd>
                     <dt>Hair trimming</dt>
-                    <dd>Keep the hair immediately around the eyes lightly trimmed to stop tears wicking into the coat and staining the white markings.[reference:30]</dd>
+                    <dd>Keep the hair immediately around the eyes lightly trimmed to stop tears wicking into the coat and staining the white markings.</dd>
                 </dl>
             </div>
 
@@ -192,9 +179,9 @@
                 <h4>Nail &amp; Paw Care</h4>
                 <dl>
                     <dt>Nails</dt>
-                    <dd>Trim nails every <strong>3–4 weeks</strong>. If you can hear the nails clicking on the floor, they are overdue.[reference:31]</dd>
+                    <dd>Trim nails every <strong>3–4 weeks</strong>. If you can hear the nails clicking on the floor, they are overdue.</dd>
                     <dt>Pads</dt>
-                    <dd>Check paw pads for grass seeds and barley awns after walks in long grass, and keep the hair between the pads trimmed for traction.[reference:32]</dd>
+                    <dd>Check paw pads for grass seeds and barley awns after walks in long grass, and keep the hair between the pads trimmed for traction.</dd>
                 </dl>
             </div>
 
@@ -202,19 +189,87 @@
                 <h4>Dental Care</h4>
                 <dl>
                     <dt>Daily brushing</dt>
-                    <dd>Brush the teeth daily with a canine toothbrush and toothpaste. Small breeds are prone to dental disease, and consistent home care makes a real difference to overall health.[reference:33]</dd>
+                    <dd>Brush the teeth daily with a canine toothbrush and toothpaste. Small breeds are prone to dental disease, and consistent home care makes a real difference to overall health.</dd>
                 </dl>
             </div>
 
         </div>
 
-        <h3 id="natural">Natural Feathering vs. Practical Trim</h3>
+        <h3 id="equipment">Tools &amp; Equipment</h3>
+
+        <div class="spec-grid">
+
+            <div class="spec-card">
+                <h4>Brushes &amp; Combs</h4>
+                <dl>
+                    <dt>Pin brush</dt>
+                    <dd>The everyday tool for the body and feathering. Choose rounded, polished pins sized for medium-length hair -- a 27&nbsp;mm pin is a common fit for adult Cavaliers.</dd>
+                    <dt>Slicker brush</dt>
+                    <dd>For small tangles and loose hair in the feathering. Use a light touch on a single silky coat; over-brushing with a slicker can break the fine hairs over time.</dd>
+                    <dt>Steel comb</dt>
+                    <dd>The reality check. A metal comb with fine and medium teeth run down to the skin tells you whether the brush actually reached the coat -- not just the surface.</dd>
+                </dl>
+            </div>
+
+            <div class="spec-card">
+                <h4>Bathing &amp; Drying</h4>
+                <dl>
+                    <dt>Shampoo &amp; conditioner</dt>
+                    <dd>A gentle dog-specific shampoo and a good conditioner. Conditioner matters more than most owners expect -- it keeps long hair sliding past itself instead of knotting.</dd>
+                    <dt>Dryer</dt>
+                    <dd>A low-heat or no-heat pet dryer is safest for a Cavalier's fine coat. High heat can dry out the skin and damage the silky texture; the goal is thorough drying of the ear feathering, not speed.</dd>
+                </dl>
+            </div>
+
+            <div class="spec-card">
+                <h4>Nail Care</h4>
+                <dl>
+                    <dt>Clippers or grinder</dt>
+                    <dd>A sharp pair of small-dog nail clippers or a nail grinder. Whichever you choose, keep the tool sharp -- dull clippers crush the nail rather than cut it.</dd>
+                    <dt>Styptic powder</dt>
+                    <dd>Buy it before you need it. A small nick in the quick is common, and styptic powder stops the bleeding quickly and calmly.</dd>
+                </dl>
+            </div>
+
+            <div class="spec-card">
+                <h4>Ear &amp; Eye Care</h4>
+                <dl>
+                    <dt>Ear cleaner</dt>
+                    <dd>A vet-approved enzymatic ear cleaner formulated for long, floppy ears. Apply to a cotton ball or gauze and wipe the visible canal -- never push a cotton bud deep into the L-shaped canal.</dd>
+                    <dt>Eye wipes</dt>
+                    <dd>Sterile saline, cooled boiled water, or dog-safe eye wipes for daily tear-stain management. Keep them separate from ear equipment to avoid cross-contamination.</dd>
+                </dl>
+            </div>
+
+            <div class="spec-card">
+                <h4>Dental Care</h4>
+                <dl>
+                    <dt>Toothbrush</dt>
+                    <dd>A canine toothbrush sized for a small mouth -- a finger brush or a small-headed soft brush both work. Human toothbrushes are too large.</dd>
+                    <dt>Toothpaste</dt>
+                    <dd>Dog-safe toothpaste only. Human toothpaste contains ingredients that should not be swallowed by dogs.</dd>
+                </dl>
+            </div>
+
+            <div class="spec-card">
+                <h4>Trimming Tools</h4>
+                <dl>
+                    <dt>Rounded-tip scissors</dt>
+                    <dd>For tidying the feet, ear tips, and hygiene areas. Rounded tips reduce the risk of nicking skin during close work on a wriggly dog.</dd>
+                    <dt>Optional: thinning shears</dt>
+                    <dd>Useful for softening a heavy foot or blending a tidy-up. Not essential for every owner, but a reasonable addition if you do your own feather trimming.</dd>
+                </dl>
+            </div>
+
+        </div>
+
+        <h3 id="styles">Natural Feathering vs. Practical Trim</h3>
         <p>There is no single "correct" Cavalier groom -- the right choice depends on your lifestyle and how much coat you want to manage.</p>
-        <p><strong id="natural">Natural feathering</strong> is the breed-standard look: the silky coat is left long, with only <strong>subtle tidying of the feet, ears, and tail</strong>. It requires the most home brushing -- daily is ideal -- but preserves the classic Cavalier silhouette. A professional groom every <strong>6–8 weeks</strong> keeps the outline neat.[reference:34][reference:35]</p>
-        <p><strong id="practical-trim">Practical trim</strong> shortens the feathering on the legs, belly, and ears while leaving the body coat natural. It is faster to maintain and kinder to a dog who picks up burrs or gets wet often. Some groomers offer a <strong>modified Cocker pet cut</strong> for owners who cannot keep up with full feathering -- this is a reasonable compromise, not a failure.[reference:36]</p>
+        <p><strong>Natural feathering</strong> is the breed-standard look: the silky coat is left long, with only <strong>subtle tidying of the feet, ears, and tail</strong>. It requires the most home brushing -- daily is ideal -- but preserves the classic Cavalier silhouette. A professional groom every <strong>6–8 weeks</strong> keeps the outline neat.</p>
+        <p><strong>Practical trim</strong> shortens the feathering on the legs, belly, and ears while leaving the body coat natural. It is faster to maintain and kinder to a dog who picks up burrs or gets wet often. Some groomers offer a <strong>modified spaniel pet cut</strong> for owners who cannot keep up with full feathering -- this is a reasonable compromise, not a failure.</p>
 
         <h3 id="no-clip">Why Not to Clip the Coat Short</h3>
-        <p>The Cavalier’s coat is <strong>single, not double</strong>, and the silky hair is part of the breed’s natural protection. Clipping the body short removes that protection and changes the texture of the regrowth, which can become woollier and harder to manage. Professional guidance is consistent: <strong>clippers all over? Absolutely not</strong>. Subtle trimming and feather refinement, yes -- a shaved Cavalier, no.[reference:37][reference:38]</p>
+        <p>The Cavalier’s coat is <strong>single, not double</strong>, and the silky hair is part of the breed’s natural protection. Clipping the body short removes that protection and changes the texture of the regrowth, which can become woollier and harder to manage. Professional guidance is consistent: <strong>clippers all over? Absolutely not</strong>. Subtle trimming and feather refinement, yes -- a shaved Cavalier, no.</p>
 
         <h3>Additional Tips</h3>
 
@@ -222,17 +277,17 @@
 
             <div class="tip-card">
                 <h4>Never brush a dry tangle</h4>
-                <p>Spray a light leave-in detangling conditioner into the coat before working through a knot. Brushing a dry tangle snaps the hair shaft and makes the mat worse.[reference:39]</p>
+                <p>Spray a light leave-in detangling conditioner into the coat before working through a knot. Brushing a dry tangle snaps the hair shaft and makes the mat worse.</p>
             </div>
 
             <div class="tip-card">
                 <h4>Keep ear tips out of the bowl</h4>
-                <p>Long ear feathering trails into water bowls. A <strong>snood</strong> at mealtime or a narrow, elevated bowl keeps the tips clean and dry.[reference:40]</p>
+                <p>Long ear feathering trails into water bowls. A <strong>snood</strong> at mealtime or a narrow, elevated bowl keeps the tips clean and dry.</p>
             </div>
 
             <div class="tip-card">
                 <h4>Acclimatise early</h4>
-                <p>Slowly get your Cavalier used to having the face, mouth, ears, and feet handled -- and to the sound of the dryer -- before you need to do a full groom. Cooperative care makes every session easier.[reference:41]</p>
+                <p>Slowly get your Cavalier used to having the face, mouth, ears, and feet handled -- and to the sound of the dryer -- before you need to do a full groom. Cooperative care makes every session easier.</p>
             </div>
 
         </div>

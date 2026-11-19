@@ -1,55 +1,5 @@
 <style>
-    /* Fallback tokens (in case global.css hasn't loaded yet) */
-    :root {
-        --purple-dark:  #4b2a7f;
-        --purple-mid:   #6a3ea1;
-        --purple-light: #d9c7f3;
-        --purple-soft:  #efe6fb;
-        --purple-hover: #8b5bd1;
-    }
 
-    /* ---------- Header ---------- */
-    .head {
-        padding: 1.75rem 1.25rem 1.35rem;
-        text-align: center;
-        background: var(--purple-mid, #6a3ea1);
-        border-bottom: 1px solid var(--purple-dark, #4b2a7f);
-    }
-    .head .logo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: .75rem;
-        max-width: 1100px;
-        margin: 0 auto;
-    }
-    .head .logo-img {
-        width: 96px;
-        height: 96px;
-        padding: .35rem;
-        object-fit: contain;
-        border-radius: 50%;
-        /* Transparent background so a white logo shows against the purple.
-           If your logo is dark, change this to:
-           background: var(--purple-soft, #efe6fb); */
-        background: transparent;
-        border: 1px solid rgba(255, 255, 255, .22);
-        box-shadow: 0 4px 16px rgba(0, 0, 0, .18);
-    }
-    .head .logo p {
-        margin: 0;
-        font-size: .75rem;
-        font-weight: 700;
-        letter-spacing: .18em;
-        text-transform: uppercase;
-        color: var(--purple-light, #d9c7f3);
-    }
-
-    @media (max-width: 600px) {
-        .head { padding: 1.25rem 1rem 1rem; }
-        .head .logo-img { width: 72px; height: 72px; }
-        .head .logo p { font-size: .6875rem; letter-spacing: .14em; }
-    }
 </style>
 
 <header class="head">

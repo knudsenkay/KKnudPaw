@@ -20,6 +20,7 @@
     const COMPONENTS = [
         { targetId: "head", file: "000H.html" },
         { targetId: "nav",  file: "000N.html" },
+        { targetId: "hero",  file: "000I.html" },
         { targetId: "foot", file: "000F.html" }
     ];
 
